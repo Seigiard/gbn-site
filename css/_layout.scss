@@ -1,0 +1,25 @@
+.layout-header {
+  background: #000;
+  height: 69px;
+}
+
+.layout-main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: flex-start;
+}
+
+.layout-sidebar {
+  order: 0;
+  flex: 0 0 auto;
+  align-self: auto;
+}
+
+.layout-content {
+  order: 0;
+  flex: 1 0 auto;
+  align-self: auto;
+}
