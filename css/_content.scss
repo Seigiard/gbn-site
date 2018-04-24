@@ -1,3 +1,33 @@
+.main-page {
+  height: calc(100vh - 69px);
+  background: #000 url(../img/bg-main-page.jpg) bottom right no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding: 40px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-content: stretch;
+  align-items: flex-start;
+
+  h1 {
+    font-size: 45px;
+    line-height: 1.15;
+    margin: 0;
+    padding: 0 0 20px 0;
+  }
+  p {
+    max-width: 592px;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+}
+
 
 .site-content {
   height: calc(100vh - 145px);

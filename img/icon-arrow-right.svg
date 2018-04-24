@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="11px" height="12px" viewBox="0 0 11 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
-    <title>Icon</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Услуги.-Прокрутка.-1000-пк" transform="translate(-549.000000, -721.000000)" fill="#FFFFFF" fill-rule="nonzero">
-            <g id="Price" transform="translate(240.000000, 698.000000)">
-                <g id="Field" transform="translate(40.000000, 20.000000)">
-                    <polygon id="Icon" points="273.295088 4.1358242 274.544494 3 279.85 8.83605657 274.544494 14.6721131 273.295088 13.5362889 276.798754 9.68225558 269 9.68225558 269 7.99383112 276.802367 7.99383112"></polygon>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path fill="#FFF" fill-rule="nonzero" d="M4.295 1.136L5.545 0l5.305 5.836-5.306 5.836-1.249-1.136L7.8 6.682H0V4.994h7.802z"/></svg>

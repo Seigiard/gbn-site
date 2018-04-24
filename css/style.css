@@ -16,7 +16,7 @@ body {
   background: #000;
   height: 69px; }
 
-.layout-main {
+.layout-main, .layout-service {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,7 +121,8 @@ body {
 
 .menu {
   padding: 50px 0;
-  border-right: 3px solid #000; }
+  border-right: 3px solid #000;
+  max-width: 180px; }
   .menu.menu__shrinked {
     font-size: 13px;
     line-height: 1.2;
@@ -145,13 +146,50 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
     margin: 0 25px 0 15px; }
   .menu li a, .menu li span {
-    padding: 7px 25px 7px 15px;
+    padding: 7px 45px 7px 15px;
     display: inline-block; }
   .menu li a {
     text-decoration: none;
     color: #000; }
     .menu li a:hover {
       color: #333; }
+
+.main-page {
+  height: calc(100vh - 69px);
+  background: #000 url(../img/bg-main-page.jpg) bottom right no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding: 40px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start; }
+  .main-page h1 {
+    font-size: 45px;
+    line-height: 1.15;
+    margin: 0;
+    padding: 0 0 20px 0; }
+  .main-page p {
+    max-width: 592px;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0; }
 
 .site-content {
   height: calc(100vh - 145px); }
