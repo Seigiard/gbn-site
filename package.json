@@ -6,7 +6,7 @@
         "build": "harp compile ./project ./dist",
         "server": "harp server project --port 9000",
         "livereload": "browser-sync start --proxy localhost:9000 --files 'project/**/*.jade, project/**/*.ejs, project/**/*.less, project/**/*.json, project/**/*.js, project/**/*.css, project/**/*.scss' --no-notify",
-        "deploy": "npm run build && push-dir --dir=dist --branch=gh-pages --cleanup"
+        "deploy": "npm run build & push-dir --dir=dist --branch=gh-pages --cleanup"
     },
     "devDependencies": {
         "browser-sync": "^2.21.0",
