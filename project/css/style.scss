@@ -11,7 +11,8 @@ body {
   margin: 0;
   padding: 0;
   font: normal 1rem/1.4 'Formular', Roboto, Verdana, sans-serif;
-  font-display: block;
+  font-display: swap;
+  border-bottom: 10px solid #000;
 }
 
 * {

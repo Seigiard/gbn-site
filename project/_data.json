@@ -1,0 +1,7 @@
+{
+  "inner": {
+    "sections": [
+      "search_flat", "make_deal", "make_documents"
+    ]
+  }
+}
