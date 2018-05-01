@@ -1,6 +1,26 @@
-<% var formattedPrice = price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1&thinsp;'); %>
+<%
+  function stripHtml(html) {
+    return (html || '').replace(/<(?:.|\n)*?>/gm, '').replace(/\n/gm, '');
+  }
+
+  function formatPrice(htmlString) {
+    const priceString = stripHtml(htmlString).replace(/\s+/gm, '');
+    const priceValue = priceString.slice(-1);
+    const price = priceString.slice(0, -1).replace(/(\d)(?=(\d{3})$)/g, '$1<span class="hs"></span>');
+
+    return `${price}<span class="rhs">&nbsp;</span>${priceValue}`;
+  }
+
+  const data = (partial("../_services-info/" + name) || '').split('<hr>');
+  const [ title, price, description, info ] = data;
+  const formattedPrice = formatPrice(price);
+  const strippedTitle = stripHtml(title);
+%>
 <div class="service-item">
-  <h3><%- title %></h3>
-  <p><%- description %></p>
-  <div class="service-item--price"><%- formattedPrice %> ₽</div>
+  <h3><%- strippedTitle %></h3>
+  <%- description %>
+  <div class="service-item--info">
+    <%- info %>
+  </div>
+  <div class="service-item--price"><%- formattedPrice %></div>
 </div>

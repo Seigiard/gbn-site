@@ -54,3 +54,19 @@ p {
 @import '_header';
 @import '_sidebar';
 @import '_content';
+
+.hs {
+  /* Полупробел для
+  разделения разрядов чисел:
+  10<span class="hs"></span>000 */
+  margin-left: .2em;
+}
+
+.rhs {
+  /* Полупробел на случай,
+  если реальный пробел важен,
+  например между ценой и валютой:
+  1<span class="rhs">&nbsp;</span>$ */
+  font-size: 50%;
+  line-height: 1;
+}

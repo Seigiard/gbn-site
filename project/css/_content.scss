@@ -101,13 +101,29 @@
   padding: 10px 100px 0 0;
   position: relative;
   border-top: 1px solid #C5C5C5;
-  p {
-    font-size: 13px;
+  font-size: 13px;
+  p, li {
     line-height: 16px;
   }
+  ol {
+    padding: 0 0 1rem 0;
+    margin: 0;
+    list-style-position: inside;
+  }
+  li {
+    margin: 0;
+    padding: 0;
+  }
+  li + li {
+    padding-top: .5rem;
+  }
+}
+.service-item__extra {
+  padding-bottom: 10px;
 }
 .service-item--price {
   position: absolute;
   top: 7px;
   right: 0;
+  font-size: 16px;
 }
