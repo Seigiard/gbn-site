@@ -49,8 +49,12 @@
           <h1>Купить квартиру</h1>
           <p>Мы выясним ваши потребности, подберём варианты, договоримся о просмотре, проверим продавца и документы на квартиру, подготовим договор купли-продажи, организуем сделку и проследим за исполнением договора.</p>
           <h2>Рекомендуемые услуги</h2>
-          <% sections.forEach(function(section){ %>
-            <%- partial("_blocks/" + blocks[section].type, blocks[section]) %>
+          <% services.forEach(function(service){ %>
+            <%- partial("_blocks/" + blocks[service].type, blocks[service]) %>
+          <% }); %>
+          <h2>Дополнительные услуги</h2>
+          <% extra_services.forEach(function(service){ %>
+            <%- partial("_blocks/" + blocks[service].type, blocks[service]) %>
           <% }); %>
         </div>
       </div>
