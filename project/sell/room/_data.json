@@ -1,0 +1,21 @@
+{
+  "index": {
+    "layout": "../../_service-list.ejs",
+    "services": [
+      "search_flat",
+      "make_deal",
+      "make_documents",
+      "legal_check"
+    ],
+    "servicesExtra": [
+      "extra_prepayment",
+      "extra_layer_check",
+      "extra_hypothec_help",
+      "extra_hypothec_album",
+      "extra_pay_account_communal",
+      "extra_flat_judgment",
+      "extra_flat_arrested",
+      "extra_health_center_approval"
+    ]
+  }
+}

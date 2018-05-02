@@ -11,8 +11,7 @@
     return `${price}<span class="rhs">&nbsp;</span>${priceValue}`;
   }
 
-  const data = (partial("../_services-info/" + name) || '').split('<hr>');
-  const [ title, price, description, info ] = data;
+  const [ title, price, description, info ] = (data || '').split('<hr>');
   const formattedPrice = formatPrice(price);
   const strippedTitle = stripHtml(title);
 %>

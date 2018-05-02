@@ -9,8 +9,19 @@
   color: #fff;
   a {
     color: #fff;
+    text-decoration: none;
     &:hover {
-      border-bottom: 1px dashed rgba(255,255,255,.5);
+      text-decoration: none;
+    }
+  }
+  .header--logo a {
+    &:hover span {
+      border-bottom: 1px solid rgba(255,255,255,.5);
+    }
+  }
+  .header--phone a {
+    &:hover {
+      border-bottom: 1px solid rgba(255,255,255,.5);
     }
   }
 }

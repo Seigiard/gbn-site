@@ -1,11 +1,15 @@
 {
   "globals": {
+    "mainMenu": [
+      "sell",
+      "buy",
+      "urgent-sell",
+      "mortgage",
+      "rent",
+      "let",
+      "oh-my-god"
+    ],
     "blocks": {
-      "search_flat": "service-item",
-      "make_deal": "service-item",
-      "make_documents": "service-item",
-      "legal_check": "service-item",
-
       "extra_prepayment": {
         "type": "service-item--extra",
         "title": "Внесение аванса от&nbsp;лица клиента, подготовка авансового соглашения, страхование риска невозврата",

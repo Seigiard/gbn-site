@@ -1,0 +1,39 @@
+<% if(current.path.length > 1) { %>
+  <%
+  const MENU_TITLES = {
+    flat: 'Квартиру',
+    share: 'Долю',
+    room: 'Комнату',
+    house: 'Дом, таунхаус',
+    commercial: 'Коммерче­скую недви­жимость'
+  }
+
+  const mainMenu = current.path[0];
+  const currentMenu = current.path[1];
+
+  const subMenuArray = public._data[mainMenu].menu || [];
+
+  function menuShrinkedClass() {
+    return current.path.length > 2 ? 'menu__shrinked' : '';
+  }
+  function isActiveMainMenuItem(menuItemSlug) {
+    return current.path[1] === menuItemSlug;
+  }
+  function getMenuHref(menuItemSlug) {
+    return `/${current.path[0]}/${menuItemSlug}`;
+  }
+  %>
+  <% if(subMenuArray.length) { %>
+    <nav class="menu menu__level2 <%- menuShrinkedClass() %>">
+      <% subMenuArray.forEach(function(menu) { %>
+        <% if (public[mainMenu][menu]._data.index) { %>
+          <% if (isActiveMainMenuItem(menu)) { %>
+            <li><span><%- MENU_TITLES[menu] %></span></li>
+          <% } else { %>
+            <li><a href="<%- getMenuHref(menu) %>"><%- MENU_TITLES[menu] %></a></li>
+          <% } %>
+        <% } %>
+      <% }) %>
+    </nav>
+  <%} %>
+<%} %>

@@ -1,0 +1,31 @@
+<%
+const MENU_TITLES = {
+  sell: 'Продать',
+  buy: 'Купить',
+  'urgent-sell': 'Срочно продать (выкуп)',
+  mortgage: 'Получить ипотеку',
+  rent: 'Арендовать',
+  let: 'Сдать в аренду',
+  'oh-my-god': 'Всё сложно'
+}
+
+const menuArray = Object.keys(public._data);
+
+function isActiveMainMenuItem(menuItemSlug) {
+  return current.path[0] === menuItemSlug;
+}
+function menuShrinkedClass() {
+  return current.path.length > 1 ? 'menu__shrinked' : '';
+}
+%>
+<nav class="menu menu__level1 <%- menuShrinkedClass() %>">
+  <% menuArray.forEach(function(menu){ %>
+    <% if (public[menu]) { %>
+      <% if (isActiveMainMenuItem(menu)) { %>
+        <li><span><%- MENU_TITLES[menu] %></span></li>
+      <% } else { %>
+        <li><a href="/<%- menu %>"><%- MENU_TITLES[menu] %></a></li>
+      <% } %>
+    <% } %>
+  <% }) %>
+</nav>

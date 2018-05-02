@@ -1,0 +1,41 @@
+<html>
+  <%- partial("_snippets/head.jade") %>
+  <body>
+    <%- partial("_snippets/header.ejs") %>
+    <main class="layout-service">
+      <aside class="layout-sidebar">
+        <div class="menu-wrapper">
+          <%- partial('_snippets/menu.ejs') %>
+        </div>
+      </aside>
+      <div class="layout-content">
+        <div class="site-content">
+          <div class="content-wrapper">
+            <div class="service-list">
+              <%- yield %>
+
+              <h2>Рекомендуемые услуги</h2>
+              <%- partial("_blocks/service-list") %>
+
+              <h2>Дополнительные услуги</h2>
+              <%- partial("_blocks/service-list--extra") %>
+            </div>
+          </div>
+        </div>
+        <div class="site-content--footer">
+          <div class="content--footer">
+            <div class="contact-form">
+              <form action="">
+                <input type="email" name="email" id="email" placeholder="Эл. почта, куда прислать расчёт" />
+                <button type="submit"><img src="img/icon-arrow-right.svg" alt="Отправить"></button>
+              </form>
+            </div>
+            <div class="price">
+              165&thinsp;000&nbsp;₽
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
