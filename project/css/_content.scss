@@ -29,19 +29,28 @@
 }
 
 
+.content-wrapper {
+  overflow-y: scroll;
+  .site-content & {
+    padding: 50px 20px 20px 40px;
+  }
+}
+
+.main-page-content {
+  &, & .content-wrapper {
+    height: calc(100vh - 79px);
+  }
+}
+
 .site-content {
-  height: calc(100vh - 142px);
+  &, & .content-wrapper {
+    height: calc(100vh - 142px);
+  }
 }
 .site-content--footer {
   height: 63px;
   background: #1D3070;
   border-top: 3px solid #000;
-}
-
-.content-wrapper {
-  padding: 50px 20px 20px 40px;
-  overflow-y: scroll;
-  height: calc(100vh - 142px);
 }
 
 .content--footer {
