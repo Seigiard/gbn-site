@@ -1,0 +1,226 @@
+.main-page {
+  height: calc(100vh - 79px);
+  background: #000 url(../img/bg-main-page.jpg) bottom right no-repeat;
+  background-size: cover;
+  color: #fff;
+  padding: 51px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-content: stretch;
+  align-items: flex-start;
+  h1 {
+    font-size: 59px;
+    line-height: 1.11;
+    margin: 0;
+    padding: 0 0 20px 0;
+  }
+  p {
+    max-width: 592px;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    &.subheader {
+      line-height: 1;
+      padding-bottom: 9px;
+    }
+  }
+}
+
+.main-page-content {
+  &,
+  & .content-wrapper {
+    height: calc(100vh - 79px);
+  }
+  .content-wrapper {
+    // background: url(../img/tpl.png) -190px -40px no-repeat;
+    background-attachment: local;
+  }
+  .row {
+    border: 2px solid black;
+    border-width: 2px 0;
+  }
+  .main-page + .row {
+    border-top-width: 4px;
+  }
+  .row:last-child {
+    border-bottom: none;
+  }
+  .row>*[class^="col"] {
+    border: 2px solid #000;
+    border-width: 0 2px;
+    padding: 27px 28px 31px;
+  }
+  .row>*[class^="col"]:first-child {
+    border-left: none;
+  }
+  .row>*[class^="col"]:last-child {
+    border-right: none;
+  }
+}
+
+.main-page-content .row {
+  h3 {
+    padding-bottom: 1px;
+  }
+  .main-page--description {
+    padding: 40px 50px 40px 30px;
+    h2 {
+      padding-bottom: 2px;
+    }
+  }
+  .main-page--expirience {
+    background: #1D3070;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    p {
+      padding: 0;
+      font-size: 20px;
+    }
+    b {
+      display: block;
+      font-size: 100px;
+      font-weight: 200;
+      line-height: 1;
+      height: 0.9em;
+    }
+  }
+  .main-page--black-box {
+    background: #000;
+  }
+  .main-page--discount {
+    background-color: #FFC107;
+    padding: 20px;
+    p {
+      display: flex;
+      padding: 0;
+    }
+    b {
+      flex: 1 0 50px;
+      font-size: 70px;
+      font-weight: 200;
+      line-height: 1;
+      padding: 0 23px 0 0;
+      height: 0.85em;
+    }
+  }
+  .main-page--video {
+    padding: 0;
+  }
+  .main-page--employee  {
+    padding-bottom: 0;
+  }
+  .main-page-employee-list {
+    padding: 0;
+    .employee__horizontal {
+      border: 2px solid #000;
+      border-width: 2px 0;
+    }
+    .employee__horizontal:first-child {
+      border-top: none;
+    }
+    .employee__horizontal:last-child {
+      border-bottom: none;
+    }
+  }
+  .main-page--vacancy {
+    border-top: 75px solid #000;
+  }
+  .main-page--address {
+    color: #fff;
+    background: #1D3070;
+    border-top: 75px solid #000;
+    padding-bottom: 10px;
+  }
+  .main-page--map {
+    padding: 0;
+    img {
+      max-width: 100%;
+    }
+  }
+  .proposal-block {
+    padding: 26px 35px 23px 30px;
+  }
+}
+
+.proposal-block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: flex-start;
+}
+.proposal-block--description {
+  flex: 1 1 auto;
+}
+.proposal-block--image {
+  text-align: right;
+  flex: 0 1 auto;
+  align-self: flex-end;
+  padding: 25px 0 0 0;
+}
+
+.employee {
+  display: flex;
+  ul {
+    list-style: none;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    margin: 0;
+    padding: 0 0 10px 0px;
+  }
+}
+.employee--image {
+  flex: 0 0 auto;
+  img {
+    width: 198px;
+    max-width: 100%;
+  }
+}
+
+.employee__vertical {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: flex-start;
+  padding-bottom: 0;
+  .employee--image {
+    order: 1;
+    flex: 0 0 auto;
+    align-self: auto;
+    margin: 0 -28px;
+  }
+  .employee--description {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
+}
+
+.employee__horizontal {
+  .employee--description {
+    padding: 27px 0px;
+  }
+}
+
+.address-block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: flex-start;
+  a {
+    color: #fff;
+  }
+}
