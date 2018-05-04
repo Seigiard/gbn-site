@@ -1,6 +1,6 @@
 .main-page {
   height: calc(100vh - 79px);
-  /* background: #000 url(../img/bg-main-page.jpg) bottom right no-repeat; */
+  background: #000 url(../img/bg-main-page.jpg) bottom right no-repeat;
   background-size: cover;
   color: #fff;
   padding: 51px 30px;
