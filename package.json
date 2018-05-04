@@ -5,12 +5,14 @@
         "start": "npm-run-all --parallel server livereload",
         "build": "harp compile ./project ./dist",
         "server": "harp server project --port 9000",
-        "livereload": "browser-sync start --proxy localhost:9000 --files 'project/**/*.jade, project/**/*.ejs, project/**/*.less, project/**/*.json, project/**/*.js, project/**/*.css, project/**/*.scss' --no-notify",
+        "livereload": "livereload project/ --exts 'jade,ejs,less,json,js,css,scss'",
+        "browser-sync": "browser-sync start --proxy localhost:9000 --files 'project/**/*.jade, project/**/*.ejs, project/**/*.less, project/**/*.json, project/**/*.js, project/**/*.css, project/**/*.scss' --no-notify",
         "deploy": "npm run build && push-dir --dir=dist --branch=gh-pages --cleanup"
     },
     "devDependencies": {
-        "browser-sync": "^2.21.0",
+        "browser-sync": "^2.24.4",
         "hoek": "^5.0.3",
+        "livereload": "^0.7.0",
         "npm-run-all": "^4.0.2",
         "push-dir": "^0.4.1"
     }
