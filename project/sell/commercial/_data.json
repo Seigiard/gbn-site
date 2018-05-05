@@ -8,11 +8,14 @@
       "4-check"
     ],
     "servicesExtra": [
-      "extra_prepayment",
-      "extra_layer_check",
-      "extra_object_judgment",
-      "extra_object_arrested",
-      "extra_health_center_approval"
+      "extra_recieve_prepayment",
+      "extra_property_rights",
+      "extra_privatization",
+      "extra_sell_object_judgment",
+      "extra_sell_object_arrested",
+      "extra_health_center_approval",
+      "extra_docs_for_proxy",
+      "extra_sell_by_proxy"
     ]
   }
 }

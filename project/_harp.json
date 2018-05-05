@@ -35,6 +35,11 @@
         "title": "Доплата за каждый лицевой счёт при покупке коммунальной квартиры",
         "price": 25000
       },
+      "extra_sell_pay_account_communal": {
+        "type": "service-item--extra",
+        "title": "Доплата за каждый лицевой счёт при продаже коммунальной квартиры",
+        "price": 25000
+      },
       "extra_flat_judgment": {
         "type": "service-item--extra",
         "title": "Покупка квартиры с судебным решением или спорами в&nbsp;истории",
@@ -69,6 +74,66 @@
         "type": "service-item--extra",
         "title": "Получение одобрения органов опеки и вызов на сделку врача, если продавец состоит на учёте в&nbsp;психоневрологическом или наркологическом диспансере",
         "price": 30000
+      },
+      "extra_recieve_prepayment": {
+        "type": "service-item--extra",
+        "title": "Приём аванса от покупателя, подготовка авансового соглашения",
+        "price": 30000
+      },
+      "extra_property_rights": {
+        "type": "service-item--extra",
+        "title": "Помощь в переходе права собственности по наследству",
+        "price": 50000
+      },
+      "extra_privatization": {
+        "type": "service-item--extra",
+        "title": "Приватизация, оформление объекта в собственность",
+        "price": 50000
+      },
+      "extra_docs_for_proxy": {
+        "type": "service-item--extra",
+        "title": "Сбор документов по доверенности для сделки",
+        "price": 15000
+      },
+      "extra_sell_by_proxy": {
+        "type": "service-item--extra",
+        "title": "Продажа по доверенности",
+        "price": 20000
+      },
+      "extra_cadastral_registration": {
+        "type": "service-item--extra",
+        "title": "Постановка на кадастровый учёт",
+        "price": 20000
+      },
+      "extra_sell_flat_judgment": {
+        "type": "service-item--extra",
+        "title": "Продажа квартиры с судебным решением или спорами в&nbsp;истории",
+        "price": 30000
+      },
+      "extra_sell_flat_arrested": {
+        "type": "service-item--extra",
+        "title": "Снятие залога или ареста с продаваемой квартиры, если&nbsp;это&nbsp;возможно",
+        "price": 20000
+      },
+      "extra_sell_house_judgment": {
+        "type": "service-item--extra",
+        "title": "Продажа дома с судебным решением или спорами в&nbsp;истории",
+        "price": 30000
+      },
+      "extra_sell_house_arrested": {
+        "type": "service-item--extra",
+        "title": "Снятие залога или ареста с продаваемого дома, если&nbsp;это&nbsp;возможно",
+        "price": 20000
+      },
+      "extra_sell_object_judgment": {
+        "type": "service-item--extra",
+        "title": "Продажа объекта с судебным решением или спорами в&nbsp;истории",
+        "price": 30000
+      },
+      "extra_sell_object_arrested": {
+        "type": "service-item--extra",
+        "title": "Снятие залога или ареста с продаваемого объекта, если&nbsp;это&nbsp;возможно",
+        "price": 20000
       }
     }
   }

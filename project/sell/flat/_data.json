@@ -8,14 +8,15 @@
       "4-check"
     ],
     "servicesExtra": [
-      "extra_prepayment",
-      "extra_layer_check",
-      "extra_hypothec_help",
-      "extra_hypothec_album",
-      "extra_pay_account_communal",
-      "extra_flat_judgment",
-      "extra_flat_arrested",
-      "extra_health_center_approval"
+      "extra_recieve_prepayment",
+      "extra_property_rights",
+      "extra_privatization",
+      "extra_sell_pay_account_communal",
+      "extra_sell_flat_judgment",
+      "extra_sell_flat_arrested",
+      "extra_health_center_approval",
+      "extra_docs_for_proxy",
+      "extra_sell_by_proxy"
     ]
   }
 }
