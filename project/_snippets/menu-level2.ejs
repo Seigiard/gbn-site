@@ -12,12 +12,20 @@
       room: 'Комнату или&nbsp;долю',
       house: 'Дом, таунхаус',
       commercial: 'Коммерче­скую недви­жимость'
+    },
+    rent: {
+      flat: 'Квартиру, комнату или&nbsp;дом',
+      commercial: 'Коммерче­скую недви­жимость'
+    },
+    let: {
+      flat: 'Квартиру, комнату или&nbsp;дом',
+      commercial: 'Коммерче­скую недви­жимость'
     }
   }
 
   const mainMenuLevel = current.path[0];
   const currentMenuTitles = MENU_TITLES[mainMenuLevel];
-  const subMenuArray = public._data[mainMenuLevel].menu || [];
+  const subMenuArray = Object.keys(public[mainMenuLevel]._data) || [];
 
   function menuShrinkedClass() {
     return current.path.length > 2 ? 'menu__shrinked' : '';
@@ -33,7 +41,7 @@
   }
 
   %>
-  <% if(subMenuArray.length) { %>
+  <% if(subMenuArray.length > 1) { %>
     <nav class="menu menu__level2 <%- menuShrinkedClass() %>">
       <% subMenuArray.forEach(function(menu) { %>
         <% if (public[mainMenuLevel][menu] && public[mainMenuLevel][menu]._data.index) { %>

@@ -1,31 +1,7 @@
 {
-  "sell": {
-    "menu": [
-      "flat",
-      "share",
-      "room",
-      "house",
-      "commercial"
-    ]
-  },
-  "buy": {
-    "menu": [
-      "flat",
-      "share",
-      "room",
-      "house",
-      "commercial"
-    ]
-  },
-  "urgent-sell": {
-    "menu": [
-      "flat",
-      "share",
-      "room",
-      "house",
-      "commercial"
-    ]
-  },
+  "sell": {},
+  "buy": {},
+  "urgent-sell": {},
   "mortgage": {},
   "rent": {},
   "let": {},

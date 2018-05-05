@@ -1,3 +1,6 @@
-<% servicesExtra.forEach(function(service){ %>
-  <%- partial("./" + blocks[service].type, blocks[service]) %>
-<% }); %>
+<% if (servicesExtra.length) {%>
+  <h2>Дополнительные услуги</h2>
+  <% servicesExtra.forEach(function(service){ %>
+    <%- partial("./" + blocks[service].type, blocks[service]) %>
+  <% }); %>
+<% } %>

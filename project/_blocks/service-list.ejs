@@ -1,9 +1,12 @@
-<%
-  const serviceList = services.map(service => ({
-    name: service,
-    data: partial(`../${current.path.slice(0,-1).join('/')}/${service}`)
-  }))
-%>
-<% serviceList.forEach(function(service){ %>
-  <%- partial("./service-item", service) %>
-<% }); %>
+<% if (services.length) {%>
+  <h2>Рекомендуемые услуги</h2>
+  <%
+    const serviceList = services.map(service => ({
+      name: service,
+      data: partial(`../${current.path.slice(0,-1).join('/')}/${service}`)
+    }))
+  %>
+  <% serviceList.forEach(function(service){ %>
+    <%- partial("./service-item", service) %>
+  <% }); %>
+<% } %>

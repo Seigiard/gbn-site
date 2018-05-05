@@ -1,14 +1,5 @@
 {
   "globals": {
-    "mainMenu": [
-      "sell",
-      "buy",
-      "urgent-sell",
-      "mortgage",
-      "rent",
-      "let",
-      "oh-my-god"
-    ],
     "blocks": {
       "extra_prepayment": {
         "type": "service-item--extra",

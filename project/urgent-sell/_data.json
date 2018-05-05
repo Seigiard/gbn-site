@@ -2,7 +2,7 @@
   "index": {
     "layout": "../_service-list.ejs",
     "services": [
-      "1-documents"
+      "1-check"
     ],
     "servicesExtra": []
   }

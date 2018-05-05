@@ -1,8 +1,8 @@
 {
   "index": {
-    "layout": "../_service-list.ejs",
+    "layout": "../../_service-list.ejs",
     "services": [
-      "1-documents"
+      "1-search"
     ],
     "servicesExtra": []
   }
