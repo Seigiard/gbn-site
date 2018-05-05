@@ -45,6 +45,26 @@
         "title": "Снятие залога или ареста с приобретаемой квартиры, если&nbsp;это&nbsp;возможно",
         "price": 20000
       },
+      "extra_house_judgment": {
+        "type": "service-item--extra",
+        "title": "Покупка дома с судебным решением или спорами в&nbsp;истории",
+        "price": 30000
+      },
+      "extra_house_arrested": {
+        "type": "service-item--extra",
+        "title": "Снятие залога или ареста с приобретаемого дома, если&nbsp;это&nbsp;возможно",
+        "price": 20000
+      },
+      "extra_object_judgment": {
+        "type": "service-item--extra",
+        "title": "Покупка объекта с судебным решением или спорами в&nbsp;истории",
+        "price": 30000
+      },
+      "extra_object_arrested": {
+        "type": "service-item--extra",
+        "title": "Снятие залога или ареста с приобретаемого объекта, если&nbsp;это&nbsp;возможно",
+        "price": 20000
+      },
       "extra_health_center_approval": {
         "type": "service-item--extra",
         "title": "Получение одобрения органов опеки и вызов на сделку врача, если продавец состоит на учёте в&nbsp;психоневрологическом или наркологическом диспансере",

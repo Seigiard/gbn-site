@@ -1,17 +1,23 @@
 <% if(current.path.length > 1) { %>
   <%
   const MENU_TITLES = {
-    flat: 'Квартиру',
-    share: 'Долю',
-    room: 'Комнату',
-    house: 'Дом, таунхаус',
-    commercial: 'Коммерче­скую недви­жимость'
+    buy: {
+      flat: 'Квартиру',
+      room: 'Комнату или&nbsp;долю',
+      house: 'Дом, таунхаус',
+      commercial: 'Коммерче­скую недви­жимость'
+    },
+    sell: {
+      flat: 'Квартиру',
+      room: 'Комнату или&nbsp;долю',
+      house: 'Дом, таунхаус',
+      commercial: 'Коммерче­скую недви­жимость'
+    }
   }
 
-  const mainMenu = current.path[0];
-  const currentMenu = current.path[1];
-
-  const subMenuArray = public._data[mainMenu].menu || [];
+  const mainMenuLevel = current.path[0];
+  const currentMenuTitles = MENU_TITLES[mainMenuLevel];
+  const subMenuArray = public._data[mainMenuLevel].menu || [];
 
   function menuShrinkedClass() {
     return current.path.length > 2 ? 'menu__shrinked' : '';
@@ -22,15 +28,19 @@
   function getMenuHref(menuItemSlug) {
     return `/${current.path[0]}/${menuItemSlug}`;
   }
+  function getMenuItemTitle(menu) {
+    return currentMenuTitles[menu];
+  }
+
   %>
   <% if(subMenuArray.length) { %>
     <nav class="menu menu__level2 <%- menuShrinkedClass() %>">
       <% subMenuArray.forEach(function(menu) { %>
-        <% if (public[mainMenu][menu]._data.index) { %>
+        <% if (public[mainMenuLevel][menu] && public[mainMenuLevel][menu]._data.index) { %>
           <% if (isActiveMainMenuItem(menu)) { %>
-            <li><span><%- MENU_TITLES[menu] %></span></li>
+            <li><span><%- getMenuItemTitle(menu) %></span></li>
           <% } else { %>
-            <li><a href="<%- getMenuHref(menu) %>"><%- MENU_TITLES[menu] %></a></li>
+            <li><a href="<%- getMenuHref(menu) %>"><%- getMenuItemTitle(menu) %></a></li>
           <% } %>
         <% } %>
       <% }) %>

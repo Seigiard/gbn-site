@@ -4,6 +4,9 @@
   }
 
   function formatPrice(htmlString) {
+    if (htmlString.includes('<ul>')) {
+      return htmlString;
+    }
     const priceString = stripHtml(htmlString).replace(/\s+/gm, '');
     const priceValue = priceString.slice(-1);
     const price = priceString.slice(0, -1).replace(/(\d)(?=(\d{3})$)/g, '$1<span class="hs"></span>');

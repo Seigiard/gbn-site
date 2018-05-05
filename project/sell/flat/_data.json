@@ -2,10 +2,10 @@
   "index": {
     "layout": "../../_service-list.ejs",
     "services": [
-      "search_flat",
-      "make_deal",
-      "make_documents",
-      "legal_check"
+      "1-search",
+      "2-deal",
+      "3-documents",
+      "4-check"
     ],
     "servicesExtra": [
       "extra_prepayment",
