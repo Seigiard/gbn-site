@@ -48,7 +48,10 @@
     text-decoration: none;
     color: #000;
     &:hover {
-      color: #333;
+      color: #000;
+    }
+    &:focus, &:active {
+      color: #fff;
     }
   }
 }

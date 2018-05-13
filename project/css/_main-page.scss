@@ -1,9 +1,9 @@
 .main-page {
   height: calc(100vh - 79px);
-  background: #000 url(../img/bg-main-page.jpg) bottom right no-repeat;
+  background: #000 url(../img/bg-main-page.jpg) bottom left no-repeat;
   background-size: cover;
   color: #fff;
-  padding: 51px 30px;
+  padding: 51px 30px 29px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -28,6 +28,9 @@
       padding-bottom: 9px;
     }
   }
+  .main-page--navigation-arrow {
+    margin-top: 21px;
+  }
 }
 
 .main-page-content {
@@ -43,7 +46,7 @@
     border: 2px solid black;
     border-width: 2px 0;
   }
-  .main-page + .row {
+  .main-page+.row {
     border-top-width: 4px;
   }
   .row:last-child {
@@ -112,7 +115,7 @@
   .main-page--video {
     padding: 0;
   }
-  .main-page--employee  {
+  .main-page--employee {
     padding-bottom: 0;
   }
   .main-page-employee-list {
@@ -156,9 +159,11 @@
   align-content: stretch;
   align-items: flex-start;
 }
+
 .proposal-block--description {
   flex: 1 1 auto;
 }
+
 .proposal-block--image {
   text-align: right;
   flex: 0 1 auto;
@@ -179,6 +184,7 @@
     padding: 0 0 10px 0px;
   }
 }
+
 .employee--image {
   flex: 0 0 auto;
   img {

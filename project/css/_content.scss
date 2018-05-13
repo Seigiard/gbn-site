@@ -64,12 +64,27 @@
   line-height: 1;
 }
 
+.service-wrapper {
+  position: relative;
+}
+
 .service-list {
   max-width: 600px;
   h2 {
     font-size: 16px;
     padding: 20px 0 16px 0;
   }
+}
+
+.service-list--navigation {
+  a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+  }
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 .service-item {
   padding: 10px 100px 0 0;
