@@ -15,7 +15,7 @@ function isActiveMainMenuItem(menuItemSlug) {
   return current.path[0] === menuItemSlug;
 }
 function menuShrinkedClass() {
-  const subMenuArray = Object.keys(public[current.path[0]]._data) || [];
+  const subMenuArray = public[current.path[0]] ? Object.keys(public[current.path[0]]._data) : [];
   const isNestedPage = current.path.length > 1;
   const isSubmenuExists = !!subMenuArray.length && !(subMenuArray.length === 1 && subMenuArray[0] === 'index');
   return isNestedPage && isSubmenuExists ? 'menu__shrinked' : '';
