@@ -11,18 +11,18 @@
       <div class="layout-content">
         <div class="site-content">
           <div class="content-wrapper service-wrapper">
-            <div class="service-list">
+            <div class="service-list service-list__percent">
               <nav class="service-list--navigation"><a href="../"><img src="/img/icon-close.svg" alt="Закрыть услугу"></a></nav>
               <%- yield %>
 
-              <%- partial("_blocks/service-list") %>
+              <%- partial("_blocks/service-list", { title: 'Базовый пакет услуг' }) %>
 
-              <%- partial("_blocks/service-list--extra") %>
+              <%- partial("_blocks/service-list--extra", { title: 'Дополнительные услуги, если требуются<br/>(входят в стоимость)' }) %>
             </div>
           </div>
         </div>
         <div class="site-content--footer">
-          <%- partial("_blocks/order-form__simple.ejs") %>
+          <%- partial("_blocks/order-form__complex.ejs") %>
         </div>
       </div>
     </main>

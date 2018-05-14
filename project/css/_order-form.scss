@@ -1,0 +1,54 @@
+.order-form {
+  margin: 0 0 0 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
+  color: #fff;
+  height: 60px;
+}
+.order-form__simple {
+  max-width: 600px;
+}
+
+.order-form--email-form, .order-form--price {
+  flex: 0 1 auto;
+  align-self: auto;
+}
+.order-form--email-form {
+  font-size: 0;
+}
+.order-form--price {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.order-form--input + .order-form--button {
+  margin-left: 15px;
+}
+.order-form--input {
+  height: 35px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  font-size: 16px;
+  opacity: .8;
+  &:focus, &:active {
+    opacity: 1;
+  }
+}
+.order-form--button {
+  height: 36px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  padding: 0 22px 0 20px;
+  opacity: .8;
+  &:hover, &:focus, &:active {
+    opacity: 1;
+  }
+}

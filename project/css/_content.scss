@@ -16,54 +16,6 @@
   border-top: 3px solid #000;
 }
 
-.content--footer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-content: stretch;
-  align-items: center;
-  padding: 5px 110px 0 40px;
-  color: #fff;
-}
-
-.contact-form, .price {
-  flex: 0 1 auto;
-  align-self: auto;
-}
-
-.contact-form form {
-  border-bottom: 1px solid #fff;
-  margin-top: 11px;
-  input {
-    font-size: 16px;
-    color: #fff;
-    width: 15.5em;
-    line-height: 1;
-    padding: 4px 0;
-    margin: 0;
-    background: transparent;
-    border: none;
-  }
-  button {
-    img {
-      width: 11px;
-    }
-    display: inline-block;
-    font-size: 16px;
-    line-height: 1;
-    padding: 4px 0 0 10px;
-    margin: 0;
-    background: transparent;
-    border: none;
-  }
-}
-
-.price {
-  font-size: 24px;
-  line-height: 1;
-}
-
 .service-wrapper {
   position: relative;
 }
@@ -81,6 +33,10 @@
     display: block;
     text-decoration: none;
     padding: 10px;
+    transition: opacity .1s ease-in-out;
+    &:hover, &:focus, &:active {
+      opacity: .8;
+    }
   }
   position: absolute;
   top: 10px;
@@ -129,5 +85,12 @@
   li {
     margin: 0;
     padding: 0;
+  }
+}
+
+.service-list__percent .service-item {
+  padding-right: 0;
+  .service-item--price {
+    display: none;
   }
 }

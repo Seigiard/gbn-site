@@ -12,11 +12,11 @@
 .menu {
   padding: 40px 0;
   border-right: 4px solid #000;
-  max-width: 190px;
+  max-width: 194px;
   &.menu__shrinked {
     font-size: 13px;
     line-height: 1.2;
-    max-width: 120px;
+    max-width: 124px;
   }
 }
 
@@ -41,7 +41,7 @@
     margin: 0 25px 0 15px;
   }
   a, span {
-    padding: 8px 30px 8px 20px;
+    padding: 8px 21px 8px 15px;
     display: inline-block;
   }
   a {

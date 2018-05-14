@@ -1,5 +1,5 @@
 <% if (services.length) {%>
-  <h2>Рекомендуемые услуги</h2>
+  <h2><% if (locals.title) {%><%- locals.title %><% } else { %>Рекомендуемые услуги<% } %></h2>
   <%
     const serviceList = services.map(service => ({
       name: service,

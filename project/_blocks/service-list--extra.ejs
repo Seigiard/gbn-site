@@ -1,5 +1,5 @@
 <% if (servicesExtra.length) {%>
-  <h2>Дополнительные услуги</h2>
+  <h2><% if (locals.title) {%><%- locals.title %><% } else { %>Дополнительные услуги<% } %></h2>
   <% servicesExtra.forEach(function(service){ %>
     <%- partial("./" + blocks[service].type, blocks[service]) %>
   <% }); %>

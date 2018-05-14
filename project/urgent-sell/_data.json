@@ -1,6 +1,6 @@
 {
   "index": {
-    "layout": "../_service-list.ejs",
+    "layout": "../_service-list__percent.ejs",
     "services": [
       "1-check"
     ],
