@@ -31,13 +31,16 @@
 .order-form--input {
   height: 35px;
   border: none;
-  border-bottom: 1px solid #fff;
-  color: #fff;
+  border-bottom: 1px solid #D1D5E2;
+  color: #D1D5E2;
   background: transparent;
   font-size: 16px;
-  opacity: .8;
+  ::placeholder {
+    color: #606D9A;
+  }
   &:focus, &:active {
-    opacity: 1;
+    color: #fff;
+    border-color: #fff;
   }
 }
 .order-form--button {
@@ -47,8 +50,8 @@
   color: #fff;
   font-size: 16px;
   padding: 0 22px 0 20px;
-  opacity: .8;
+  transition: background-color .3s ease-in-out;
   &:hover, &:focus, &:active {
-    opacity: 1;
+    background-color: rgba(0,0,0,.7);
   }
 }

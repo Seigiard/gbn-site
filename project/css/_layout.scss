@@ -1,9 +1,13 @@
+$header-height: 69px;
+$border-height: 10px;
+$layout-height: calc(100vh - #{$header-height + $border-height});
+
 .layout-header {
   background: #000;
   height: 69px;
 }
 
-.layout-main, .layout-service {
+.layout {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -12,14 +16,37 @@
   align-items: flex-start;
 }
 
-.layout-sidebar {
+.layout--sidebar {
   order: 0;
   flex: 0 0 auto;
   align-self: auto;
+  height: $layout-height;
 }
 
-.layout-content {
+.layout--content {
   order: 0;
   flex: 1 1 auto;
   align-self: auto;
+  height: $layout-height;
+}
+
+.main-page--container {
+  height: $layout-height;
+  overflow-y: scroll;
+}
+
+.service-layout {
+  height: $layout-height;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+.service-layout--container {
+  overflow-y: scroll;
+  padding: 50px 20px 20px 40px;
+  position: relative;
+}
+.service-layout--footer {
+  height: 63px;
+  background: #1D3070;
+  border-top: 3px solid #000;
 }

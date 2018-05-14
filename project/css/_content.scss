@@ -1,25 +1,3 @@
-.content-wrapper {
-  overflow-y: scroll;
-  .site-content & {
-    padding: 50px 20px 20px 40px;
-  }
-}
-
-.site-content {
-  &, & .content-wrapper {
-    height: calc(100vh - 142px);
-  }
-}
-.site-content--footer {
-  height: 63px;
-  background: #1D3070;
-  border-top: 3px solid #000;
-}
-
-.service-wrapper {
-  position: relative;
-}
-
 .service-list {
   max-width: 600px;
   h2 {

@@ -2,15 +2,15 @@
   <%- partial("_snippets/head.jade") %>
   <body>
     <%- partial("_snippets/header.ejs") %>
-    <main class="layout-service">
-      <aside class="layout-sidebar">
+    <div class="layout">
+      <aside class="layout--sidebar">
         <div class="menu-wrapper">
           <%- partial('_snippets/menu.ejs') %>
         </div>
       </aside>
-      <div class="layout-content">
-        <div class="site-content">
-          <div class="content-wrapper service-wrapper">
+      <main class="layout--content">
+        <div class="service-layout">
+          <div class="service-layout--container">
             <div class="service-list service-list__percent">
               <nav class="service-list--navigation"><a href="../"><img src="/img/icon-close.svg" alt="Закрыть услугу"></a></nav>
               <%- yield %>
@@ -20,12 +20,12 @@
               <%- partial("_blocks/service-list--extra", { title: 'Дополнительные услуги, если требуются<br/>(входят в стоимость)' }) %>
             </div>
           </div>
+          <div class="service-layout--footer">
+            <%- partial("_blocks/order-form__complex.ejs") %>
+          </div>
         </div>
-        <div class="site-content--footer">
-          <%- partial("_blocks/order-form__complex.ejs") %>
-        </div>
-      </div>
-    </main>
+      </main>
+    </div>
     <%- partial("_snippets/footer-scripts.ejs") %>
   </body>
 </html>

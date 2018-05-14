@@ -33,15 +33,7 @@
   }
 }
 
-.main-page-content {
-  &,
-  & .content-wrapper {
-    height: calc(100vh - 79px);
-  }
-  .content-wrapper {
-    // background: url(../img/tpl.png) -190px -40px no-repeat;
-    background-attachment: local;
-  }
+.main-page--container {
   .row {
     border: 2px solid black;
     border-width: 2px 0;
@@ -65,7 +57,7 @@
   }
 }
 
-.main-page-content .row {
+.main-page--container .row {
   h3 {
     padding-bottom: 1px;
   }
@@ -187,6 +179,7 @@
 
 .employee--image {
   flex: 0 0 auto;
+  align-self: flex-end;
   img {
     width: 198px;
     max-width: 100%;
