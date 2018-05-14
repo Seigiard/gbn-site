@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Corner</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Comment-/-Savikov-/-600" transform="translate(-580.000000, -85.000000)" fill="#000000">
+            <g id="Corners">
+                <polygon id="Corner" transform="translate(590.000000, 95.000000) scale(-1, -1) translate(-590.000000, -95.000000) " points="580 85 600 85 600 89 584 89 584 105 580 105"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
