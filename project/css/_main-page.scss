@@ -87,6 +87,13 @@
   }
   .main-page--black-box {
     background: #000;
+    color: #fff;
+  }
+  .main-page--black-box__video {
+    padding-bottom: 10px;
+    p {
+      max-width: 500px
+    }
   }
   .main-page--discount {
     background-color: #FFC107;
