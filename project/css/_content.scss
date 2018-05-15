@@ -6,6 +6,7 @@
   h2 {
     font-size: 16px;
     padding: 20px 0 16px 0;
+    position: sticky
   }
 }
 
@@ -139,7 +140,8 @@
     left: 100%;
     top: 0;
     margin-left: 40px;
-    width: 320px;
+    width: calc(100vw - 970px);
+    max-width: 470px;
   }
 }
 

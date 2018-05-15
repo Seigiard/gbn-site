@@ -9,11 +9,56 @@
   align-content: stretch;
   align-items: center;
   color: #fff;
-  height: 60px;
 }
 .order-form__simple {
   max-width: 600px;
+  padding: 16px 0;
 }
+.order-form__complex {
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 770px;
+  position: relative;
+  padding-right: 170px;
+  label {
+    display: block;
+    font-size: 13px;
+    line-height: 1;
+    padding-bottom: 2px;
+  }
+  .order-form--inputrange {
+    width: 100%;
+    padding: 16px 0 20px;
+    .order-form--input {
+      width: 100%;
+      font-size: 24px;
+    }
+  }
+  .order-form--email-form {
+    width: 100%;
+    padding: 0 0 16px;
+    .order-form--input {
+      width: calc(100% - 200px);
+    }
+    .order-form--button {
+      float: right;
+    }
+  }
+  .order-form--price {
+    position: absolute;
+    right: 0%;
+    top: 16px;
+    width: 120px;
+    label {
+      padding-bottom: 8px;
+    }
+  }
+
+  @media screen and (max-width: 1120px ) {
+    max-width: 600px;
+  }
+}
+
 
 .order-form--email-form, .order-form--price {
   flex: 0 1 auto;
