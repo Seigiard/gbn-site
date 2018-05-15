@@ -15,8 +15,9 @@
   }
 
   const [ title, price, description, info, ...feedback ] = (data || '').split('<hr>');
-  const [ feedbackText, feedbackName, feedbackImage ] = feedback || [];
+  const [ feedbackText, feedbackName, feedbackImage, feedbackTypeHtml ] = feedback || [];
   const feedbackImageUrl = stripHtml(feedbackImage);
+  const feedbackType = stripHtml(feedbackTypeHtml);
   const formattedPrice = formatPrice(price);
   const strippedTitle = stripHtml(title);
 %>
@@ -29,13 +30,23 @@
   </div>
 
   <% if (feedbackText) { %>
-    <div class="service-item--feeedback feedback">
-      <div class="feedback--text"><%- feedbackText %></div>
-      <div class="feedback--author">
-        <div class="feedback--image"><img src="/img/<%- feedbackImageUrl %>" alt=""></div>
-        <%- feedbackName %>
+    <% if (feedbackType === 'client') { %>
+      <div class="service-item--feeedback feedback feedback__<%- feedbackType %>">
+        <div class="feedback--text"><%- feedbackText %></div>
+        <div class="feedback--author">
+          <div class="feedback--image"><img src="/img/<%- feedbackImageUrl %>" alt=""></div>
+          <%- feedbackName %>
+        </div>
       </div>
-    </div>
+    <% } else { %>
+      <div class="service-item--feeedback feedback feedback__<%- feedbackType %>">
+        <div class="feedback--author">
+          <div class="feedback--image"><img src="/img/<%- feedbackImageUrl %>" alt=""></div>
+          <%- feedbackName %>
+        </div>
+        <div class="feedback--text"><%- feedbackText %></div>
+      </div>
+    <% } %>
   <% } %>
 
   <div class="service-item--price"><%- formattedPrice %></div>
