@@ -1,6 +1,6 @@
 .main-page {
   height: calc(100vh - 79px);
-  background: #000 url(../img/bg-main-page.jpg) top left no-repeat;
+  background: #000 url(../img/bg-main-page.jpg) 0 10% no-repeat;
   background-size: cover;
   color: #fff;
   padding: 51px 30px 29px;
@@ -68,7 +68,7 @@
     }
   }
   .main-page--expirience {
-    background: #1D3070;
+    background: #1E3179;
     color: #fff;
     display: flex;
     align-items: center;
@@ -135,15 +135,15 @@
   }
   .main-page--address {
     color: #fff;
-    background: #1D3070;
+    background: #1E3179;
     border-top: 75px solid #000;
     padding-bottom: 10px;
   }
   .main-page--map {
     padding: 0;
-    img {
-      max-width: 100%;
-    }
+    height: 450px;
+    // background: url(/img/bg-map.png) center center no-repeat;
+    // background-size: cover;
   }
   .proposal-block {
     padding: 26px 35px 23px 30px;
@@ -203,7 +203,7 @@
   .employee--image {
     order: 1;
     flex: 0 0 auto;
-    align-self: auto;
+    align-self: center;
     margin: 0 -28px;
   }
   .employee--description {
