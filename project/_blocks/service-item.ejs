@@ -24,10 +24,12 @@
 <div class="service-item">
   <h3><%- strippedTitle %></h3>
   <%- description %>
-  <div class="service-item--info info">
-    <button class="info--toggle" title="Дополнительная информация"><span></span></button>
-    <div class="info--content"><%- info %></div>
-  </div>
+  <% if (info) { %>
+    <div class="service-item--info info">
+      <button class="info--toggle" title="Дополнительная информация"><span></span></button>
+      <div class="info--content"><%- info %></div>
+    </div>
+  <% } %>
 
   <% if (feedbackText) { %>
     <% if (feedbackType === 'client') { %>
