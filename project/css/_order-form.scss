@@ -57,3 +57,38 @@
     background-color: #071330;
   }
 }
+
+
+.hire-form {
+  display: flex;
+  border-bottom: 1px solid #666;
+  padding-top: 14px;
+
+  input {
+    flex: 1 1 auto;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    height: 28px;
+    line-height: 28px;
+    ::placeholder {
+      color: #7f7f7f;
+    }
+  }
+  button {
+    flex: 0 1 auto;
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0 0 0 10px;
+    height: 28px;
+    cursor: pointer;
+    &:active, &:focus {
+      opacity: .7;
+    }
+  }
+
+  &:focus-within {
+    border-bottom-color: #000;
+  }
+}
