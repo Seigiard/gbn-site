@@ -1,3 +1,5 @@
+@import '_variables';
+
 .main-page {
   height: calc(100vh - 79px);
   background: #000 url(../img/bg-main-page.jpg) 0 10% no-repeat;
@@ -68,7 +70,7 @@
     }
   }
   .main-page--expirience {
-    background: #1E3179;
+    background: $color-blue;
     color: #fff;
     display: flex;
     align-items: center;
@@ -135,7 +137,7 @@
   }
   .main-page--address {
     color: #fff;
-    background: #1E3179;
+    background: $color-blue;
     border-top: 75px solid #000;
     padding-bottom: 10px;
   }
@@ -227,6 +229,6 @@
   align-content: stretch;
   align-items: flex-start;
   a {
-    color: #fff;
+    @include link(#fff, #fff, $color-blue);
   }
 }

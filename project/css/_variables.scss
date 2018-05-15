@@ -1,0 +1,39 @@
+$base-font-size: 16px;
+@function rem($px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+
+@function inPercent($px, $width) {
+  @return (100 * $px / $width) * 1%;
+}
+
+@mixin link($link-color, $link-active-color, $bg-color: #fff) {
+  $link-border-color: rgba($link-color, .4);
+  $link-hover-border-color: rgba($link-color, .6);
+  $link-active-border-color: rgba($link-active-color, .8);
+  $border-height: 1px;
+
+  color: $link-color;
+  background-image: linear-gradient($link-border-color, $link-border-color 1px, transparent 1px, transparent);
+  background-size: 1px $border-height;
+  background-position: left bottom;
+  background-repeat: repeat-x;
+  text-shadow: -1px 0 $bg-color, 1px 0 $bg-color;
+  text-decoration: none;
+  &:hover {
+    background-image: linear-gradient($link-hover-border-color, $link-hover-border-color 1px, transparent 1px, transparent);
+  }
+  &:active {
+    color: $link-active-color;
+    background-image: linear-gradient($link-active-border-color, $link-active-border-color 1px, transparent 1px, transparent);
+  }
+}
+@mixin link-reset() {
+  background: none;
+  text-shadow: none;
+}
+
+$color-blue: #1E3179;
+$header-height: 69px;
+$border-height: 10px;
+$layout-height: calc(100vh - #{$header-height + $border-height});
