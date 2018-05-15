@@ -1,5 +1,5 @@
 const infoBlockClass = '.info__content-visible';
-console.log(123123);
+
 $(function() {
   $('.service-item').each((id, block) => {
     const $block = $(block);
