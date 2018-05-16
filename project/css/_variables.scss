@@ -38,4 +38,6 @@ $header-height: 69px;
 $border-height: 10px;
 $layout-height: calc(100vh - #{$header-height + $border-height});
 
-$color-red: red; // use on hover on white bg
+$color-red: #E33F0B; // use on hover on white bg
+$menu-bg1: $color-red;
+$menu-bg2: #FFC107;
