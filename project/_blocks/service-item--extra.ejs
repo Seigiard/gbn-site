@@ -1,5 +1,6 @@
 <% var formattedPrice = price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1&thinsp;'); %>
 <div class="service-item service-item__extra">
+  <label class="service-item--checkbox"><input type="checkbox" checked name="" id=""><span></span></label>
   <h3><%- title %></h3>
   <div class="service-item--price"><%- formattedPrice %> ₽</div>
 </div>

@@ -19,6 +19,7 @@
   const strippedTitle = stripHtml(title);
 %>
 <div class="service-item">
+  <label class="service-item--checkbox"><input type="checkbox" checked name="" id=""><span></span></label>
   <h3><%- strippedTitle %></h3>
   <%- description %>
   <% if (info) { %>

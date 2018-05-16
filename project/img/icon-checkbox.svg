@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="44px" viewBox="0 0 22 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
+    <title>Mobile</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Checkmark-/-On" transform="translate(4.500000, 4.500000)">
+            <rect id="Rectangle" stroke="#9E9E9E" stroke-width="1" opacity="0.6" x="0.5" y="0.5" width="12" height="12"></rect>
+            <polygon id="Checkmark" fill="#000000" fill-rule="evenodd" points="6.19425993 10.1818182 15 -1.19152727 15 -4 6.20242599 7.44756364 2 2.29209455 2 4.99344727"></polygon>
+        </g>
+        <g id="Checkmark-/-Off" transform="translate(4.500000, 26.500000)" opacity="0.6" stroke="#9E9E9E">
+            <rect id="Rectangle" x="0.5" y="0.5" width="12" height="12"></rect>
+        </g>
+    </g>
+</svg>
