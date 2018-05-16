@@ -1,0 +1,19 @@
+footer.site-footer {
+  position: absolute;
+  bottom: 16px;
+  left: 15px;
+  font-size: 13px;
+  line-height: 1;
+  transform: rotate(-90deg);
+  transform-origin: top left;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  @media screen and (max-height: 650px ) {
+    bottom: 0;
+    p {
+      max-width: 120px;
+    }
+  }
+}
