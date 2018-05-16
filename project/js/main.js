@@ -28,4 +28,10 @@ $(function() {
       })
     })
   })
+
+  $scrollContainer = $('.service-layout--container');
+  $scrollContainer.scroll(() => {
+    const fn = $scrollContainer.scrollTop() > 33 ? 'addClass' : 'removeClass';
+    $scrollContainer[fn]('js-sticky');
+  });
 });
