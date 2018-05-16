@@ -34,8 +34,16 @@ $(function() {
   $scrollContainer.scroll(() => {
     const fn = $scrollContainer.scrollTop() > 28 ? 'addClass' : 'removeClass';
     $scrollContainer[fn]('js-sticky');
-  });
+  })
 });
 
 var elements = document.querySelectorAll('.service-list--navigation, .service-list h1');
-Stickyfill.add(elements);
+Stickyfill.add(elements)
+
+
+
+function checkIsEmpty(event) {
+  const fn = !!event.target.value ? 'remove' : 'add';
+  event.target.classList[fn]('is_empty');
+}
+[...document.querySelectorAll('input[type="text"], input[type="number"], input[type="email"]')].forEach(el => el.addEventListener('blur', checkIsEmpty));
