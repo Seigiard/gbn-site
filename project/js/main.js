@@ -38,7 +38,7 @@ $(function() {
 
 
 $(function() {
-  const $asides = $('.service-item__feeedback');
+  const $asides = $('.feedback__client');
 
   function placeAsideToTopOfPrevSibling(i, e) {
     $el = $(e);

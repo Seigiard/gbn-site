@@ -4,7 +4,9 @@
     "services": [
       "1-search",
       "2-deal",
+      "2-fb-client",
       "3-documents",
+      "3-fb-employee",
       "4-check"
     ],
     "servicesExtra": [

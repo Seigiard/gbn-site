@@ -156,7 +156,7 @@
 }
 
 @media screen and (min-width: 1300px ) {
-  .feedback {
+  .feedback__client {
     position: absolute;
     left: 640px;
     width: calc(100vw - 970px);
@@ -164,7 +164,7 @@
     opacity: 0;
   }
 
-  .feedback.feedback__positioned {
+  .feedback__client.feedback__positioned {
     animation: asideShow ease-in-out .5s;
     animation-iteration-count: 1;
     opacity: 1;
