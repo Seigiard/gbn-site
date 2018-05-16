@@ -174,31 +174,6 @@
   }
 }
 
-@media screen and (min-width: 1300px ) {
-  .feedback__client {
-    position: absolute;
-    left: 640px;
-    width: calc(100vw - 981px);
-    max-width: 470px;
-    opacity: 0;
-  }
-
-  .feedback__client.feedback__positioned {
-    animation: asideShow ease-in-out .5s;
-    animation-iteration-count: 1;
-    opacity: 1;
-  }
-}
-
-@keyframes asideShow {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
-
 .info {}
 .info--toggle {
   border: none;

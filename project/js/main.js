@@ -35,28 +35,3 @@ $(function() {
     $scrollContainer[fn]('js-sticky');
   });
 });
-
-
-$(function() {
-  const $asides = $('.feedback__client');
-
-  function placeAsideToTopOfPrevSibling(i, e) {
-    $el = $(e);
-    $el.addClass('feedback__positioned');
-
-    $prev = $el.prev('.service-item');
-
-    if (!$prev[0]) {
-      return;
-    }
-    const prevOffsetTop = parseInt($prev.position().top, 10);
-    $el.css('top', prevOffsetTop + 'px');
-  }
-
-  function plaseAsides() {
-    $asides.each(placeAsideToTopOfPrevSibling);
-  }
-
-  const ro = new ResizeObserver(plaseAsides);
-  ro.observe(document.querySelector('.service-list'));
-});
