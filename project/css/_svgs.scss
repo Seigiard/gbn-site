@@ -1,0 +1,40 @@
+@import '_variables';
+
+.iconToggle {
+  width: 20px;
+  height: 10px;
+}
+
+.info--toggle svg {
+  .iconToggle--border {
+    stroke: #c5c5c5;
+    fill: #fff;
+  }
+  .iconToggle--dots {
+    fill: #000;
+  }
+}
+
+.info--toggle:hover,
+.info__content-transition .info--toggle svg,
+.info__content-visible:not(.info__content-transition) .info--toggle:hover svg {
+  .iconToggle--border {
+    stroke: $color-red;
+    fill: #fff;
+  }
+  .iconToggle--dots {
+    fill: #000;
+  }
+}
+
+
+.info__content-visible:not(.info__content-transition) .info--toggle svg {
+  .iconToggle--border {
+    stroke: #000;
+    fill: #000
+  }
+  .iconToggle--dots {
+    fill: #fff;
+  }
+}
+

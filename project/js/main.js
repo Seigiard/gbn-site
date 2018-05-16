@@ -21,9 +21,10 @@ $(function() {
 
     $('.info--toggle', $block).click(() => {
       const fn = $block.hasClass(infoBlockClass) ? 'slideUp' : 'slideDown';
+      $block.addClass('info__content-transition')
       $content[fn]({
         duration,
-        complete: () => $block.toggleClass(infoBlockClass),
+        complete: () => $block.removeClass('info__content-transition').toggleClass(infoBlockClass),
         // easing: "easeInOutSine",
       })
     })
