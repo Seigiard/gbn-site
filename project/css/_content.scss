@@ -3,15 +3,25 @@
   padding-top: 33px;
   h1 {
     white-space: nowrap;
-    padding: 17px 21px 13px;
-    margin-left: -21px;
-    width: calc(100vw - 320px);
+    padding: 17px 40px 0;
+    margin-left: -40px;
+    width: calc(100vw - 300px);
     z-index: 10;
+    position: sticky;
+    top: 0;
+    &:after {
+      content: '';
+      display: block;
+      margin-left: -20px;
+      padding-bottom: 13px;
+      width: calc(100vw - 320px);
+      border-bottom: 2px solid #fff;
+    }
     .js-sticky & {
       background: #fff;
-      border-bottom: 2px solid #000;
-      position: sticky;
-      top: 0;
+      &:after {
+        border-bottom-color: #000;
+      }
     }
   }
   h2 {
