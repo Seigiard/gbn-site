@@ -1,1 +1,6 @@
-<svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M11 9.307l8.96-8.96.347-.347.693.693-.346.346L11.693 10l8.96 8.96.347.347-.693.693-.346-.346L11 10.693l-8.96 8.96-.347.347L1 19.307l.346-.346L10.307 10l-8.96-8.96L1 .692 1.693 0l.346.346L11 9.307z" stroke="#000" fill="none" fill-rule="evenodd" stroke-linecap="square"/></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <path d="M11,10.3072407 L19.9608611,1.34637963 L20.3072407,1 L21,1.69275927 L20.6536204,2.0391389 L11.6927593,11 L20.6536204,19.9608611 L21,20.3072407 L20.3072407,21 L19.9608611,20.6536204 L11,11.6927593 L2.0391389,20.6536204 L1.69275927,21 L1,20.3072407 L1.34637963,19.9608611 L10.3072407,11 L1.34637963,2.0391389 L1,1.69275927 L1.69275927,1 L2.0391389,1.34637963 L11,10.3072407 Z" id="Cross" stroke="#000000"></path>
+    </g>
+</svg>
