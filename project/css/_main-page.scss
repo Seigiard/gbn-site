@@ -82,9 +82,10 @@
     b {
       display: block;
       font-size: 100px;
-      font-weight: 200;
+      font-weight: 400;
       line-height: 1;
       height: 0.9em;
+      margin-left: -4px;
     }
   }
   .main-page--black-box {
@@ -105,9 +106,9 @@
       padding: 0;
     }
     b {
-      flex: 1 0 50px;
+      flex: 0 0 50px;
       font-size: 70px;
-      font-weight: 200;
+      font-weight: 400;
       line-height: 1;
       padding: 0 23px 0 0;
       height: 0.85em;
@@ -139,7 +140,8 @@
     color: #fff;
     background: $color-blue;
     border-top: 75px solid #000;
-    padding-bottom: 10px;
+    padding-bottom: 3px;
+    padding-top: 32px;
   }
   .main-page--map {
     padding: 0;
@@ -229,6 +231,17 @@
   align-content: stretch;
   align-items: flex-start;
   a {
-    @include link(#fff, #fff, $color-blue);
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      color: $color-red;
+    }
   }
+}
+.address-block--top,
+.address-block--bottom {
+  max-width: 200px;
+}
+.address-block--bottom p {
+  line-height: 1.4;
 }

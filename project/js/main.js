@@ -3,7 +3,7 @@ const infoBlockClass = 'info__content-visible';
 function getDurationTime($component) {
   const height = $component.height();
   const minTime = 300;
-  const maxTime = 900;
+  const maxTime = 700;
   const msPerHeight = 1;
   let time = height * msPerHeight
 
@@ -32,7 +32,7 @@ $(function() {
 
   $scrollContainer = $('.service-layout--container');
   $scrollContainer.scroll(() => {
-    const fn = $scrollContainer.scrollTop() > 33 ? 'addClass' : 'removeClass';
+    const fn = $scrollContainer.scrollTop() > 28 ? 'addClass' : 'removeClass';
     $scrollContainer[fn]('js-sticky');
   });
 });
