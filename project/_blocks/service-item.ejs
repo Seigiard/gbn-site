@@ -21,8 +21,10 @@
   const checkbox = new Date().getTime();
 %>
 <div class="service-item">
-  <label class="service-item--checkbox" for="serviceItem<%- id %>"><input type="checkbox" checked name="serviceItem<%- id %>" id="serviceItem<%- id %>"><span></span></label>
-  <h3><label for="serviceItem<%- id %>"><%- strippedTitle %></label></h3>
+  <h3><label>
+    <span class="service-item--checkbox"><input type="checkbox" checked name="serviceItem<%- id %>" id="serviceItem<%- id %>"></span>
+    <%- strippedTitle %>
+  </label></h3>
   <%- description %>
   <% if (info) { %>
     <div class="service-item--info info">

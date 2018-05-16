@@ -20,13 +20,12 @@
 .info__content-visible:not(.info__content-transition) .info--toggle:hover svg {
   .iconToggle--border {
     stroke: $color-red;
-    fill: #fff;
+    fill: $color-red;
   }
   .iconToggle--dots {
-    fill: darken($color-red, 5%);
+    fill: #fff;
   }
 }
-
 
 .info__content-visible:not(.info__content-transition) .info--toggle svg {
   .iconToggle--border {
@@ -37,6 +36,7 @@
     fill: #fff;
   }
 }
+
 
 .icon-close:hover svg .iconClose {
   stroke: $color-red;

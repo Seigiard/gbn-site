@@ -37,5 +37,5 @@ $(function() {
   });
 });
 
-var elements = document.querySelectorAll('.service-list--navigation, .service-list h3');
+var elements = document.querySelectorAll('.service-list--navigation, .service-list h1');
 Stickyfill.add(elements);
