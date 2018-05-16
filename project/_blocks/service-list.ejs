@@ -12,13 +12,14 @@
 <% if (services.length) {%>
   <h2><% if (locals.title) {%><%- locals.title %><% } else { %>Рекомендуемые услуги<% } %></h2>
   <%
-    const serviceList = services.map(service => ({
+    const serviceList = services.map((service, id) => ({
+      id,
       name: service,
       data: partial(`../${current.path.slice(0,-1).join('/')}/${service}`),
       template: getTemplate(service)
     }))
   %>
-  <% serviceList.forEach(function(service){ %>
+  <% serviceList.forEach(function(service, id){ %>
     <%- partial(service.template, service) %>
   <% }); %>
 <% } %>

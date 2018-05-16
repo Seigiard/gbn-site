@@ -114,6 +114,9 @@
   .service-item--price, .service-item--checkbox {
     display: none;
   }
+  label {
+    cursor: default;
+  }
 }
 
 .feedback {

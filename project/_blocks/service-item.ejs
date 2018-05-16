@@ -17,10 +17,12 @@
   const [ title, price, description, info ] = (data || '').split('<hr>');
   const formattedPrice = formatPrice(price);
   const strippedTitle = stripHtml(title);
+
+  const checkbox = new Date().getTime();
 %>
 <div class="service-item">
-  <label class="service-item--checkbox"><input type="checkbox" checked name="" id=""><span></span></label>
-  <h3><%- strippedTitle %></h3>
+  <label class="service-item--checkbox" for="serviceItem<%- id %>"><input type="checkbox" checked name="serviceItem<%- id %>" id="serviceItem<%- id %>"><span></span></label>
+  <h3><label for="serviceItem<%- id %>"><%- strippedTitle %></label></h3>
   <%- description %>
   <% if (info) { %>
     <div class="service-item--info info">

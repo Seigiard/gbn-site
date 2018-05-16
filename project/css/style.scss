@@ -65,6 +65,10 @@ input, button {
   }
 }
 
+label, button {
+  cursor: pointer;
+}
+
 @import '_variables';
 @import '_layout';
 @import '_grids';
