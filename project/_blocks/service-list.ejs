@@ -1,12 +1,24 @@
+<%
+  function getTemplate(blockName) {
+    if (blockName.includes('fb-client')) {
+      return './fb-client.ejs';
+    }
+    if (blockName.includes('fb-employee')) {
+      return './fb-employee.ejs';
+    }
+    return './service-item.ejs';
+  }
+%>
 <% if (services.length) {%>
   <h2><% if (locals.title) {%><%- locals.title %><% } else { %>Рекомендуемые услуги<% } %></h2>
   <%
     const serviceList = services.map(service => ({
       name: service,
-      data: partial(`../${current.path.slice(0,-1).join('/')}/${service}`)
+      data: partial(`../${current.path.slice(0,-1).join('/')}/${service}`),
+      template: getTemplate(service)
     }))
   %>
   <% serviceList.forEach(function(service){ %>
-    <%- partial("./service-item", service) %>
+    <%- partial(service.template, service) %>
   <% }); %>
 <% } %>

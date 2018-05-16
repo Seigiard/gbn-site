@@ -1,0 +1,17 @@
+
+<%
+  function stripHtml(html) {
+    return (html || '').replace(/<(?:.|\n)*?>/gm, '').replace(/\n/gm, '');
+  }
+
+  const [ feedbackText, feedbackName, feedbackImage, feedbackTypeHtml ] = (data || '').split('<hr>');
+  const feedbackImageUrl = stripHtml(feedbackImage);
+  const feedbackType = stripHtml(feedbackTypeHtml);
+%>
+<div class="service-item service-item__feeedback feedback feedback__<%- feedbackType %>">
+  <div class="feedback--author">
+    <div class="feedback--image"><img src="/img/<%- feedbackImageUrl %>" alt=""></div>
+    <%- feedbackName %>
+  </div>
+  <div class="feedback--text"><%- feedbackText %></div>
+</div>

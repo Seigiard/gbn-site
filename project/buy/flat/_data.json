@@ -4,8 +4,10 @@
     "services": [
       "1-search",
       "2-deal",
+      "2-fb-client",
       "3-documents",
-      "4-check"
+      "4-check",
+      "4-fb-employee"
     ],
     "servicesExtra": [
       "extra_prepayment",

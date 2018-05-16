@@ -14,10 +14,7 @@
     return `${price}<span class="rhs">&nbsp;</span>${priceValue}`;
   }
 
-  const [ title, price, description, info, ...feedback ] = (data || '').split('<hr>');
-  const [ feedbackText, feedbackName, feedbackImage, feedbackTypeHtml ] = feedback || [];
-  const feedbackImageUrl = stripHtml(feedbackImage);
-  const feedbackType = stripHtml(feedbackTypeHtml);
+  const [ title, price, description, info ] = (data || '').split('<hr>');
   const formattedPrice = formatPrice(price);
   const strippedTitle = stripHtml(title);
 %>
@@ -29,26 +26,6 @@
       <button class="info--toggle" title="Дополнительная информация"><span></span></button>
       <div class="info--content"><%- info %></div>
     </div>
-  <% } %>
-
-  <% if (feedbackText) { %>
-    <% if (feedbackType === 'client') { %>
-      <div class="service-item--feeedback feedback feedback__<%- feedbackType %>">
-        <div class="feedback--text"><%- feedbackText %></div>
-        <div class="feedback--author">
-          <div class="feedback--image"><img src="/img/<%- feedbackImageUrl %>" alt=""></div>
-          <%- feedbackName %>
-        </div>
-      </div>
-    <% } else { %>
-      <div class="service-item--feeedback feedback feedback__<%- feedbackType %>">
-        <div class="feedback--author">
-          <div class="feedback--image"><img src="/img/<%- feedbackImageUrl %>" alt=""></div>
-          <%- feedbackName %>
-        </div>
-        <div class="feedback--text"><%- feedbackText %></div>
-      </div>
-    <% } %>
   <% } %>
 
   <div class="service-item--price"><%- formattedPrice %></div>

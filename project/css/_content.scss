@@ -1,5 +1,6 @@
 .service-list {
   max-width: 600px;
+  position: relative;
   h1 {
     white-space: nowrap;
     padding: 17px 17px 13px;
@@ -64,6 +65,10 @@
     padding-bottom: 8px;
   }
 }
+.service-item__feeedback {
+  border-top: none;
+  position: static;
+}
 .service-item__extra {
   padding-bottom: 10px;
 }
@@ -94,6 +99,7 @@
 
 .feedback {
   margin: 5px 0 20px;
+  padding: 0;
 }
 
 .feedback--text {
@@ -152,11 +158,25 @@
 @media screen and (min-width: 1300px ) {
   .feedback {
     position: absolute;
-    left: 100%;
-    top: 0;
-    margin-left: 40px;
+    left: 640px;
     width: calc(100vw - 970px);
     max-width: 470px;
+    opacity: 0;
+  }
+
+  .feedback.feedback__positioned {
+    animation: asideShow ease-in-out .5s;
+    animation-iteration-count: 1;
+    opacity: 1;
+  }
+}
+
+@keyframes asideShow {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
   }
 }
 
