@@ -35,3 +35,6 @@ $(function() {
     $scrollContainer[fn]('js-sticky');
   });
 });
+
+var elements = document.querySelectorAll('.service-list--navigation, .service-list h3');
+Stickyfill.add(elements);

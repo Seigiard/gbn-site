@@ -65,7 +65,7 @@ input, button {
   }
 }
 
-label, button {
+label, button, input[type="checkbox"], input[type="radio"] {
   cursor: pointer;
 }
 

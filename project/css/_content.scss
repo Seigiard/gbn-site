@@ -1,17 +1,17 @@
 .service-list {
   max-width: 600px;
-  position: relative;
+  padding-top: 33px;
   h1 {
     white-space: nowrap;
     padding: 17px 21px 13px;
     margin-left: -21px;
-    position: sticky;
-    top: 0;
     width: calc(100vw - 320px);
     z-index: 10;
     .js-sticky & {
       background: #fff;
       border-bottom: 2px solid #000;
+      position: sticky;
+      top: 0;
     }
   }
   h2 {
