@@ -11,6 +11,7 @@
     "devDependencies": {
         "browser-sync": "^2.24.4",
         "hoek": "^5.0.3",
+        "harp": "^0.25.0",
         "npm-run-all": "^4.0.2",
         "push-dir": "^0.4.1"
     }
