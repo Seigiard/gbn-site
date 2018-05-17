@@ -3,9 +3,9 @@
 %>
 <% bgs.forEach(function(bg){ %>
   <div class="bg-<%- bg %>" style="padding: 2rem 3rem">
-    <h1>Срочно продать квартиру</h1>
-    <h2>Базовый пакет услуг</h2>
-    <p>Бывает, что продавцу <a href="">важно быстро получить деньги</a>: например, он срочно уезжает за границу или хочет вложиться в бизнес. Если повезёт, самые оперативные сделки с живыми покупателями проходят за две-три недели. Если нужно гарантированно получить деньги быстрее — мы можем сделать срочный выкуп квартиры за неделю.</p>
+    <h1>Заголовок первого уровня</h1>
+    <h2>Основной цвет текста</h2>
+    <p>Бывает, что продавцу <a href="">важно быстро получить деньги</a>: например, он срочно уезжает за границу или хочет вложиться в бизнес.</p>
     <h2>Ссылка</h2>
     <p><a href="">Ссылка</a></p>
     <h2>Инпуты</h2>
@@ -13,13 +13,15 @@
     <p><button>Кнопка</button></p>
     <h2>Иконка в ссылке</h2>
     <div class="util--icon-list">
+      <a href=""><%- partial("_snippets/svg-icon.ejs", { name: 'logo' }) %></a>
       <a href=""><%- partial("_snippets/svg-icon.ejs", { name: 'close' }) %></a>
       <a href=""><%- partial("_snippets/svg-icon.ejs", { name: 'toggle' }) %></a>
     </div>
     <h2>Иконкой в кнопке</h2>
     <div class="util--icon-list">
-      <a href=""><%- partial("_snippets/svg-icon.ejs", { name: 'close' }) %></a>
-      <a href=""><%- partial("_snippets/svg-icon.ejs", { name: 'toggle' }) %></a>
+      <button class="button__icon"><%- partial("_snippets/svg-icon.ejs", { name: 'logo' }) %></button>
+      <button class="button__icon"><%- partial("_snippets/svg-icon.ejs", { name: 'close' }) %></button>
+      <button class="button__icon"><%- partial("_snippets/svg-icon.ejs", { name: 'toggle' }) %></button>
     </div>
   </div>
 <% }); %>

@@ -65,6 +65,13 @@ label, button, input[type="checkbox"], input[type="radio"] {
   cursor: pointer;
 }
 
+.button__icon {
+  background: transparent;
+  border: none;
+  padding:0;
+  margin:0;
+}
+
 @import '_inc/variables';
 @import '_inc/layout';
 @import '_inc/hovers';
