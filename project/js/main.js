@@ -37,7 +37,7 @@ $(function() {
   })
 });
 
-var elements = document.querySelectorAll('.service-list--navigation, .service-list h1');
+var elements = document.querySelectorAll('.service-header');
 Stickyfill.add(elements)
 
 

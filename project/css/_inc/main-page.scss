@@ -1,7 +1,13 @@
-@import '_variables';
+@import 'variables';
+
+
+.scroll-container {
+  height: $layout-height;
+  overflow-y: scroll;
+}
 
 .main-page {
-  height: calc(100vh - 79px);
+  height: $layout-height;
   background: #000 url(../img/bg-main-page.jpg) 0 10% no-repeat;
   background-size: cover;
   color: #fff;
@@ -74,7 +80,6 @@
     color: #fff;
     display: flex;
     align-items: center;
-    padding: 20px;
     p {
       padding: 0;
       font-size: 20px;

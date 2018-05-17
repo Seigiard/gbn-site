@@ -1,49 +1,53 @@
-.service-list {
-  max-width: 600px;
-  padding-top: 33px;
-  h1 {
-    white-space: nowrap;
-    padding: 15px 0 0 40px;
-    margin-left: -40px;
-    width: calc(100vw - 258px);
+@import 'variables';
+
+$column-width: 600px;
+$content-padding-left: 40px;
+$content-padding-right: 20px;
+
+.service-header {
+  padding: 0px 20px 0 $content-padding-left;
+  margin-top: 33px;
+  position: sticky;
+  top: 0;
+  .js-sticky & {
+    background: #fff;
     z-index: 10;
-    position: sticky;
-    top: 0;
-    &:after {
-      content: '';
-      display: block;
-      margin-left: -20px;
-      padding-bottom: 9px;
-      width: calc(100vw - 300px);
-      border-bottom: 2px solid #fff;
-    }
-    .js-sticky & {
-      background: #fff;
-      &:after {
-        border-bottom-color: #000;
-      }
+    h1 {
+      border-bottom: 2px solid #000;
     }
   }
+  h1 {
+    white-space: nowrap;
+    padding: 15px 40px 9px 20px;
+    margin-left: -20px;
+    border-bottom: 2px solid #fff;
+  }
+  nav {
+    float: right;
+    margin-top: 20px;
+    a {
+      display: block;
+      text-decoration: none;
+    }
+  }
+}
+
+.service-lead {
+  padding-left: $content-padding-left;
+  padding-right: $content-padding-right;
+  max-width: $column-width;
+  box-sizing: content-box;
+}
+
+.service-list {
+  padding-left: $content-padding-left;
+  padding-right: $content-padding-right;
+  max-width: $column-width;
+  box-sizing: content-box;
   h2 {
     font-size: 16px;
     padding: 20px 0 16px 0;
   }
-}
-
-.service-list--navigation {
-  a {
-    display: block;
-    text-decoration: none;
-    padding: 10px;
-    position: absolute;
-    z-index: 10;
-    top: 8px;
-    right: 0px;
-  }
-  position: sticky;
-  top: 2px;
-  width: calc(100vw - 310px);
-  z-index: 20;
 }
 .service-item {
   padding: 10px 100px 5px 0;

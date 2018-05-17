@@ -65,16 +65,16 @@ label, button, input[type="checkbox"], input[type="radio"] {
   cursor: pointer;
 }
 
-@import '_variables';
-@import '_layout';
-@import '_grids';
-@import '_header';
-@import '_footer';
-@import '_sidebar';
-@import '_content';
-@import '_main-page';
-@import '_order-form';
-@import '_svgs';
+@import '_inc/variables';
+@import '_inc/layout';
+@import '_inc/grids';
+@import '_inc/header';
+@import '_inc/footer';
+@import '_inc/sidebar';
+@import '_inc/content';
+@import '_inc/main-page';
+@import '_inc/order-form';
+@import '_inc/svgs';
 
 .hs {
   /* Полупробел для
