@@ -1,0 +1,19 @@
+<html>
+  <%- partial("_snippets/head.jade") %>
+  <body>
+    <%- partial("_snippets/header.ejs") %>
+    <div class="layout">
+      <aside class="layout--sidebar">
+        <div class="menu-wrapper">
+          <%- partial('_snippets/menu.ejs') %>
+        </div>
+      </aside>
+      <main class="layout--content">
+        <div class="scroll-container">
+          <%- yield %>
+        </div>
+      </main>
+    </div>
+    <%- partial("_snippets/footer.ejs") %>
+  </body>
+</html>

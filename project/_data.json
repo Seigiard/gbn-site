@@ -5,5 +5,8 @@
   "mortgage": {},
   "rent": {},
   "let": {},
-  "oh-my-god": {}
+  "oh-my-god": {},
+  "hovers": {
+    "layout": "_page.ejs"
+  }
 }
