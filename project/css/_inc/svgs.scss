@@ -5,39 +5,22 @@
   height: 10px;
 }
 
-.info--toggle svg {
-  .iconToggle--border {
-    stroke: #c5c5c5;
-    fill: #fff;
-  }
-  .iconToggle--dots {
-    fill: #000;
-  }
-}
-
-.info--toggle:hover,
-.info__content-transition .info--toggle svg,
-.info__content-visible:not(.info__content-transition) .info--toggle:hover svg {
-  .iconToggle--border {
+.info__content-transition .info--toggle svg {
+  .svg-primary-stroke, .svg-bg-fill {
     stroke: $color-red;
     fill: $color-red;
   }
-  .iconToggle--dots {
-    fill: #fff;
+  .svg-primary-fill {
+    fill: $color-white;
   }
 }
 
 .info__content-visible:not(.info__content-transition) .info--toggle svg {
-  .iconToggle--border {
-    stroke: #000;
-    fill: #000
+  .svg-primary-stroke, .svg-bg-fill {
+    stroke: $color-black;
+    fill: $color-black;
   }
-  .iconToggle--dots {
-    fill: #fff;
+  .svg-primary-fill {
+    fill: $color-white;
   }
-}
-
-
-.icon-close:hover svg .iconClose {
-  stroke: $color-red;
 }

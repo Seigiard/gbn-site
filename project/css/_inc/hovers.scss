@@ -1,5 +1,4 @@
 @import 'variables';
-// 'white', 'black', 'blue', 'yellow', 'red'
 
 @mixin a-colors($primary-color, $secondary-color) {
   a {
@@ -7,6 +6,15 @@
     &:hover {
       color: $secondary-color;
     }
+  }
+}
+
+.svg-stroke-o40 {
+  stroke-opacity: 0.4;
+}
+a:hover, button:hover {
+  .svg-stroke-o100--hover {
+    stroke-opacity: 1;
   }
 }
 
@@ -27,16 +35,24 @@
   }
 }
 
-@mixin svg-colors($primary-color, $secondary-color) {
+@mixin svg-colors($primary-color, $secondary-color, $bg-color) {
   @include svg-fill-stroke('primary', $primary-color);
   @include svg-fill-stroke('secondary', $secondary-color);
+  @include svg-fill-stroke('bg', $bg-color);
+}
+
+@mixin render-block($background-color, $primary-color, $secondary-color) {
+  color: $primary-color;
+  background-color: $background-color;
+  @include a-colors($primary-color, $secondary-color);
+  @include svg-colors($primary-color, $secondary-color, $background-color);
 }
 
 a { text-decoration: none; }
 $primary-color: $color-black;
 $secondary-color: $color-red;
 @include a-colors($primary-color, $secondary-color);
-@include svg-colors($primary-color, $secondary-color);
+@include svg-colors($primary-color, $secondary-color, $color-white);
 
 @include svg-fill-stroke('white', $color-white);
 @include svg-fill-stroke('black', $color-black);
@@ -44,41 +60,25 @@ $secondary-color: $color-red;
 @include svg-fill-stroke('red', $color-red);
 @include svg-fill-stroke('yellow', $color-yellow);
 
-.bg-blue {
-  color: $color-white;
-  $primary-color: $color-white;
-  $secondary-color: $color-red;
-  @include a-colors($primary-color, $secondary-color);
-  @include svg-colors($primary-color, $secondary-color);
-}
 
-.bg-white { 
-  $primary-color: $color-black;
-  $secondary-color: $color-red;
-  color: $primary-color;
-  @include a-colors($primary-color, $secondary-color);
-  @include svg-colors($primary-color, $secondary-color);
+.bg-white {
+  @include render-block($color-white, $color-black, $color-red);
 }
 
 .bg-black {
-  color: #f9f9f9;
-  $primary-color: #f9f9f9;
-  $secondary-color: $color-red;
-  @include a-colors($primary-color, $secondary-color);
-  @include svg-colors($primary-color, $secondary-color);
+  @include render-block($color-black, #f9f9f9, $color-red);
+}
+
+.bg-blue {
+  @include render-block($color-blue, $color-white, $color-red);
 }
 
 .bg-yellow {
-  $primary-color: $color-black;
-  $secondary-color: $color-white;
-  @include a-colors($primary-color, $secondary-color);
-  @include svg-colors($primary-color, $secondary-color);
+  @include render-block($color-yellow, $color-black, $color-white);
 }
+
 .bg-red {
-  $primary-color: $color-black;
-  $secondary-color: $color-white;
-  @include a-colors($primary-color, $secondary-color);
-  @include svg-colors($primary-color, $secondary-color);
+  @include render-block($color-red, $color-black, $color-white);
 }
 
 
