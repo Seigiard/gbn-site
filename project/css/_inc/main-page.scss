@@ -42,6 +42,13 @@
 }
 
 .main-page {
+  h2 {
+    font-size: 40px;
+    padding: 0 0 2px 0;
+  }
+  h3 {
+    padding: 0 0 1px 0;
+  }
   .row {
     border: 2px solid black;
     border-width: 2px 0;
@@ -66,18 +73,10 @@
 }
 
 .main-page .row {
-  h3 {
-    padding-bottom: 1px;
-  }
   .main-page--description {
     padding: 40px 50px 40px 30px;
-    h2 {
-      padding-bottom: 2px;
-    }
   }
   .main-page--expirience {
-    background: $color-blue;
-    color: #fff;
     display: flex;
     align-items: center;
     p {
@@ -225,13 +224,6 @@
   justify-content: space-between;
   align-content: stretch;
   align-items: flex-start;
-  a {
-    color: #fff;
-    text-decoration: none;
-    &:hover {
-      color: $color-red;
-    }
-  }
 }
 .address-block--top,
 .address-block--bottom {
