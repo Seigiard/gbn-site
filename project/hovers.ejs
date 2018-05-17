@@ -1,5 +1,6 @@
 <%
   const bgs = ['white', 'black', 'blue', 'yellow', 'red'];
+  const icons = ['logo', 'close', 'toggle', 'arrow-down', 'arrow-right'];
 %>
 <% bgs.forEach(function(bg){ %>
   <div class="bg-<%- bg %>" style="padding: 2rem 3rem">
@@ -13,15 +14,15 @@
     <p><button>Кнопка</button></p>
     <h2>Иконка в ссылке</h2>
     <div class="util--icon-list">
-      <a href=""><%- partial("_snippets/svg-icon.ejs", { name: 'logo' }) %></a>
-      <a href=""><%- partial("_snippets/svg-icon.ejs", { name: 'close' }) %></a>
-      <a href=""><%- partial("_snippets/svg-icon.ejs", { name: 'toggle' }) %></a>
+      <% icons.forEach(function(name){ %>
+        <a href=""><%- partial("_snippets/svg-icon.ejs", { name }) %></a>
+      <% }) %>
     </div>
     <h2>Иконкой в кнопке</h2>
     <div class="util--icon-list">
-      <button class="button__icon"><%- partial("_snippets/svg-icon.ejs", { name: 'logo' }) %></button>
-      <button class="button__icon"><%- partial("_snippets/svg-icon.ejs", { name: 'close' }) %></button>
-      <button class="button__icon"><%- partial("_snippets/svg-icon.ejs", { name: 'toggle' }) %></button>
+      <% icons.forEach(function(name){ %>
+        <button class="button__icon"><%- partial("_snippets/svg-icon.ejs", { name }) %></button>
+      <% }) %>
     </div>
   </div>
 <% }); %>

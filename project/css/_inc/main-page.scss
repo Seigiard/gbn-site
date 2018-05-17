@@ -113,21 +113,18 @@
   .main-page--employee {
     padding-bottom: 0;
   }
-  .main-page-employee-list {
-    padding: 0;
-    .employee__horizontal {
-      border: 2px solid #000;
-      border-width: 2px 0;
-    }
-    .employee__horizontal:first-child {
-      border-top: none;
-    }
-    .employee__horizontal:last-child {
-      border-bottom: none;
-    }
-  }
   .main-page--vacancy {
-    border-top: 75px solid #000;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-content: flex-end;
+    align-items: flex-end;
+    padding: 0;
+    .bg-white {
+      padding: 27px 28px 31px;
+      min-height: 250px;
+    }
   }
   .main-page--address {
     color: #fff;
@@ -167,6 +164,22 @@
   padding: 25px 0 0 0;
 }
 
+.employee-list {
+  padding: 0!important;
+  display: flex;
+  flex-direction: column;
+  .employee__horizontal {
+    border: 2px solid #000;
+    border-width: 2px 0;
+  }
+  .employee__horizontal:first-child {
+    border-top: none;
+  }
+  .employee__horizontal:last-child {
+    border-bottom: none;
+  }
+}
+
 .employee {
   display: flex;
   ul {
@@ -195,8 +208,8 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-content: stretch;
-  align-items: flex-start;
+  align-content: flex-end;
+  align-items: flex-end;
   padding-bottom: 0;
   .employee--image {
     order: 1;
@@ -212,8 +225,9 @@
 }
 
 .employee__horizontal {
+  flex: 0 0 50%;
   .employee--description {
-    padding: 27px 0px;
+    padding: 27px 20px 0 0;
   }
 }
 

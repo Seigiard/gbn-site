@@ -10,33 +10,26 @@
   }
 }
 
-@mixin svg-colors($primary-color, $secondary-color) {
-  .svg-primary-fill {
-    fill: $primary-color;
+@mixin svg-fill-stroke($colorName, $color) {
+  .svg-#{$colorName}-fill {
+    fill: $color;
   }
-  .svg-primary-stroke {
-    stroke: $primary-color;
-  }
-  .svg-secondary-fill {
-    fill: $secondary-color;
-  }
-  .svg-secondary-stroke {
-    stroke: $secondary-color;
+  .svg-#{$colorName}-stroke {
+    stroke: $color;
   }
   a:hover, button:hover {
-    .svg-primary-fill--hover {
-      fill: $primary-color;
+    .svg-#{$colorName}-fill--hover {
+      fill: $color;
     }
-    .svg-primary-stroke--hover {
-      stroke: $primary-color;
+    .svg-#{$colorName}-stroke--hover {
+      stroke: $color;
     }
-    .svg-secondary-fill--hover {
-      fill: $secondary-color;
-    }  
-    .svg-secondary-stroke--hover {
-      stroke: $secondary-color;
-    }
-  }  
+  }
+}
+
+@mixin svg-colors($primary-color, $secondary-color) {
+  @include svg-fill-stroke('primary', $primary-color);
+  @include svg-fill-stroke('secondary', $secondary-color);
 }
 
 a { text-decoration: none; }
@@ -45,10 +38,24 @@ $secondary-color: $color-red;
 @include a-colors($primary-color, $secondary-color);
 @include svg-colors($primary-color, $secondary-color);
 
+@include svg-fill-stroke('white', $color-white);
+@include svg-fill-stroke('black', $color-black);
+@include svg-fill-stroke('blue', $color-blue);
+@include svg-fill-stroke('red', $color-red);
+@include svg-fill-stroke('yellow', $color-yellow);
+
 .bg-blue {
   color: $color-white;
   $primary-color: $color-white;
   $secondary-color: $color-red;
+  @include a-colors($primary-color, $secondary-color);
+  @include svg-colors($primary-color, $secondary-color);
+}
+
+.bg-white { 
+  $primary-color: $color-black;
+  $secondary-color: $color-red;
+  color: $primary-color;
   @include a-colors($primary-color, $secondary-color);
   @include svg-colors($primary-color, $secondary-color);
 }

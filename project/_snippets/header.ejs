@@ -2,9 +2,9 @@
   <div class="header bg-black">
     <div class="header--logo">
       <% if(current.path.length > 1) { %>
-        <a href="/"><img src="/img/icon-logo.svg" alt=""> <span>Городское бюро недвижимости</span></a>
+        <a href="/"><%- partial("../_snippets/svg-icon.ejs", { name: 'logo' }) %><span>Городское бюро недвижимости</span></a>
       <% } else { %>
-        <img src="/img/icon-logo.svg" alt=""> Городское бюро недвижимости
+        <%- partial("../_snippets/svg-icon.ejs", { name: 'logo' }) %>Городское бюро недвижимости
       <% } %>
     </div>
     <div class="header--phone">
