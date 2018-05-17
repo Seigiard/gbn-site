@@ -42,7 +42,7 @@
 
   %>
   <% if(subMenuArray.length > 1) { %>
-    <nav class="menu menu__level2 <%- menuShrinkedClass() %>">
+    <nav class="menu menu__level2 bg-yellow <%- menuShrinkedClass() %>">
       <% subMenuArray.forEach(function(menu) { %>
         <% if (public[mainMenuLevel][menu] && public[mainMenuLevel][menu]._data.index) { %>
           <% if (isActiveMainMenuItem(menu)) { %>

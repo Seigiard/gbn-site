@@ -21,7 +21,7 @@ function menuShrinkedClass() {
   return isNestedPage && isSubmenuExists ? 'menu__shrinked' : '';
 }
 %>
-<nav class="menu menu__level1 <%- menuShrinkedClass() %>">
+<nav class="menu menu__level1 <%- menuShrinkedClass() %> bg-red">
   <% menuArray.forEach(function(menu){ %>
     <% if (public[menu]) { %>
       <% if (isActiveMainMenuItem(menu)) { %>

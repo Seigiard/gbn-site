@@ -1,12 +1,11 @@
 @import 'variables';
 
-
 .scroll-container {
   height: $layout-height;
   overflow-y: scroll;
 }
 
-.main-page {
+.main-page--welcome {
   height: $layout-height;
   background: #000 url(../img/bg-main-page.jpg) 0 10% no-repeat;
   background-size: cover;
@@ -41,7 +40,7 @@
   }
 }
 
-.main-page--container {
+.main-page {
   .row {
     border: 2px solid black;
     border-width: 2px 0;
@@ -65,7 +64,7 @@
   }
 }
 
-.main-page--container .row {
+.main-page .row {
   h3 {
     padding-bottom: 1px;
   }
@@ -93,18 +92,7 @@
       margin-left: -4px;
     }
   }
-  .main-page--black-box {
-    background: #000;
-    color: #fff;
-  }
-  .main-page--black-box__video {
-    padding-bottom: 10px;
-    p {
-      max-width: 500px
-    }
-  }
   .main-page--discount {
-    background-color: #FFC107;
     padding: 20px;
     p {
       display: flex;
@@ -143,7 +131,6 @@
   }
   .main-page--address {
     color: #fff;
-    background: $color-blue;
     border-top: 75px solid #000;
     padding-bottom: 3px;
     padding-top: 32px;
@@ -151,8 +138,9 @@
   .main-page--map {
     padding: 0;
     height: 450px;
-    // background: url(/img/bg-map.png) center center no-repeat;
-    // background-size: cover;
+    background-color: #fff;
+    background: url(/img/bg-map.png) center center no-repeat;
+    background-size: cover;
   }
   .proposal-block {
     padding: 26px 35px 23px 30px;
@@ -197,8 +185,9 @@
   flex: 0 0 auto;
   align-self: flex-end;
   img {
-    width: 198px;
+    width: 171px;
     max-width: 100%;
+    margin-right: 20px;
   }
 }
 
@@ -213,7 +202,7 @@
     order: 1;
     flex: 0 0 auto;
     align-self: center;
-    margin: 0 -28px;
+    margin: 0 -28px; // blockp padding compensation
   }
   .employee--description {
     order: 0;
