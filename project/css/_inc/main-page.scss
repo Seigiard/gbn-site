@@ -157,11 +157,24 @@
   flex: 1 1 auto;
 }
 
-.proposal-block--image {
+.proposal-block--images {
   text-align: right;
   flex: 0 1 auto;
   align-self: flex-end;
   padding: 25px 0 0 0;
+  a {
+    display: inline-block;
+  }
+  a + a {
+    margin-left: 18px;
+  }
+  .icon-kmstudio {
+    background: url(/img/proposal-kmstudio-bg.png) top left no-repeat;
+    background-size: 61px 106px;
+  }
+  a:hover .icon-kmstudio {
+    background-position: bottom left;
+  }
 }
 
 .employee-list {
