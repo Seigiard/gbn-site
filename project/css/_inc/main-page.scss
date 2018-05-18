@@ -128,10 +128,10 @@
     }
   }
   .main-page--address {
+    background: url(../img/util-footer.png) top left no-repeat;
     color: #fff;
     border-top: 75px solid #000;
     padding-bottom: 3px;
-    padding-top: 32px;
   }
   .main-page--map {
     padding: 0;
@@ -255,7 +255,7 @@
 }
 .address-block--top,
 .address-block--bottom {
-  max-width: 200px;
+  max-width: 190px;
 }
 .address-block--bottom p {
   line-height: 1.4;
