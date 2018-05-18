@@ -40,49 +40,12 @@
   margin-top: 20px;
 }
 
-.order-form--input {
-  height: 35px;
-  border: none;
-  border-bottom: 1px solid #fff;
-  color: #fff;
-  background: transparent;
-  font-size: 16px;
-  ::placeholder {
-    color: #606D9A;
-  }
-  &.is_empty, &:placeholder-shown {
-    border-bottom: 1px solid #606D9A;
-  }
-  &:focus, &:active {
-    color: #fff;
-    border-color: #fff;
-  }
-}
-.order-form--input__big {
-  width: 100%;
-  font-size: 24px;
-}
-
-
-.order-form--button {
-  height: 36px;
-  border: none;
-  background-color: #000;
-  color: #fff;
-  font-size: 16px;
-  padding: 0 22px 0 20px;
-  &:hover, &:focus, &:active {
-    background-color: #fff;
-    color: #000;
-  }
-}
-
 .order-form--email-form {
   display: flex;
-  .order-form--input {
+  .input {
     flex: 1 0 auto;
   }
-  .order-form--button {
+  .button {
     flex: 0 0 auto;
     margin-left: 20px;
   }

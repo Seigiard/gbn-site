@@ -116,12 +116,16 @@
               </div>
               <div class="col-2 main-page--vacancy bg-black">
                 <div class="bg-white">
-                <h3>Работа в бюро</h3>
-                <p>Если хотите в нашу команду, отправьте свой номер телефона. Мы перезвоним в течение суток.</p>
-                <form action="" class="hire-form">
-                  <input placeholder="Номер" type="text" name="number">
-                  <button type="button"><img src="/img/icon-arrow-right.svg" alt="Отправить"></button>
-                </form>
+                  <h3>Работа в бюро</h3>
+                  <p>Если хотите в нашу команду, отправьте свой номер телефона. Мы перезвоним в течение суток.</p>
+                  <form action="">
+                    <div class="input-combined">
+                      <input placeholder="Номер" class="input" type="text" name="number">
+                      <button class="button__icon" type="button">
+                        <%- partial("_snippets/svg-icon.ejs", { name: 'arrow-right' }) %>
+                      </button>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
