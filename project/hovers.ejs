@@ -1,24 +1,24 @@
 <%
-  const bgs = ['white', 'black', 'blue', 'yellow', 'red'];
+  const bgs = ['white', 'blue', 'yellow', 'red', 'black'];
   const icons = ['logo', 'close', 'toggle', 'arrow-down', 'arrow-right', 'bank-sber', 'bank-vtb', 'studio-zw'];
 %>
 <% bgs.forEach(function(bg){ %>
   <div class="bg-<%- bg %>" style="padding: 2rem 3rem">
-    <h1>Заголовок первого уровня</h1>
-    <h2>Основной цвет текста</h2>
-    <p>Бывает, что продавцу <a href="">важно быстро получить деньги</a>: например, он срочно уезжает за границу или хочет вложиться в бизнес.</p>
-    <h2>Ссылка</h2>
     <p><a href="">Ссылка</a></p>
-    <h2>Инпуты</h2>
-    <p><input type="text" placeholder="Ввведите текст" /> <input type="text" value="Введённый текст" /></p>
-    <p><button>Кнопка</button></p>
-    <h2>Иконка в ссылке</h2>
+    <p><input class="input" type="text" placeholder="Ввведите текст" /> <input class="input" type="text" value="Введённый текст" /> <button class="button">Кнопка</button></p>
+    <div class="input-combined">
+      <input placeholder="Номер" class="input" type="text" name="number">
+      <button class="button__icon" type="button">
+        <%- partial("_snippets/svg-icon.ejs", { name: 'arrow-right' }) %>
+      </button>
+    </div>
+    <h2>Ссылка-иконка</h2>
     <div class="util--icon-list">
       <% icons.forEach(function(name){ %>
         <a href=""><%- partial("_snippets/svg-icon.ejs", { name }) %></a>
       <% }) %>
     </div>
-    <h2>Иконкой в кнопке</h2>
+    <h2>Кнопка-иконка</h2>
     <div class="util--icon-list">
       <% icons.forEach(function(name){ %>
         <button class="button__icon"><%- partial("_snippets/svg-icon.ejs", { name }) %></button>

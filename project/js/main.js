@@ -41,9 +41,17 @@ var elements = document.querySelectorAll('.service-header');
 Stickyfill.add(elements)
 
 
-
 function checkIsEmpty(event) {
-  const fn = !!event.target.value ? 'remove' : 'add';
-  event.target.classList[fn]('is_empty');
+  const input = event.target;
+  const fn = !!input.value ? 'remove' : 'add';
+  input.classList[fn]('is_empty');
 }
 [...document.querySelectorAll('input[type="text"], input[type="number"], input[type="email"]')].forEach(el => el.addEventListener('blur', checkIsEmpty));
+
+
+function setOffsetForButton(el) {
+  const button = el.querySelector('button');
+  console.log(button.offsetWidth)
+  el.querySelector('input').style.paddingRight = `${button.offsetWidth+8}px`;
+}
+[...document.querySelectorAll('.input-combined')].forEach(setOffsetForButton);

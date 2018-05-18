@@ -35,10 +35,44 @@ a:hover, button:hover {
   }
 }
 
-@mixin svg-colors($primary-color, $secondary-color, $bg-color) {
+@mixin svg-colors($primary-color, $secondary-color, $background-color) {
   @include svg-fill-stroke('primary', $primary-color);
   @include svg-fill-stroke('secondary', $secondary-color);
-  @include svg-fill-stroke('bg', $bg-color);
+  @include svg-fill-stroke('bg', $background-color);
+}
+
+@mixin buttons($background-color, $text-color, $background-color--hover, $text-color--hover) {
+  button.button {
+    border: 1px solid $background-color;
+    background: $background-color;
+    color: $text-color;
+    &:hover {
+      border: 1px solid $background-color--hover;
+      background: $background-color--hover;
+      color: $text-color--hover;
+    }
+  }
+}
+
+@mixin inputs($border, $text, $placeholder, $inactive-border) {
+  // .input-combined {
+  //   &, &:focus-within {
+  //     border-color: $border;
+  //   }
+  //   &.is_empty:not(:focus-within) {
+  //     border-color: $inactive-border;
+  //   }
+  // }
+  input.input {
+    border-color: $border;
+    color: $text;
+    &.is_empty, &:placeholder-shown {
+      border-color: $inactive-border;
+    }
+    &::placeholder {
+      color: $placeholder;
+    }
+  }
 }
 
 @mixin render-block($background-color, $primary-color, $secondary-color) {
@@ -48,11 +82,46 @@ a:hover, button:hover {
   @include svg-colors($primary-color, $secondary-color, $background-color);
 }
 
+.button {
+  font-size: 16px;
+  line-height: 1;
+  height: 36px;
+  padding: 0 16px;
+}
+
+.input {
+  font-size: 16px;
+  line-height: 1;
+  height: 36px;
+  padding: 0;
+  border-width: 0 0 1px 0;
+  background: transparent;
+  max-width: 100%;
+}
+
+.input-combined {
+  position: relative;
+  display: inline-block;
+  .input {
+    flex: 1 0 auto;
+  }
+  button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
+}
+
 a { text-decoration: none; }
 $primary-color: $color-black;
 $secondary-color: $color-red;
+$background-color: $color-white;
 @include a-colors($primary-color, $secondary-color);
-@include svg-colors($primary-color, $secondary-color, $color-white);
+@include svg-colors($primary-color, $secondary-color, $background-color);
+@include buttons($color-black, $color-white, $color-red, $color-white);
+@include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
+
 
 @include svg-fill-stroke('white', $color-white);
 @include svg-fill-stroke('black', $color-black);
@@ -63,24 +132,33 @@ $secondary-color: $color-red;
 
 .bg-white {
   @include render-block($color-white, $color-black, $color-red);
-}
-
-.bg-black {
-  @include render-block($color-black, $color-white, $color-red);
+  @include buttons($color-black, $color-white, $color-red, $color-white);
+  @include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
 }
 
 .bg-blue {
   @include render-block($color-blue, $color-white, $color-red);
+  @include buttons($color-black, $color-white, $color-white, $color-black);
+  @include inputs($color-white, $color-white, rgba($color-white, .3), rgba($color-white, .3));
 }
 
 .bg-yellow {
   @include render-block($color-yellow, $color-black, $color-white);
+  @include buttons($color-black, $color-white, $color-white, $color-black);
+  @include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
 }
 
 .bg-red {
   @include render-block($color-red, $color-black, $color-white);
+  @include buttons($color-black, $color-white, $color-white, $color-black);
+  @include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
 }
 
+.bg-black {
+  @include render-block($color-black, $color-white, $color-red);
+  @include buttons($color-white, $color-black, $color-red, $color-black);
+  @include inputs($color-white, $color-white, rgba($color-white, .3), rgba($color-white, .4));
+}
 
 .util--icon-list {
   display: flex;
