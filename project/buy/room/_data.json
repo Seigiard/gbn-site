@@ -8,16 +8,6 @@
       "3-documents",
       "3-fb-employee",
       "4-check"
-    ],
-    "servicesExtra": [
-      "extra_pay_account_communal",
-      "extra_prepayment",
-      "extra_layer_check",
-      "extra_hypothec_help",
-      "extra_hypothec_album",
-      "extra_flat_judgment",
-      "extra_flat_arrested",
-      "extra_health_center_approval"
     ]
   }
 }
