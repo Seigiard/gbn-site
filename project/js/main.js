@@ -26,12 +26,20 @@ function getDurationTime($component) {
   return time;
 }
 
-function ConvertFormToJSON(form){
+function convertFormToJSON(form){
   var array = jQuery(form).serializeArray();
   var json = {};
 
   jQuery.each(array, function() {
-      json[this.name] = this.value || '';
+    if (this.name.includes('[]')) {
+      const name = this.name.slice(0, -2);
+      if(!json[name]) {
+        json[name] = [];
+      }
+      json[name].push(this.value || '');
+      return;
+    }
+    json[this.name] = this.value || '';
   });
 
   return json;
@@ -64,7 +72,17 @@ $(function () {
 
   $('form').submit(function (event) {
     event.preventDefault();
-    console.warn(ConvertFormToJSON($(event.target)));
+    $.each(convertFormToJSON($(event.target)), function(key, prop) {
+      console.group(key)
+      prop = $.isArray(prop) ? prop : [prop]
+      $.each(prop, function(k, val) { console.log(val); });
+      console.groupEnd(key);
+    });
+    const text = [
+      'Форма отправки не работает.',
+      'В консоли можно увидеть список отправленных данных.'
+    ].join('\n');
+    alert(text);
   })
 });
 

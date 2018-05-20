@@ -24,9 +24,9 @@
   <h3><label>
     <span class="service-item--checkbox">
       <% if (disabled) { %>
-        <input type="hidden"  name="serviceItem[<%- id %>]" value="<%- strippedTitle %>">
+        <input type="hidden" name="serviceItem[]" value="<%- strippedTitle %>">
       <% } %>
-      <input type="checkbox" checked <%- disabled %> name="serviceItem[<%- id %>]" value="<%- strippedTitle %>" id="serviceItem<%- id %>">
+      <input type="checkbox" checked <%- disabled %> name="serviceItem[]" value="<%- strippedTitle %>">
     </span>
     <%- strippedTitle %>
   </label></h3>

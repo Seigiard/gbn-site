@@ -2,12 +2,12 @@
   <div class="order-form--controls">
     <div class="control-row">
       <label for="price">Стоимость дома, таунхауса</label>
-      <input value="2&thinsp;000&thinsp;000" type="text" name="price" id="price"
+      <input required value="2&thinsp;000&thinsp;000" type="text" name="price" id="price"
         class="input input__big input__100" placeholder="Стоимость дома, таунхауса" />
     </div>
     <div class="control-row">
       <div class="order-form--email-form">
-          <input type="email" name="email" id="email" class="input" placeholder="Электронная почта" />
+          <input required type="email" name="email" id="email" class="input" placeholder="Электронная почта" />
           <button type="submit" class="button">Отправить расчёт</button>
       </div>
     </div>
@@ -15,5 +15,6 @@
   <div class="order-form--price">
     <label>Комиссия 5%</label>
     <span>100&thinsp;000&nbsp;₽</span>
+    <input type="hidden" name="price" value="100000" />
   </div>
 </div>
