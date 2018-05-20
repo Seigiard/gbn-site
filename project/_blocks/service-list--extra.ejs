@@ -1,4 +1,8 @@
 <%
+  function stripHtml(html) {
+    return (html || '').replace(/<(?:.|\n)*?>/gm, '').replace(/\n/gm, '');
+  }
+
   const services = partial(`../${current.path.slice(0,-1).join('/')}/service-extra`) || '';
   const servicesExtra = services.split('<hr>')
     .reduce(function(result, value, index, array) {
@@ -6,7 +10,12 @@
         result.push(array.slice(index, index + 2));
       return result;
     }, [])
-    .filter(x => x[0] && x[1]);
+    .filter(x => x[0] && x[1])
+    .map((x, id) => ({
+      title: stripHtml(x[0]),
+      price: stripHtml(x[1]),
+      disabled: locals.title ? 'disabled' : '',
+    }));
 %>
 <% if (servicesExtra.length) {%>
   <h2><% if (locals.title) {%><%- locals.title %><% } else { %>Дополнительные услуги<% } %></h2>

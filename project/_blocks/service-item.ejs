@@ -22,13 +22,18 @@
 %>
 <div class="service-item">
   <h3><label>
-    <span class="service-item--checkbox"><input type="checkbox" checked name="serviceItem<%- id %>" id="serviceItem<%- id %>"></span>
+    <span class="service-item--checkbox">
+      <% if (disabled) { %>
+        <input type="hidden"  name="serviceItem[<%- id %>]" value="<%- strippedTitle %>">
+      <% } %>
+      <input type="checkbox" checked <%- disabled %> name="serviceItem[<%- id %>]" value="<%- strippedTitle %>" id="serviceItem<%- id %>">
+    </span>
     <%- strippedTitle %>
   </label></h3>
   <%- description %>
   <% if (info) { %>
     <div class="service-item--info info">
-      <button class="info--toggle" title="Дополнительная информация">
+      <button type="button" class="info--toggle" title="Дополнительная информация">
         <%- partial("../_snippets/svg-icon.ejs", { name: 'toggle' }) %>
       </button>
       <div class="info--content"><%- info %></div>

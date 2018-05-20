@@ -18,6 +18,7 @@
       id,
       name: service,
       data: partial(`../${current.path.slice(0,-1).join('/')}/${service}`),
+      disabled: !id || locals.title ? 'disabled' : '',
       template: getTemplate(service)
     }))
   %>

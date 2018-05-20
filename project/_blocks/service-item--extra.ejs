@@ -1,16 +1,18 @@
 <%
-function stripHtml(html) {
-  return (html || '').replace(/<(?:.|\n)*?>/gm, '').replace(/\n/gm, '');
-}
-const [ title, price ] = service;
-const formattedPrice = stripHtml(price).replace(/(\d)(?=(\d{3})+$)/g, '$1&thinsp;');
+const { title, price, disabled } = service;
+const formattedPrice = price.replace(/(\d)(?=(\d{3})+$)/g, '$1&thinsp;');
 %>
 <div class="service-item service-item__extra">
   <h3>
     <label for="serviceItemExtra<%- id %>">
-      <span class="service-item--checkbox" for="serviceItemExtra<%- id %>"><input type="checkbox" checked name="serviceItemExtra<%- id %>" id="serviceItemExtra<%- id %>"></span>
-      <%- stripHtml(title) %>
+      <span class="service-item--checkbox" for="serviceItemExtra<%- id %>">
+        <% if (disabled) { %>
+          <input type="hidden"  name="serviceItemExtra[<%- id %>]" value="<%- title %>">
+        <% } %>
+        <input type="checkbox" checked <%- disabled %> name="serviceItemExtra[<%- id %>]" value="<%- title %>" id="serviceItemExtra<%- id %>">
+      </span>
+      <%- title %>
     </label>
   </h3>
-  <div class="service-item--price"><%- formattedPrice %> ₽</div>
+  <div class="service-item--price"><%- formattedPrice %><span class="rhs">&nbsp;</span>₽</div>
 </div>

@@ -26,6 +26,17 @@ function getDurationTime($component) {
   return time;
 }
 
+function ConvertFormToJSON(form){
+  var array = jQuery(form).serializeArray();
+  var json = {};
+
+  jQuery.each(array, function() {
+      json[this.name] = this.value || '';
+  });
+
+  return json;
+}
+
 $(function () {
   $('.service-item').each(function (id, block) {
     var $block = $(block);
@@ -50,6 +61,11 @@ $(function () {
     var fn = $scrollContainer.scrollTop() > 28 ? 'addClass' : 'removeClass';
     $scrollContainer[fn]('js-sticky');
   });
+
+  $('form').submit(function (event) {
+    event.preventDefault();
+    console.warn(ConvertFormToJSON($(event.target)));
+  })
 });
 
 var elements = document.querySelectorAll('.service-header');
