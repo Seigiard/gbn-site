@@ -14,7 +14,8 @@ function getHtmlWithoutHeader(html) {
     <aside class="layout--sidebar menu-wrapper">
         <%- partial('_snippets/menu.ejs') %>
     </aside>
-    <form action="">
+    <form action="" method="post">
+      <input type="hidden" name="template" value="simple-form">
       <main class="layout--content">
         <div class="service--content">
           <header class="service-header">

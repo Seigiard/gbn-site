@@ -114,9 +114,10 @@
             <div class="bg-white">
               <h3>Работа в бюро</h3>
               <p>Если хотите в нашу команду, отправьте свой номер телефона. Мы перезвоним в течение суток.</p>
-              <form method="post" action="">
+              <form action="" method="post">
+                <input type="hidden" name="template" value="vacancy">
                 <div class="input-combined">
-                  <input placeholder="Номер" required class="input input__100" type="text" name="number">
+                  <input placeholder="Номер" required class="input input__100" type="text" name="phone">
                   <button class="button__icon" type="submit">
                     <%- partial("_snippets/svg-icon.ejs", { name: 'arrow-right' }) %>
                   </button>
