@@ -83,7 +83,9 @@ $(function () {
       'В консоли можно увидеть список отправленных данных.'
     ].join('\n');
     alert(text);
-  })
+  });
+
+  $('form[calculate-total]').each(setCalculateTotal);
 });
 
 var elements = document.querySelectorAll('.service-header');

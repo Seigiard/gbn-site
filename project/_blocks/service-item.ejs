@@ -1,6 +1,6 @@
 <%
   function stripHtml(html) {
-    return (html || '').replace(/<(?:.|\n)*?>/gm, '').replace(/\n/gm, '');
+    return (html || '').trim().replace(/<(?:.|\n)*?>/gm, '').replace(/\n/gm, '');
   }
 
   function formatPrice(htmlString) {
@@ -8,10 +8,9 @@
       return htmlString;
     }
     const priceString = stripHtml(htmlString).replace(/\s+/gm, '');
-    const priceValue = priceString.slice(-1);
-    const price = priceString.slice(0, -1).replace(/(\d)(?=(\d{3})$)/g, '$1<span class="hs"></span>');
+    const price = priceString.replace(/(\d)(?=(\d{3})$)/g, '$1<span class="hs"></span>');
 
-    return `${price}<span class="rhs">&nbsp;</span>${priceValue}`;
+    return `${price}`;
   }
 
   const [ title, price, description, info ] = (data || '').split('<hr>');
@@ -26,7 +25,7 @@
       <% if (disabled) { %>
         <input type="hidden" name="serviceItem[]" value="<%- strippedTitle %>">
       <% } %>
-      <input type="checkbox" checked <%- disabled %> name="serviceItem[]" value="<%- strippedTitle %>">
+      <input type="checkbox" checked <%- disabled %> name="serviceItem[]" value="<%- strippedTitle %>" data-price="<%- stripHtml(price) %>">
     </span>
     <%- strippedTitle %>
   </label></h3>
@@ -40,5 +39,5 @@
     </div>
   <% } %>
 
-  <div class="service-item--price"><%- formattedPrice %></div>
+  <div class="service-item--price"><%- formattedPrice %><span class="rhs">&nbsp;</span>₽</div>
 </div>

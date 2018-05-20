@@ -1,5 +1,5 @@
 // Avoid `console` errors in browsers that lack a console.
-(function() {
+(function () {
     var method;
     var noop = function () {};
     var methods = [
@@ -23,17 +23,31 @@
 
 // Place any jQuery/helper plugins in here.
 
-function memoize(func) {
-    var memo = {};
-    var slice = Array.prototype.slice;
+function getPrice(htmlString) {
+    return parseInt((htmlString || '').toString().replace(/\s+/gm, ''), 10);
+}
 
-    return function() {
-      var args = slice.call(arguments);
+function formatPrice(price) {
+    return getPrice(price).toString().replace(/(\d)(?=(\d{3})$)/g, '$1<span class="hs"></span>');
+}
 
-      if (args in memo)
-        return memo[args];
-      else
-        return (memo[args] = func.apply(this, args));
+var calculateAndSetTotal = function calculateAndSetTotal(inputs, total) {
+    return function () {
+        var result = 0;
 
-    }
-  }
+        inputs.filter(':checked').each(function (i, el) {
+            result += getPrice(el.getAttribute('data-price'));
+        });
+
+        total.html(formatPrice(result));
+    };
+};
+
+function setCalculateTotal(id, form) {
+    const priceInputs = $('[data-price]', form);
+    const totalPrice = $('#totalPrice');
+    const calcFn = calculateAndSetTotal(priceInputs, totalPrice);
+    priceInputs.click(calcFn)
+    $('label', form).click(calcFn)
+    calcFn();
+}
