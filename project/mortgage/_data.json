@@ -2,7 +2,10 @@
   "index": {
     "layout": "../_service-list.ejs",
     "services": [
-      "1-fb-employee"
+      "1-bank",
+      "1-fb-employee",
+      "2-documents",
+      "2-fb-client"
     ]
   }
 }

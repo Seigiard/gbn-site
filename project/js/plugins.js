@@ -31,7 +31,7 @@ function formatPrice(price) {
     return getPrice(price).toString().replace(/(\d)(?=(\d{3})$)/g, '$1<span class="hs"></span>');
 }
 
-var calculateAndSetTotal = function calculateAndSetTotal(inputs, total) {
+var calculateAndSetTotal = function calculateAndSetTotal(inputs, totalSpan, totalInput) {
     return function () {
         var result = 0;
 
@@ -39,14 +39,16 @@ var calculateAndSetTotal = function calculateAndSetTotal(inputs, total) {
             result += getPrice(el.getAttribute('data-price'));
         });
 
-        total.html(formatPrice(result));
+        totalSpan.html(formatPrice(result));
+        totalInput.val(result);
     };
 };
 
 function setCalculateTotal(id, form) {
     const priceInputs = $('[data-price]', form);
-    const totalPrice = $('#totalPrice');
-    const calcFn = calculateAndSetTotal(priceInputs, totalPrice);
+    const totalPriceSpan = $('.js-span-total-price', form);
+    const totalPriceInput = $('.js-input-total-price', form);
+    const calcFn = calculateAndSetTotal(priceInputs, totalPriceSpan, totalPriceInput);
     priceInputs.click(calcFn)
     $('label', form).click(calcFn)
     calcFn();

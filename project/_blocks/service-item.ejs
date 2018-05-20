@@ -30,7 +30,7 @@
     <%- strippedTitle %>
   </label></h3>
   <%- description %>
-  <% if (info) { %>
+  <% if (stripHtml(info)) { %>
     <div class="service-item--info info">
       <button type="button" class="info--toggle" title="Дополнительная информация">
         <%- partial("../_snippets/svg-icon.ejs", { name: 'toggle' }) %>

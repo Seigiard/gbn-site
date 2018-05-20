@@ -3,10 +3,10 @@
     "layout": "../../_service-list.ejs",
     "services": [
       "1-search",
+      "1-fb-employee",
       "2-deal",
       "2-fb-client",
       "3-documents",
-      "3-fb-employee",
       "4-check"
     ]
   }

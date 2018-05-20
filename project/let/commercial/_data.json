@@ -2,7 +2,8 @@
   "index": {
     "layout": "../../_service-list__percent.ejs",
     "services": [
-      "1-fb-employee"
+        "1-service-all",
+		    "1-fb-employee"
     ]
   }
 }
