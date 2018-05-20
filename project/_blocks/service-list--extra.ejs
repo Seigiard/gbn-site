@@ -1,6 +1,16 @@
+<%
+  const services = partial(`../${current.path.slice(0,-1).join('/')}/service-extra`) || '';
+  const servicesExtra = services.split('<hr>')
+    .reduce(function(result, value, index, array) {
+      if (index % 2 === 0)
+        result.push(array.slice(index, index + 2));
+      return result;
+    }, [])
+    .filter(x => x[0] && x[1]);
+%>
 <% if (servicesExtra.length) {%>
   <h2><% if (locals.title) {%><%- locals.title %><% } else { %>Дополнительные услуги<% } %></h2>
   <% servicesExtra.forEach(function(service, id){ %>
-    <%- partial("./" + blocks[service].type, { id, ...blocks[service] }) %>
+    <%- partial("./service-item--extra", { id, service }) %>
   <% }); %>
 <% } %>
