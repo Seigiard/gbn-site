@@ -35,10 +35,22 @@ $(function() {
     const fn = $scrollContainer.scrollTop() > 28 ? 'addClass' : 'removeClass';
     $scrollContainer[fn]('js-sticky');
   })
+
+  // function sameHeight(id, el) {
+  //   $el = $(el);
+  //   donorHeight = $(el.getAttribute('same-height')).height();
+  //   $el.height(donorHeight);
+  // }
+  // const sameHeightBlocks = $('[same-height]')
+  // sameHeightBlocks.each(sameHeight);
+  // window.addEventListener('resize', () => {
+  //   console.log(1);
+  //   sameHeightBlocks.each(sameHeight);
+  // }, true);
 });
 
-var elements = document.querySelectorAll('.service-header');
-Stickyfill.add(elements)
+// var elements = document.querySelectorAll('.service-header');
+// Stickyfill.add(elements)
 
 
 function checkIsEmpty(event) {
@@ -51,7 +63,18 @@ function checkIsEmpty(event) {
 
 function setOffsetForButton(el) {
   const button = el.querySelector('button');
-  console.log(button.offsetWidth)
   el.querySelector('input').style.paddingRight = `${button.offsetWidth+8}px`;
 }
 [...document.querySelectorAll('.input-combined')].forEach(setOffsetForButton);
+
+
+// const ElsDependsOnWidth = [ ...document.querySelectorAll('.service-layout--footer') ];
+// const ElsDependsOnHeight = [ ...document.querySelectorAll('nav.menu') ];
+// const erd = elementResizeDetectorMaker();
+// erd.listenTo(document.getElementsByClassName("layout--content"), function(element) {
+//   const width = `${element.offsetWidth}px`;
+//   const height = `${element.offsetHeight}px`;
+//   console.log(width, height)
+//   ElsDependsOnHeight.forEach(el => el.style.height = height);
+//   // ElsDependsOnWidth.forEach(el => el.style.width = width);
+// });

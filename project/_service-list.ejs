@@ -9,38 +9,32 @@ function getHtmlWithoutHeader(html) {
 %>
 <html>
   <%- partial("_snippets/head.jade") %>
-  <body>
+  <body class="has-service-footer-simple has-sidebar">
     <%- partial("_snippets/header.ejs") %>
-    <div class="layout">
-      <aside class="layout--sidebar">
-        <div class="menu-wrapper">
-          <%- partial('_snippets/menu.ejs') %>
+    <aside class="layout--sidebar menu-wrapper">
+        <%- partial('_snippets/menu.ejs') %>
+    </aside>
+    <main class="layout--content">
+      <div class="service--content">
+        <header class="service-header">
+          <nav><a href="../" class="icon-close">
+            <%- partial("_snippets/svg-icon.ejs", { name: 'close' }) %>
+          </a></nav>
+          <%- getHeaderFromHtml(yield) %>
+        </header>
+
+        <div class="service-lead"><%- getHtmlWithoutHeader(yield) %></div>
+
+        <div class="service-list">
+          <%- partial("_blocks/service-list") %>
+
+          <%- partial("_blocks/service-list--extra") %>
         </div>
-      </aside>
-      <main class="layout--content">
-        <div class="service-layout">
-          <div class="service-layout--container">
-            <header class="service-header">
-              <nav><a href="../" class="icon-close">
-                <%- partial("_snippets/svg-icon.ejs", { name: 'close' }) %>
-              </a></nav>
-              <%- getHeaderFromHtml(yield) %>
-            </header>
-
-            <div class="service-lead"><%- getHtmlWithoutHeader(yield) %></div>
-
-            <div class="service-list">
-              <%- partial("_blocks/service-list") %>
-
-              <%- partial("_blocks/service-list--extra") %>
-            </div>
-          </div>
-          <div class="service-layout--footer bg-blue">
-            <%- partial("_blocks/order-form__simple.ejs") %>
-          </div>
-        </div>
-      </main>
-    </div>
+      </div>
+      <div class="service--footer bg-blue">
+        <%- partial("_blocks/order-form__simple.ejs") %>
+      </div>
+    </main>
     <%- partial("_snippets/footer.ejs") %>
   </body>
 </html>

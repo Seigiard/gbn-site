@@ -36,7 +36,11 @@ $base-font-size: 16px;
 
 $header-height: 69px;
 $border-height: 10px;
+$footer-height-simple: 71px;
+$footer-height-complex: 139px;
 $layout-height: calc(100vh - #{$header-height + $border-height});
+$layout-height-simple: calc(100vh - #{$header-height + $border-height + $footer-height-simple});
+$layout-height-complex: calc(100vh - #{$header-height + $border-height + $footer-height-complex});
 
 $color-white: #fff;
 $color-black: #000;

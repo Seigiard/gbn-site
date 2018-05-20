@@ -1,8 +1,43 @@
 @import 'variables';
 
+html {
+  height: 100vh;
+  overflow: hidden;
+}
+body {
+  padding-top: $header-height;
+  border: 10px solid $color-black;
+  border-width: 0 10px 10px 0;
+  height: 100vh;
+  &.has-service-footer-simple {
+    padding-bottom: $footer-height-simple;
+  }
+  &.has-service-footer-complex {
+    padding-bottom: $footer-height-complex;
+  }
+  &.has-sidebar {
+    padding-left: 248px;
+  }
+  // overflow-y: scroll;
+}
+
 .layout-header {
   background: #000;
-  height: 69px;
+  height: $header-height;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.layout--sidebar {
+  position: absolute;
+  top: $header-height;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  // height: $layout-height;
 }
 
 .layout {
@@ -15,30 +50,27 @@
   min-width: 1000px;
 }
 
-.layout--sidebar {
-  order: 0;
-  flex: 0 0 auto;
-  align-self: auto;
-  height: $layout-height;
-}
-
 .layout--content {
-  order: 0;
-  flex: 1 1 auto;
-  align-self: auto;
+  overflow-y: scroll;
   height: $layout-height;
+  .has-service-footer-simple & {
+    height: $layout-height-simple;
+  }
+  .has-service-footer-complex & {
+    height: $layout-height-complex;
+  }
 }
 
-.service-layout {
-  height: $layout-height;
-  display: grid;
-  grid-template-rows: 1fr auto;
-}
-.service-layout--container {
-  overflow-y: scroll;
+.service--content {
   padding: 0 0 60px 0;
-  position: relative;
 }
-.service-layout--footer {
+.service--footer {
   border-top: 3px solid #000;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 10px;
+  .has-sidebar & {
+    left: 248px;
+  }
 }

@@ -1,21 +1,16 @@
 $font-family: 'Formular', Roboto, Verdana, sans-serif;
 
 html {
-  height: 100vh;
-  overflow: hidden;
   margin: 0;
   padding: 0;
   font-size: 16px;
 }
 
 body {
-  height: 100vh;
   margin: 0;
   padding: 0;
   font: normal 1rem/1.4 $font-family;
   font-display: swap;
-  border-bottom: 10px solid #000;
-  border-right: 10px solid #000;
 }
 @media screen and (max-width: 1000px ) {
   body {
