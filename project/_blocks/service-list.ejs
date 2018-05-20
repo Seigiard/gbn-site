@@ -9,8 +9,10 @@
     return './service-item.ejs';
   }
 %>
-<% if (services.length) {%>
-  <h2><% if (locals.title) {%><%- locals.title %><% } else { %>Рекомендуемые услуги<% } %></h2>
+<% if (services.length) { %>
+  <% if (services.length > 1) { %>
+    <h2><% if (locals.title) {%><%- locals.title %><% } else { %>Рекомендуемые услуги<% } %></h2>
+  <% } %>
   <%
     const serviceList = services.map((service, id) => ({
       id,

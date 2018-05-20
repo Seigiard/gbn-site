@@ -55,19 +55,11 @@ a:hover, button:hover {
 }
 
 @mixin inputs($border, $text, $placeholder, $inactive-border) {
-  // .input-combined {
-  //   &, &:focus-within {
-  //     border-color: $border;
-  //   }
-  //   &.is_empty:not(:focus-within) {
-  //     border-color: $inactive-border;
-  //   }
-  // }
   input.input {
-    border-color: $border;
+    border-color: $inactive-border;
     color: $text;
-    &.is_empty, &:placeholder-shown {
-      border-color: $inactive-border;
+    &:focus {
+      border-color: $border;
     }
     &::placeholder {
       color: $placeholder;
