@@ -1,19 +1,13 @@
 <html>
   <%- partial("_snippets/head.jade") %>
-  <body>
+  <body class="<%- partial("_snippets/body-class.ejs") %>">
     <%- partial("_snippets/header.ejs") %>
-    <div class="layout">
-      <aside class="layout--sidebar">
-        <div class="menu-wrapper">
-          <%- partial('_snippets/menu.ejs') %>
-        </div>
-      </aside>
-      <main class="layout--content">
-        <div class="scroll-container">
-          <%- yield %>
-        </div>
-      </main>
-    </div>
+    <aside class="layout--sidebar menu-wrapper">
+      <%- partial('_snippets/menu.ejs') %>
+    </aside>
+    <main class="layout--content">
+      <%- yield %>
+    </main>
     <%- partial("_snippets/footer.ejs") %>
   </body>
 </html>

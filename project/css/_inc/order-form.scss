@@ -39,6 +39,9 @@
 .control-row + .control-row {
   margin-top: 20px;
 }
+.control-row__small {
+  width: 240px;
+}
 
 .order-form--email-form {
   display: flex;
@@ -82,5 +85,18 @@
 
   &:focus-within {
     border-bottom-color: #000;
+  }
+}
+
+.form__complicated {
+  padding-top: 10px;
+  padding-left: $content-padding-left;
+  padding-right: $content-padding-right;
+  max-width: $column-width;
+  box-sizing: content-box;
+  .control-row {
+    button + p {
+      padding: 10px 0 0 0;
+    }
   }
 }
