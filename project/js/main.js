@@ -45,7 +45,7 @@ $(function () {
     });
   });
 
-  $scrollContainer = $('.service-layout--container');
+  const $scrollContainer = $('.layout--content');
   $scrollContainer.scroll(function () {
     var fn = $scrollContainer.scrollTop() > 28 ? 'addClass' : 'removeClass';
     $scrollContainer[fn]('js-sticky');
