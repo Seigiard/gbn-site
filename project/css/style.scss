@@ -12,11 +12,6 @@ body {
   font: normal 1rem/1.4 $font-family;
   font-display: swap;
 }
-@media screen and (max-width: 1000px ) {
-  body {
-    overflow-x: scroll;
-  }
-}
 
 * {
   box-sizing: border-box;

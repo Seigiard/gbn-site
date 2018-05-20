@@ -8,7 +8,7 @@
   align-content: stretch;
   align-items: center;
   padding: 15px 30px 14px 15px;
-  min-width: 1000px;
+  min-width: $min-width;
 }
 
 .header--logo, .header--phone {

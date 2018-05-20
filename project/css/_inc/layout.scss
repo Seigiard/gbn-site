@@ -1,18 +1,23 @@
 @import 'variables';
 
-$has-sidebar: 194px;
-$has-sidebars: 318px;
-$has-sidebars_active: 248px;
-
 html {
   height: 100vh;
   overflow: hidden;
 }
+
+
+@media screen and (max-width: #{$min-width}) {
+  html {
+    overflow-x: scroll;
+  }
+}
+
 body {
   padding-top: $header-height;
   border: 10px solid $color-black;
   border-width: 0 10px 10px 0;
   height: 100vh;
+  min-width: $min-width;
   &.has-service-footer-simple {
     padding-bottom: $footer-height-simple;
   }
@@ -82,11 +87,14 @@ body {
   right: 10px;
   .has-sidebar & {
     left: $has-sidebar;
+    min-width: #{$min-width - $has-sidebar - 10};
   }
   .has-sidebars & {
     left: $has-sidebars;
+    min-width: #{$min-width - $has-sidebars - 10};
   }
   .has-sidebars_active & {
     left: $has-sidebars_active;
+    min-width: #{$min-width - $has-sidebars_active - 10};
   }
 }

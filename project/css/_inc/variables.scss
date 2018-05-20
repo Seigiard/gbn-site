@@ -35,6 +35,8 @@ $base-font-size: 16px;
 
 $font-family: 'Formular', Roboto, Verdana, sans-serif;
 
+$min-width: 920px;
+
 $header-height: 69px;
 $border-height: 10px;
 $footer-height-simple: 71px;
@@ -55,3 +57,7 @@ $menu-bg2: $color-yellow;
 $column-width: 600px;
 $content-padding-left: 40px;
 $content-padding-right: 20px;
+
+$has-sidebar: 194px;
+$has-sidebars: 318px;
+$has-sidebars_active: 248px;
