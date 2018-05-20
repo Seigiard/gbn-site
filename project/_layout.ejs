@@ -1,150 +1,146 @@
 <html>
   <%- partial("_snippets/head.jade") %>
-  <body>
+  <body class="<%- partial("_snippets/body-class.ejs") %>">
     <%- partial("_snippets/header.ejs") %>
     <div class="layout">
-      <aside class="layout--sidebar">
-        <div class="menu-wrapper">
-          <%- partial('_snippets/menu.ejs') %>
-        </div>
+      <aside class="layout--sidebar menu-wrapper">
+        <%- partial('_snippets/menu.ejs') %>
       </aside>
       <main class="layout--content">
-        <div class="scroll-container">
-          <div class="main-page">
-            <div class="main-page--welcome">
-              <p class="subheader">Москва и Подмосковье</p>
-              <h1>Квартиры, дома <br>и коммерческая <br>недвижимость</h1>
-              <p>Помогаем купить, продать, получить ипотеку, сдать и арендовать недвижимость. Сопровождаем сделки на всех этапах, проверяем юридическую чистоту и помогаем в сложных ситуациях.</p>
-              <img src="/img/icon-arrow-down.svg" alt="Пролистайте вниз" class="main-page--navigation-arrow">
+        <div class="main-page">
+          <div class="main-page--welcome">
+            <p class="subheader">Москва и Подмосковье</p>
+            <h1>Квартиры, дома <br>и коммерческая <br>недвижимость</h1>
+            <p>Помогаем купить, продать, получить ипотеку, сдать и арендовать недвижимость. Сопровождаем сделки на всех этапах, проверяем юридическую чистоту и помогаем в сложных ситуациях.</p>
+            <img src="/img/icon-arrow-down.svg" alt="Пролистайте вниз" class="main-page--navigation-arrow">
+          </div>
+          <div class="row">
+            <div class="col-6 main-page--description">
+              <h2>Делаем всё</h2>
+              <p>Мы работаем с любой недвижимостью в Москве и Подмосковье. Берёмся за сделки с новостройками и вторичным жильём. Избавляем клиентов от юридической волокиты и бесконечных переговоров.</p>
+              <p>Помогаем в сложных случаях: когда вовлечены органы опеки, или не оформлено наследство, или нужно снять арест с объекта, или другая сторона внезапно отказывается выходить на сделку, или всё вместе.</p>
             </div>
-            <div class="row">
-              <div class="col-6 main-page--description">
-                <h2>Делаем всё</h2>
-                <p>Мы работаем с любой недвижимостью в Москве и Подмосковье. Берёмся за сделки с новостройками и вторичным жильём. Избавляем клиентов от юридической волокиты и бесконечных переговоров.</p>
-                <p>Помогаем в сложных случаях: когда вовлечены органы опеки, или не оформлено наследство, или нужно снять арест с объекта, или другая сторона внезапно отказывается выходить на сделку, или всё вместе.</p>
-              </div>
-              <div class="col-2 main-page--expirience bg-blue">
-                <p>
-                  <b>5+</b>
-                  минимальный опыт риелтора в&nbsp;бюро — пять лет
-                </p>
-              </div>
+            <div class="col-2 main-page--expirience bg-blue">
+              <p>
+                <b>5+</b>
+                минимальный опыт риелтора в&nbsp;бюро — пять лет
+              </p>
             </div>
-            <div class="row">
-              <div class="col-2 bg-black"></div>
-              <div class="col-2">
-                <p><strong>Бесплатно</strong><br/>консультируем и оцениваем недвижимость</p>
-              </div>
-              <div class="col-4">
-                <h3>Оплата после оказания услуг</h3>
-                <p>Вы платите до окончания сделки в единственном случае: когда мы вносим аванс продавцу при покупке недвижимости.</p>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-2 bg-black"></div>
+            <div class="col-2">
+              <p><strong>Бесплатно</strong><br/>консультируем и оцениваем недвижимость</p>
             </div>
-            <div class="row">
-              <div class="col-7 main-page--discount bg-yellow">
-                <p><b>10%</b><span class="visually-hidden"> — </span>скидка на все услуги повторным клиентам, пенсионерам, многодетным семьям, отцам- и матерям-одиночкам, участникам войны, инвалидам и малоимущим</p>
-              </div>
-              <div class="col-1 bg-black"></div>
+            <div class="col-4">
+              <h3>Оплата после оказания услуг</h3>
+              <p>Вы платите до окончания сделки в единственном случае: когда мы вносим аванс продавцу при покупке недвижимости.</p>
             </div>
-            <div class="row">
-              <div class="col-4 proposal-block">
-                <div class="proposal-block--description">
-                  <h3>Льготные условия от банков</h3>
-                  <p>Сниженная ставка по ипотеке и помощь в подаче документов</p>
-                </div>
+          </div>
+          <div class="row">
+            <div class="col-7 main-page--discount bg-yellow">
+              <p><b>10%</b><span class="visually-hidden"> — </span>скидка на все услуги повторным клиентам, пенсионерам, многодетным семьям, отцам- и матерям-одиночкам, участникам войны, инвалидам и малоимущим</p>
+            </div>
+            <div class="col-1 bg-black"></div>
+          </div>
+          <div class="row">
+            <div class="col-4 proposal-block">
+              <div class="proposal-block--description">
+                <h3>Льготные условия от банков</h3>
+                <p>Сниженная ставка по ипотеке и помощь в подаче документов</p>
+              </div>
 
-                <div class="proposal-block--images">
-                  <a href="https://www.sberbank.ru/ru/person/credits/homenew" title="Сбербанк"><%- partial("_snippets/svg-icon.ejs", { name: 'bank-sber' }) %></a>
-                  <a href="https://www.vtb.ru/personal/ipoteka/" title="Банк ВТБ"><%- partial("_snippets/svg-icon.ejs", { name: 'bank-vtb' }) %></a>
-                </div>
-              </div>
-              <div class="col-4 proposal-block">
-                <div class="proposal-block--description">
-                  <h3>Скидки от дизайн-студий</h3>
-                  <p>Скидка от 10 до 20% на дизайн интерьера и ремонт</p>
-                </div>
-                <div class="proposal-block--images">
-                  <a href="https://www.zeworkroom.com/" title="ZE|WORKROOM studio"><%- partial("_snippets/svg-icon.ejs", { name: 'studio-zw' }) %></a>
-                  <a href="http://km-studio.info/projects/" title="КМ Студио"><%- partial("_snippets/svg-icon.ejs", { name: 'studio-km' }) %></a>
-                </div>
+              <div class="proposal-block--images">
+                <a href="https://www.sberbank.ru/ru/person/credits/homenew" title="Сбербанк"><%- partial("_snippets/svg-icon.ejs", { name: 'bank-sber' }) %></a>
+                <a href="https://www.vtb.ru/personal/ipoteka/" title="Банк ВТБ"><%- partial("_snippets/svg-icon.ejs", { name: 'bank-vtb' }) %></a>
               </div>
             </div>
-            <div class="row">
-              <div class="col-8 main-page--video"><img width="100%" src="/img/youtube-video.png" alt=""></div>
+            <div class="col-4 proposal-block">
+              <div class="proposal-block--description">
+                <h3>Скидки от дизайн-студий</h3>
+                <p>Скидка от 10 до 20% на дизайн интерьера и ремонт</p>
+              </div>
+              <div class="proposal-block--images">
+                <a href="https://www.zeworkroom.com/" title="ZE|WORKROOM studio"><%- partial("_snippets/svg-icon.ejs", { name: 'studio-zw' }) %></a>
+                <a href="http://km-studio.info/projects/" title="КМ Студио"><%- partial("_snippets/svg-icon.ejs", { name: 'studio-km' }) %></a>
+              </div>
             </div>
-            <div class="row">
-              <div class="col-2 main-page--employee employee employee__vertical">
+          </div>
+          <div class="row">
+            <div class="col-8 main-page--video"><img width="100%" src="/img/youtube-video.png" alt=""></div>
+          </div>
+          <div class="row">
+            <div class="col-2 main-page--employee employee employee__vertical">
+              <div class="employee--image">
+                <img src="/img/employee-kozlova.jpg" width="198px" alt="">
+              </div>
+              <div class="employee--description">
+                <h3>Оксана Козлова</h3>
+                <ul>
+                  <li>Директор бюро</li>
+                  <li>10 лет на рынке недвижимости</li>
+                  <li>164 сделки</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-4 employee-list">
+              <div class="employee employee__horizontal">
                 <div class="employee--image">
-                  <img src="/img/employee-kozlova.jpg" width="198px" alt="">
+                  <img src="/img/employee-kudina.jpg" width="198px" alt="">
                 </div>
                 <div class="employee--description">
-                  <h3>Оксана Козлова</h3>
+                  <h3>Людмила Кудина</h3>
                   <ul>
-                    <li>Директор бюро</li>
-                    <li>10 лет на рынке недвижимости</li>
-                    <li>164 сделки</li>
+                    <li>Старший эксперт</li>
+                    <li>6 лет на рынке недвижимости</li>
+                    <li>32 сделки</li>
                   </ul>
                 </div>
               </div>
-              <div class="col-4 employee-list">
-                <div class="employee employee__horizontal">
-                  <div class="employee--image">
-                    <img src="/img/employee-kudina.jpg" width="198px" alt="">
-                  </div>
-                  <div class="employee--description">
-                    <h3>Людмила Кудина</h3>
-                    <ul>
-                      <li>Старший эксперт</li>
-                      <li>6 лет на рынке недвижимости</li>
-                      <li>32 сделки</li>
-                    </ul>
-                  </div>
+              <div class="employee employee__horizontal">
+                <div class="employee--image">
+                  <img src="/img/employee-raevskaya.jpg" width="198px" alt="">
                 </div>
-                <div class="employee employee__horizontal">
-                  <div class="employee--image">
-                    <img src="/img/employee-raevskaya.jpg" width="198px" alt="">
-                  </div>
-                  <div class="employee--description">
-                    <h3>Юлия Раевская</h3>
-                    <ul>
-                      <li>Главный эксперт</li>
-                      <li>7 лет на рынке недвижимости</li>
-                      <li>48 сделок</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="col-2 main-page--vacancy">
-                <div class="bg-white">
-                  <h3>Работа в бюро</h3>
-                  <p>Если хотите в нашу команду, отправьте свой номер телефона. Мы перезвоним в течение суток.</p>
-                  <form action="">
-                    <div class="input-combined">
-                      <input placeholder="Номер" class="input input__100" type="text" name="number">
-                      <button class="button__icon" type="button">
-                        <%- partial("_snippets/svg-icon.ejs", { name: 'arrow-right' }) %>
-                      </button>
-                    </div>
-                  </form>
+                <div class="employee--description">
+                  <h3>Юлия Раевская</h3>
+                  <ul>
+                    <li>Главный эксперт</li>
+                    <li>7 лет на рынке недвижимости</li>
+                    <li>48 сделок</li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <div class="row bg-blue">
-              <div class="col-4 main-page--address address-block">
-                <div class="address-block--top">
-                  <h3>Где мы находимся</h3>
-                  <p>Мясницкая улица,&nbsp;35, строение&nbsp;2, Москва, Россия, 101000</p>
-                  <p>Офис открыт по будням с&nbsp;10&nbsp;до&nbsp;18</p>
-                  <p>Вход с проспекта Академика Сахарова</p>
-                  <p>Рядом платная парковка</p>
-                </div>
-                <div class="address-block--bottom">
-                  <p><a href="tel:+74957737755">+7 495 773-77-55</a><br><a href="mailto:mail@gbn.moscow">mail@gbn.moscow</a></p>
-                </div>
+            <div class="col-2 main-page--vacancy">
+              <div class="bg-white">
+                <h3>Работа в бюро</h3>
+                <p>Если хотите в нашу команду, отправьте свой номер телефона. Мы перезвоним в течение суток.</p>
+                <form action="">
+                  <div class="input-combined">
+                    <input placeholder="Номер" class="input input__100" type="text" name="number">
+                    <button class="button__icon" type="button">
+                      <%- partial("_snippets/svg-icon.ejs", { name: 'arrow-right' }) %>
+                    </button>
+                  </div>
+                </form>
               </div>
-              <div class="col-4 main-page--map">
-                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A42dcf3a3558eabbdbdcfe856c909ade2d5e03f4b36f3c8b774f05a5579199dc4&amp;width=100%25&amp;height=450&amp;lang=ru_RU&amp;scroll=false"></script>
+            </div>
+          </div>
+          <div class="row bg-blue">
+            <div class="col-4 main-page--address address-block">
+              <div class="address-block--top">
+                <h3>Где мы находимся</h3>
+                <p>Мясницкая улица,&nbsp;35, строение&nbsp;2, Москва, Россия, 101000</p>
+                <p>Офис открыт по будням с&nbsp;10&nbsp;до&nbsp;18</p>
+                <p>Вход с проспекта Академика Сахарова</p>
+                <p>Рядом платная парковка</p>
               </div>
+              <div class="address-block--bottom">
+                <p><a href="tel:+74957737755">+7 495 773-77-55</a><br><a href="mailto:mail@gbn.moscow">mail@gbn.moscow</a></p>
+              </div>
+            </div>
+            <div class="col-4 main-page--map">
+              <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A42dcf3a3558eabbdbdcfe856c909ade2d5e03f4b36f3c8b774f05a5579199dc4&amp;width=100%25&amp;height=450&amp;lang=ru_RU&amp;scroll=false"></script>
             </div>
           </div>
         </div>

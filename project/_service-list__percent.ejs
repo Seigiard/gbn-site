@@ -9,7 +9,7 @@ function getHtmlWithoutHeader(html) {
 %>
 <html>
   <%- partial("_snippets/head.jade") %>
-  <body class="has-service-footer-complex has-sidebar">
+  <body class="has-service-footer-complex <%- partial("_snippets/body-class.ejs") %>">
     <%- partial("_snippets/header.ejs") %>
     <aside class="layout--sidebar menu-wrapper">
         <%- partial('_snippets/menu.ejs') %>
@@ -31,10 +31,10 @@ function getHtmlWithoutHeader(html) {
           <%- partial("_blocks/service-list--extra", { title: 'Дополнительные услуги, если требуются<br/>(входят в стоимость)' }) %>
         </div>
       </div>
-      <div class="service--footer bg-blue">
-        <%- partial("_blocks/order-form__complex.ejs") %>
-      </div>
     </main>
+    <div class="service--footer bg-blue">
+      <%- partial("_blocks/order-form__complex.ejs") %>
+    </div>
     <%- partial("_snippets/footer.ejs") %>
   </body>
 </html>

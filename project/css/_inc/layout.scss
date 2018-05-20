@@ -1,5 +1,9 @@
 @import 'variables';
 
+$has-sidebar: 194px;
+$has-sidebars: 318px;
+$has-sidebars_active: 248px;
+
 html {
   height: 100vh;
   overflow: hidden;
@@ -16,7 +20,13 @@ body {
     padding-bottom: $footer-height-complex;
   }
   &.has-sidebar {
-    padding-left: 248px;
+    padding-left: $has-sidebar;
+  }
+  &.has-sidebars {
+    padding-left: $has-sidebars;
+  }
+  &.has-sidebars_active {
+    padding-left: $has-sidebars_active;
   }
   // overflow-y: scroll;
 }
@@ -71,6 +81,12 @@ body {
   left: 0;
   right: 10px;
   .has-sidebar & {
-    left: 248px;
+    left: $has-sidebar;
+  }
+  .has-sidebars & {
+    left: $has-sidebars;
+  }
+  .has-sidebars_active & {
+    left: $has-sidebars_active;
   }
 }

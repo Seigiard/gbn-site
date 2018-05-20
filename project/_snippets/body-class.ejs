@@ -1,0 +1,18 @@
+<%
+function isMenu1ShrinkedClass() {
+  const subMenuArray = public[current.path[0]] ? Object.keys(public[current.path[0]]._data) : [];
+  const isNestedPage = current.path.length > 1;
+  const isSubmenuExists = !!subMenuArray.length && !(subMenuArray.length === 1 && subMenuArray[0] === 'index');
+  return isNestedPage && isSubmenuExists;
+}
+
+function isMenu2ShrinkedClass() {
+  return current.path.length > 2;
+}
+
+let sidebarClass = 'has-sidebar';
+if (isMenu1ShrinkedClass()) {
+  sidebarClass = isMenu2ShrinkedClass() ? 'has-sidebars_active' : 'has-sidebars'
+}
+%>
+<%- sidebarClass %>
