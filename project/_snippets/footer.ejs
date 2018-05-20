@@ -1,7 +1,10 @@
+<%
+  const hash = new Date().getTime();
+%>
 <footer class="site-footer"><p>Сделано в&nbsp;школе Бюро&nbsp;Горбунова</p></footer>
-<script src="/js/vendor/jquery-3.2.1.min.js"></script>
+<script src="/js/vendor/jquery-3.2.1.min.js?<%- hash %>"></script>
 <!-- script src="/js/vendor/element-resize-detector.js"></script -->
 <!-- script src="/js/vendor/resizeObserver.js"></script -->
-<script src="/js/vendor/stickyfill.js"></script>
-<script src="/js/plugins.js?20180402"></script>
-<script src="/js/main.js?20180518"></script>
+<script src="/js/vendor/stickyfill.js?<%- hash %>"></script>
+<script src="/js/plugins.js?<%- hash %>"></script>
+<script src="/js/main.js?<%- hash %>"></script>

@@ -1,11 +1,24 @@
-const infoBlockClass = 'info__content-visible';
+'use strict';
+
+function _toConsumableArray(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+    return arr2;
+  } else {
+    return Array.from(arr);
+  }
+}
+
+var infoBlockClass = 'info__content-visible';
 
 function getDurationTime($component) {
-  const height = $component.height();
-  const minTime = 300;
-  const maxTime = 700;
-  const msPerHeight = 1;
-  let time = height * msPerHeight
+  var height = $component.height();
+  var minTime = 300;
+  var maxTime = 700;
+  var msPerHeight = 1;
+  var time = height * msPerHeight;
 
   time = Math.min(time, maxTime);
   time = Math.max(time, minTime);
@@ -13,56 +26,46 @@ function getDurationTime($component) {
   return time;
 }
 
-$(function() {
-  $('.service-item').each((id, block) => {
-    const $block = $(block);
-    const $content = $('.info--content', $block);
-    const duration = getDurationTime($content);
+$(function () {
+  $('.service-item').each(function (id, block) {
+    var $block = $(block);
+    var $content = $('.info--content', $block);
+    var duration = getDurationTime($content);
 
-    $('.info--toggle', $block).click(() => {
-      const fn = $block.hasClass(infoBlockClass) ? 'slideUp' : 'slideDown';
-      $block.addClass('info__content-transition')
+    $('.info--toggle', $block).click(function () {
+      var fn = $block.hasClass(infoBlockClass) ? 'slideUp' : 'slideDown';
+      $block.addClass('info__content-transition');
       $content[fn]({
-        duration,
-        complete: () => $block.removeClass('info__content-transition').toggleClass(infoBlockClass),
+        duration: duration,
+        complete: function complete() {
+          return $block.removeClass('info__content-transition').toggleClass(infoBlockClass);
+        }
         // easing: "easeInOutSine",
-      })
-    })
-  })
+      });
+    });
+  });
 
   $scrollContainer = $('.service-layout--container');
-  $scrollContainer.scroll(() => {
-    const fn = $scrollContainer.scrollTop() > 28 ? 'addClass' : 'removeClass';
+  $scrollContainer.scroll(function () {
+    var fn = $scrollContainer.scrollTop() > 28 ? 'addClass' : 'removeClass';
     $scrollContainer[fn]('js-sticky');
-  })
-
-  // function sameHeight(id, el) {
-  //   $el = $(el);
-  //   donorHeight = $(el.getAttribute('same-height')).height();
-  //   $el.height(donorHeight);
-  // }
-  // const sameHeightBlocks = $('[same-height]')
-  // sameHeightBlocks.each(sameHeight);
-  // window.addEventListener('resize', () => {
-  //   console.log(1);
-  //   sameHeightBlocks.each(sameHeight);
-  // }, true);
+  });
 });
 
 var elements = document.querySelectorAll('.service-header');
-Stickyfill.add(elements)
-
+Stickyfill.add(elements);
 
 function checkIsEmpty(event) {
-  const input = event.target;
-  const fn = !!input.value ? 'remove' : 'add';
+  var input = event.target;
+  var fn = !!input.value ? 'remove' : 'add';
   input.classList[fn]('is_empty');
 }
-[...document.querySelectorAll('input[type="text"], input[type="number"], input[type="email"]')].forEach(el => el.addEventListener('blur', checkIsEmpty));
-
+[].concat(_toConsumableArray(document.querySelectorAll('input[type="text"], input[type="number"], input[type="email"]'))).forEach(function (el) {
+  return el.addEventListener('blur', checkIsEmpty);
+});
 
 function setOffsetForButton(el) {
-  const button = el.querySelector('button');
-  el.querySelector('input').style.paddingRight = `${button.offsetWidth+8}px`;
+  var button = el.querySelector('button');
+  el.querySelector('input').style.paddingRight = button.offsetWidth + 8 + 'px';
 }
-[...document.querySelectorAll('.input-combined')].forEach(setOffsetForButton);
+[].concat(_toConsumableArray(document.querySelectorAll('.input-combined'))).forEach(setOffsetForButton);
