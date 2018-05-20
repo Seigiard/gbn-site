@@ -1,9 +1,9 @@
-$font-family: 'Formular', Roboto, Verdana, sans-serif;
+@import '_inc/variables';
 
 html {
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: $base-font-size;
 }
 
 body {
@@ -55,7 +55,6 @@ p {
 input, button, textarea {
   font-family: $font-family;
   font-size: 16px;
-  line-height: 1;
   &:focus {
     outline: none;
   }
@@ -65,7 +64,7 @@ textarea {
   resize: none;
 }
 
-label, button, input[type="checkbox"], input[type="radio"] {
+label[for], button, input[type="checkbox"], input[type="radio"] {
   cursor: pointer;
 }
 
@@ -82,7 +81,6 @@ label, button, input[type="checkbox"], input[type="radio"] {
   margin:0;
 }
 
-@import '_inc/variables';
 @import '_inc/layout';
 @import '_inc/hovers';
 @import '_inc/grids';

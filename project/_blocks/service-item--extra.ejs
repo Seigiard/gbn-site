@@ -6,7 +6,11 @@ const [ title, price ] = service;
 const formattedPrice = stripHtml(price).replace(/(\d)(?=(\d{3})+$)/g, '$1&thinsp;');
 %>
 <div class="service-item service-item__extra">
-  <label class="service-item--checkbox" for="serviceItemExtra<%- id %>"><input type="checkbox" checked name="serviceItemExtra<%- id %>" id="serviceItemExtra<%- id %>"><span></span></label>
-  <h3><label for="serviceItemExtra<%- id %>"><%- title %></label></h3>
+  <h3>
+    <label for="serviceItemExtra<%- id %>">
+      <span class="service-item--checkbox" for="serviceItemExtra<%- id %>"><input type="checkbox" checked name="serviceItemExtra<%- id %>" id="serviceItemExtra<%- id %>"></span>
+      <%- stripHtml(title) %>
+    </label>
+  </h3>
   <div class="service-item--price"><%- formattedPrice %> ₽</div>
 </div>

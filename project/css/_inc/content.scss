@@ -55,6 +55,7 @@
     padding-bottom: 8px;
     label {
       padding: 3px 0;
+      cursor: pointer;
     }
   }
   p, li {
@@ -102,8 +103,8 @@
   display: block;
   position: absolute;
   right: 100%;
-  top: 9px;
-  width: 20px;
+  top: 8px;
+  width: 23px;
 }
 
 .service-list__percent .service-item {
