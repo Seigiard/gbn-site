@@ -9,7 +9,9 @@
   align-content: stretch;
   align-items: flex-start;
   color: #fff;
-  max-width: 600px;
+  .has-service-footer-simple & {
+    max-width: 600px;
+  }
   label {
     display: block;
     font-size: 13px;
@@ -23,6 +25,11 @@
 
 .order-form--controls {
   flex: 1 0 auto;
+  .has-service-footer-complex & {
+    width: 600px;
+    max-width: 600px;
+    min-width: 600px;
+  }
 }
 .order-form--price {
   flex: 0 0 auto;
@@ -33,6 +40,11 @@
   span {
     font-size: 24px;
     line-height: 1;
+  }
+  .has-service-footer-simple & {
+    width: 150px;
+    padding-left: 0;
+    text-align: right;
   }
 }
 
