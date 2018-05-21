@@ -22,13 +22,15 @@ function menuShrinkedClass() {
 }
 %>
 <nav class="menu menu__level1 <%- menuShrinkedClass() %> bg-red">
-  <% menuArray.forEach(function(menu){ %>
-    <% if (public[menu]) { %>
-      <% if (isActiveMainMenuItem(menu)) { %>
-        <li><span><%- MENU_TITLES[menu] %></span></li>
-      <% } else { %>
-        <li><a href="/<%- menu %>"><%- MENU_TITLES[menu] %></a></li>
+  <ul>
+    <% menuArray.forEach(function(menu){ %>
+      <% if (public[menu]) { %>
+        <% if (isActiveMainMenuItem(menu)) { %>
+          <li><span><%- MENU_TITLES[menu] %></span></li>
+        <% } else { %>
+          <li><a href="/<%- menu %>"><%- MENU_TITLES[menu] %></a></li>
+        <% } %>
       <% } %>
-    <% } %>
-  <% }) %>
+    <% }) %>
+  </ul>
 </nav>

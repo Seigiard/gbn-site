@@ -43,15 +43,17 @@
   %>
   <% if(subMenuArray.length > 1) { %>
     <nav class="menu menu__level2 bg-yellow <%- menuShrinkedClass() %>">
-      <% subMenuArray.forEach(function(menu) { %>
-        <% if (public[mainMenuLevel][menu] && public[mainMenuLevel][menu]._data.index) { %>
-          <% if (isActiveMainMenuItem(menu)) { %>
-            <li><span><%- getMenuItemTitle(menu) %></span></li>
-          <% } else { %>
-            <li><a href="<%- getMenuHref(menu) %>"><%- getMenuItemTitle(menu) %></a></li>
+     <ul>
+        <% subMenuArray.forEach(function(menu) { %>
+          <% if (public[mainMenuLevel][menu] && public[mainMenuLevel][menu]._data.index) { %>
+            <% if (isActiveMainMenuItem(menu)) { %>
+              <li><span><%- getMenuItemTitle(menu) %></span></li>
+            <% } else { %>
+              <li><a href="<%- getMenuHref(menu) %>"><%- getMenuItemTitle(menu) %></a></li>
+            <% } %>
           <% } %>
-        <% } %>
-      <% }) %>
+        <% }) %>
+      </ul>
     </nav>
   <%} %>
 <%} %>

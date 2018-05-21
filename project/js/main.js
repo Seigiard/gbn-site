@@ -65,10 +65,29 @@ $(function () {
   });
 
   const $scrollContainer = $('.layout--content');
-  $scrollContainer.scroll(function () {
+  const $body = $('body');
+  const $menu = $('.menu ul');
+  const $footer = $('.site-footer');
+
+  function onScrollFunc() {
     var fn = $scrollContainer.scrollTop() > 28 ? 'addClass' : 'removeClass';
-    $scrollContainer[fn]('js-sticky');
-  });
+    $body[fn]('js-sticky');
+
+    const mainOffset = $scrollContainer[0].scrollHeight - $scrollContainer.scrollTop() - $body.height();
+    const menuHeight = $menu.height() + 50;
+    const sidebarNegativeOffset = mainOffset - menuHeight;
+
+    $footer.css({ 'transform': 'translateY('+mainOffset+'px)' });
+    if (sidebarNegativeOffset < 0) {
+      $menu.css({ 'transform': 'translateY('+sidebarNegativeOffset+'px)' })
+    } else {
+      $menu.css({ 'transform': 'translateY('+0+'px)' })
+    }
+  }
+  const onScrollFuncThrottled = rafThrottle(onScrollFunc);
+  $scrollContainer.scroll(onScrollFuncThrottled);
+
+  $('form[calculate-total]').each(setCalculateTotal);
 
   $('form').submit(function (event) {
     event.preventDefault();
@@ -84,12 +103,12 @@ $(function () {
     ].join('\n');
     alert(text);
   });
-
-  $('form[calculate-total]').each(setCalculateTotal);
 });
 
 var elements = document.querySelectorAll('.service-header');
 Stickyfill.add(elements);
+
+
 
 function checkIsEmpty(event) {
   var input = event.target;
