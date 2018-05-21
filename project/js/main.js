@@ -73,19 +73,20 @@ $(function () {
     var fn = $scrollContainer.scrollTop() > 28 ? 'addClass' : 'removeClass';
     $body[fn]('js-sticky');
 
-    const mainOffset = $scrollContainer[0].scrollHeight - $scrollContainer.scrollTop() - $body.height();
     const menuHeight = $menu.height() + 50;
-    const sidebarNegativeOffset = mainOffset - menuHeight;
+    const minPossibleHeight = $body.height() + menuHeight;
+    let mainOffset;
 
-    $footer.css({ 'transform': 'translateY('+mainOffset+'px)' });
-    if (sidebarNegativeOffset < 0) {
-      $menu.css({ 'transform': 'translateY('+sidebarNegativeOffset+'px)' })
+    if ($scrollContainer[0].scrollHeight > minPossibleHeight) {
+      mainOffset = $scrollContainer[0].scrollHeight - $scrollContainer.scrollTop() - $body.height();
+      $footer.css({ transform: 'translateY('+mainOffset+'px)' });
     } else {
-      $menu.css({ 'transform': 'translateY('+0+'px)' })
+      $footer.css({ transform: 'translateY(0px)' });
     }
   }
   const onScrollFuncThrottled = rafThrottle(onScrollFunc);
   $scrollContainer.scroll(onScrollFuncThrottled);
+  onScrollFunc();
 
   $('form[calculate-total]').each(setCalculateTotal);
 
@@ -103,6 +104,8 @@ $(function () {
     ].join('\n');
     alert(text);
   });
+
+  $('[focus-on-load]').focus();
 });
 
 var elements = document.querySelectorAll('.service-header');

@@ -14,7 +14,8 @@
     .map((x, id) => ({
       title: stripHtml(x[0]),
       price: stripHtml(x[1]),
-      disabled: locals.title ? 'disabled' : '',
+      checked: locals.title ? 'checked' : '',
+      disabled: locals.title ? 'disabled' : ''
     }));
 %>
 <% if (servicesExtra.length) {%>
