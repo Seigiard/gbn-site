@@ -50,6 +50,9 @@
 
 .control-row + .control-row {
   margin-top: 20px;
+  .main-page--vacancy & {
+    margin-top: 12px;
+  }
 }
 .control-row__small {
   width: 240px;

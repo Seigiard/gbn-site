@@ -64,7 +64,7 @@ var calculateAndSetTotal = function calculateAndSetTotal(inputs, totalSpan, tota
     };
 };
 
-function setCalculateTotal(id, form) {
+function setCalculateTotal(form) {
     const priceInputs = $('[data-price]', form);
     const totalPriceSpan = $('.js-span-total-price', form);
     const totalPriceInput = $('.js-input-total-price', form);
@@ -73,3 +73,47 @@ function setCalculateTotal(id, form) {
     $('label', form).click(calcFn)
     calcFn();
 }
+
+
+function initForm(id, form) {
+    const $form = $(form);
+    const $disabledButtons = $('button[disable-on-submit]', $form);
+    const $disabledInputs = $('input[disable-on-submit]', $form);
+    const $inputs = $(':input:not([disable-on-submit])', $form);
+
+    function enableInputs() {
+      $disabledButtons.prop('disabled', false);
+      $disabledInputs.removeClass('disabled');
+    }
+    function disableInputs() {
+      $disabledButtons.prop('disabled', true);
+      $disabledInputs.addClass('disabled');
+    }
+
+    $form.submit(function (event) {
+      event.preventDefault();
+
+      $.ajax({
+        type: "POST",
+        url: $form.attr('action'),
+        data: $form.serialize(),
+        success: function(r) {
+          if(r.status !== 'sent') {
+            console.error(r);
+          }
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+          enableInputs();
+        }
+      });
+
+      disableInputs();
+    });
+
+    $inputs.on('blur focus input change', enableInputs);
+    $disabledInputs.click(enableInputs);
+
+    if ($form.is('[calculate-total]')) {
+        setCalculateTotal($form);
+    }
+  }

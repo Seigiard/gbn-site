@@ -63,54 +63,13 @@ $(function () {
   $scrollContainer.scroll(onScrollFuncThrottled);
   onScrollFuncThrottled();
 
-  $('form').each(function(id, form) {
-    const $form = $(form);
-    const $disabledButtons = $('button[disable-on-submit]', $form);
-    const $disabledInputs = $('input[disable-on-submit]', $form);
-    const $inputs = $(':input:not([disable-on-submit])', $form);
-
-    function enableInputs() {
-      $disabledButtons.prop('disabled', false);
-      $disabledInputs.removeClass('disabled');
-    }
-    function disableInputs() {
-      $disabledButtons.prop('disabled', true);
-      $disabledInputs.addClass('disabled');
-    }
-
-    $form.submit(function (event) {
-      event.preventDefault();
-
-      $.ajax({
-        type: "POST",
-        url: $form.attr('action'),
-        data: $form.serialize(),
-        success: function(r) {
-          if(r.status !== 'sent') {
-            console.error(r);
-          }
-        },
-        error: function(XMLHttpRequest, textStatus, errorThrown) {
-          enableInputs();
-        }
-      });
-
-      disableInputs();
-    });
-
-    $inputs.on('blur focus input change', enableInputs);
-    $disabledInputs.click(enableInputs);
-  })
-
-  $('form[calculate-total]').each(setCalculateTotal);
+  $('form').each(initForm);
 
   $('[focus-on-load]').focus();
 });
 
 var elements = document.querySelectorAll('.service-header');
 Stickyfill.add(elements);
-
-
 
 function checkIsEmpty(event) {
   var input = event.target;
