@@ -6,18 +6,21 @@
     <h1>Всё сложно</h1>
   </header>
   <div class="service-lead">
-    <p>Мы поможем в&nbsp;непростых случаях: когда нужно одновременно купить и&nbsp;продать недвижимость, или&nbsp;провести сделку с&nbsp;опекой, снять недвижимость с&nbsp;ареста или даже сделать всё за&nbsp;вас, если вы в&nbsp;другом городе или&nbsp;стране. Опишите ситуацию, и&nbsp;мы&nbsp;перезвоним в&nbsp;течение суток.</h1></p>
+    <p>Мы поможем в&nbsp;непростых случаях: когда нужно одновременно купить и&nbsp;продать недвижимость, провести сделку с&nbsp;опекой, снять арест с&nbsp;квартиры или&nbsp;даже сделать всё за&nbsp;вас, если вы в&nbsp;другом городе и&nbsp;не&nbsp;можете приехать. Опишите ситуацию, и&nbsp;мы перезвоним в&nbsp;течение суток.</h1></p>
   </div>
-  <form action="" method="post" class="form__complicated">
-    <input type="hidden" name="template" value="ohMyGod">
+  <form action="<%- partial("../_snippets/sender-path.ejs") %>" target="blank" method="post" class="form__complicated">
+    <input type="hidden" name="template" value="oh-my-god">
     <div class="control-row">
       <textarea name="message" placeholder="Описание ситуации" focus-on-load></textarea>
     </div>
     <div class="control-row control-row__small">
-      <input class="input input__100" type="text" name="phone" placeholder="Номер, куда перезвонить">
+      <input disable-on-submit class="input input__100" type="text" name="phone" placeholder="Номер, куда перезвонить">
     </div>
     <div class="control-row control-row__small">
-      <button class="button button__100" type="submit">Отправить описание</button>
+      <button disable-on-submit class="button button__100" type="submit">
+        <span class="on-disable--show">Описание отправлено</span>
+        <span class="on-disable--hide">Отправить описание</span>
+      </button>
       <p><small>Перезвоним в течение суток</small></p>
     </div>
   </form>

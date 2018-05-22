@@ -1,11 +1,17 @@
 <%
+function stripHtml(html) {
+  return (html || '').replace(/<(?:.|\n)*?>/gm, '').replace(/\n/gm, '');
+}
+
 function getHeaderFromHtml(html) {
-  return html.match(/<h1[^>]*>(.*?)<\/h1>/)[0];
+  return stripHtml(html.match(/<h1[^>]*>(.*?)<\/h1>/)[0]);
 }
 
 function getHtmlWithoutHeader(html) {
   return html.replace(/<h1[^>]*>(.*?)<\/h1>/, "");
 }
+
+const header = getHeaderFromHtml(yield)
 %>
 <html>
   <%- partial("_snippets/head.ejs") %>
@@ -14,15 +20,16 @@ function getHtmlWithoutHeader(html) {
     <aside class="layout--sidebar menu-wrapper">
         <%- partial('_snippets/menu.ejs') %>
     </aside>
-    <form action="" method="post" calculate-total>
+    <form action="<%- partial("_snippets/sender-path.ejs") %>" method="post" calculate-total>
       <input type="hidden" name="template" value="simple-form">
+      <input type="hidden" name="title" value="<%- header %>">
       <main class="layout--content">
         <div class="service--content">
           <header class="service-header">
             <nav><a href="../" class="icon-close">
               <%- partial("_snippets/svg-icon.ejs", { name: 'close' }) %>
             </a></nav>
-            <%- getHeaderFromHtml(yield) %>
+            <h1><%- header %></h1>
           </header>
 
           <div class="service-lead"><%- getHtmlWithoutHeader(yield) %></div>

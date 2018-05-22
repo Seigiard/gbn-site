@@ -6,9 +6,17 @@
   <div class="bg-<%- bg %>" style="padding: 2rem 3rem">
     <p><a href="">Ссылка</a></p>
     <p><input class="input" type="text" placeholder="Ввведите текст" /> <input class="input" type="text" value="Введённый текст" /> <button class="button">Кнопка</button></p>
+    <p><input class="input" disabled type="text" placeholder="Ввведите текст" value="Введённое значение" /> <button class="button" disabled>Кнопка</button></p>
+
     <div class="input-combined">
       <input placeholder="Номер" class="input" type="text" name="number">
       <button class="button__icon" type="button">
+        <%- partial("_snippets/svg-icon.ejs", { name: 'arrow-right' }) %>
+      </button>
+    </div>
+    <div class="input-combined">
+      <input placeholder="Номер" value="Введённое значение" class="input" disabled type="text" name="number">
+      <button class="button__icon" type="button" disabled>
         <%- partial("_snippets/svg-icon.ejs", { name: 'arrow-right' }) %>
       </button>
     </div>

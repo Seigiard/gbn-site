@@ -5,12 +5,14 @@ const formattedPrice = price.replace(/(\d)(?=(\d{3})+$)/g, '$1&thinsp;');
 <div class="service-item service-item__extra">
   <h3>
     <label>
-      <span class="service-item--checkbox" for="serviceItemExtra<%- id %>">
+      <span class="service-item--checkbox">
+        <input type="hidden" name="serviceItemExtra[<%- id %>][price]" value="<%- price %>">
+        <input type="hidden" name="serviceItemExtra[<%- id %>][title]" value="<%- title %>">
         <% if (disabled) { %>
-          <input type="hidden" name="serviceItemExtra[]" value="<%- title %>">
+          <input type="hidden" name="serviceItemExtra[<%- id %>][checked]" value="true">
         <% } %>
         <input type="checkbox" <%- checked %> <%- disabled %>
-        name="serviceItemExtra[]" value="<%- title %>" data-price="<%- price %>">
+          name="serviceItemExtra[<%- id %>][checked]" value="true" data-price="<%- price %>">
       </span>
       <%- title %>
     </label>

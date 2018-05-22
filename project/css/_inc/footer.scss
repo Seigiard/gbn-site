@@ -1,13 +1,15 @@
 @import 'variables';
 
-footer.site-footer {
+.site-footer {
   position: absolute;
   bottom: 10px;
   left: 15px;
   font-size: 13px;
   line-height: 1;
   z-index: 110;
-  transform: translateY(250px);
+  transform: translateY(10px);
+  opacity: 0;
+  transition: opacity .33s ease-out, transform .33s ease-out;
   p {
     margin: 0;
     padding: 0;
@@ -29,4 +31,9 @@ footer.site-footer {
       max-width: 120px;
     }
   }
+}
+
+.site-footer__visible {
+  transform: translateY(0px);
+  opacity: 1;
 }

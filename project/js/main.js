@@ -26,25 +26,6 @@ function getDurationTime($component) {
   return time;
 }
 
-function convertFormToJSON(form){
-  var array = jQuery(form).serializeArray();
-  var json = {};
-
-  jQuery.each(array, function() {
-    if (this.name.includes('[]')) {
-      const name = this.name.slice(0, -2);
-      if(!json[name]) {
-        json[name] = [];
-      }
-      json[name].push(this.value || '');
-      return;
-    }
-    json[this.name] = this.value || '';
-  });
-
-  return json;
-}
-
 $(function () {
   $('.service-item').each(function (id, block) {
     var $block = $(block);
@@ -70,40 +51,58 @@ $(function () {
   const $footer = $('.site-footer');
 
   function onScrollFunc() {
-    var fn = $scrollContainer.scrollTop() > 28 ? 'addClass' : 'removeClass';
+    const fn = $scrollContainer.scrollTop() > 28 ? 'addClass' : 'removeClass';
     $body[fn]('js-sticky');
 
-    const menuHeight = $menu.height() + 50;
-    const minPossibleHeight = $body.height() + menuHeight;
-    let mainOffset;
-
-    if ($scrollContainer[0].scrollHeight > minPossibleHeight) {
-      mainOffset = $scrollContainer[0].scrollHeight - $scrollContainer.scrollTop() - $body.height();
-      $footer.css({ transform: 'translateY('+mainOffset+'px)' });
-    } else {
-      $footer.css({ transform: 'translateY(0px)' });
-    }
+    const minMenuOffset = 20;
+    const bottomOffset = $scrollContainer[0].scrollHeight - $scrollContainer.scrollTop() - $body.height() - minMenuOffset;
+    const fnFooter = bottomOffset > minMenuOffset ? 'removeClass' : 'addClass';
+    $footer[fnFooter]('site-footer__visible');
   }
   const onScrollFuncThrottled = rafThrottle(onScrollFunc);
   $scrollContainer.scroll(onScrollFuncThrottled);
-  onScrollFunc();
+  onScrollFuncThrottled();
+
+  $('form').each(function(id, form) {
+    const $form = $(form);
+    const $disabledButtons = $('button[disable-on-submit]', $form);
+    const $disabledInputs = $('input[disable-on-submit]', $form);
+    const $inputs = $(':input:not([disable-on-submit])', $form);
+
+    function enableInputs() {
+      $disabledButtons.prop('disabled', false);
+      $disabledInputs.removeClass('disabled');
+    }
+    function disableInputs() {
+      $disabledButtons.prop('disabled', true);
+      $disabledInputs.addClass('disabled');
+    }
+
+    $form.submit(function (event) {
+      event.preventDefault();
+
+      $.ajax({
+        type: "POST",
+        url: $form.attr('action'),
+        data: $form.serialize(),
+        success: function(r) {
+          if(r.status !== 'sent') {
+            console.error(r);
+          }
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+          enableInputs();
+        }
+      });
+
+      disableInputs();
+    });
+
+    $inputs.on('blur focus input change', enableInputs);
+    $disabledInputs.click(enableInputs);
+  })
 
   $('form[calculate-total]').each(setCalculateTotal);
-
-  $('form').submit(function (event) {
-    event.preventDefault();
-    $.each(convertFormToJSON($(event.target)), function(key, prop) {
-      console.group(key)
-      prop = $.isArray(prop) ? prop : [prop]
-      $.each(prop, function(k, val) { console.log(val); });
-      console.groupEnd(key);
-    });
-    const text = [
-      'Форма отправки не работает.',
-      'В консоли можно увидеть список отправленных данных.'
-    ].join('\n');
-    alert(text);
-  });
 
   $('[focus-on-load]').focus();
 });

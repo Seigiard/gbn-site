@@ -22,10 +22,12 @@
 <div class="service-item">
   <h3><label>
     <span class="service-item--checkbox">
+      <input type="hidden" name="serviceItem[<%- id %>][price]" value="<%- stripHtml(price) %>">
+      <input type="hidden" name="serviceItem[<%- id %>][title]" value="<%- strippedTitle %>">
       <% if (disabled) { %>
-        <input type="hidden" name="serviceItem[]" value="<%- strippedTitle %>">
+        <input type="hidden" name="serviceItem[<%- id %>][checked]" value="true">
       <% } %>
-      <input type="checkbox" checked <%- disabled %> name="serviceItem[]" value="<%- strippedTitle %>" data-price="<%- stripHtml(price) %>">
+      <input type="checkbox" checked <%- disabled %> name="serviceItem[<%- id %>][checked]" value="true" data-price="<%- stripHtml(price) %>">
     </span>
     <%- strippedTitle %>
   </label></h3>

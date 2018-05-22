@@ -7,8 +7,11 @@
     </div>
     <div class="control-row">
       <div class="order-form--email-form">
-          <input required type="email" name="email" id="email" class="input" placeholder="Электронная почта" />
-          <button type="submit" class="button">Отправить расчёт</button>
+          <input disable-on-submit required type="email" name="mail" id="mail" class="input" placeholder="Электронная почта" />
+          <button disable-on-submit type="submit" class="button">
+            <span class="on-disable--show">Расчёт отправлен</span>
+            <span class="on-disable--hide">Отправить расчёт</span>
+          </button>
       </div>
     </div>
   </div>
