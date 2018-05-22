@@ -7,8 +7,6 @@
   font-size: 13px;
   line-height: 1;
   z-index: 110;
-  transform: translateY(10px);
-  opacity: 0;
   transition: opacity .33s ease-out, transform .33s ease-out;
   p {
     margin: 0;
@@ -33,7 +31,13 @@
   }
 }
 
-.site-footer__visible {
-  transform: translateY(0px);
-  opacity: 1;
+.js {
+  .site-footer {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  .site-footer__visible {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
