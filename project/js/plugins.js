@@ -116,4 +116,6 @@ function initForm(id, form) {
     if ($form.is('[calculate-total]')) {
         setCalculateTotal($form);
     }
+
+    $('[phone-mask]', $form).inputmask("+7(999) 999-99-99");
   }

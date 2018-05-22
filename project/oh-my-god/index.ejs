@@ -14,7 +14,8 @@
       <textarea name="message" placeholder="Описание ситуации" focus-on-load></textarea>
     </div>
     <div class="control-row control-row__small">
-      <input disable-on-submit class="input input__100" type="text" name="phone" placeholder="Номер, куда перезвонить">
+      <input disable-on-submit phone-mask required
+        class="input input__100" type="tel" name="phone" placeholder="Номер, куда перезвонить">
     </div>
     <div class="control-row control-row__small">
       <button disable-on-submit class="button button__100" type="submit">

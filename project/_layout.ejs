@@ -117,12 +117,13 @@
               <form action="<%- partial("_snippets/sender-path.ejs") %>" target="blank" method="post">
                 <input type="hidden" name="template" value="vacancy">
                 <div class="control-row">
-                  <input disable-on-submit placeholder="Номер" required class="input input__100" type="text" name="phone">
+                  <input disable-on-submit phone-mask required
+                    class="input input__100" type="tel" name="phone" placeholder="Номер" />
                 </div>
                 <div class="control-row">
                   <button disable-on-submit class="button button__100" type="submit">
-                    <span class="on-disable--show">Отправить</span>
-                    <span class="on-disable--hide">Перезвоним</span>
+                    <span class="on-disable--show">Перезвоним</span>
+                    <span class="on-disable--hide">Отправить</span>
                   </button>
                 </div>
               </form>
