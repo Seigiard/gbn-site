@@ -118,7 +118,5 @@ function initForm(id, form) {
     }
 
     $('[phone-mask]', $form).inputmask("+7(999) 999-99-99");
-    $('[save][id]', $form).savy('load');;
-
-
+    $('[save][id]', $form).savy('load');
   }
