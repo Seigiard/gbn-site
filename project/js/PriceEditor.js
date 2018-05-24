@@ -67,8 +67,11 @@ class PriceEditor {
   onPriceInputKeydown(e) {
     // If Enter is pressed
     if (e.which == 13) {
+      e.preventDefault();
       $(window).off('click', this.onInputBlurCheck);
       this.priceChangeState();
+    } else {
+      // this.$priceInput.change();
     }
   }
 

@@ -43,7 +43,14 @@ function rafThrottle(callback) {
     return throttled
 }
 
+function isNumber (value) {
+    return typeof value === 'number' && isFinite(value);
+}
+
 function getPrice(htmlString) {
+    if (isNumber(htmlString)) {
+        return htmlString;
+    }
     return parseInt((htmlString || '').toString().replace(/\s+/gm, ''), 10);
 }
 
