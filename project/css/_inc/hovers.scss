@@ -42,7 +42,7 @@ a:hover, button:hover {
 }
 
 @mixin buttons($background-color, $text-color, $background-color--hover, $text-color--hover, $background-color--disabled, $text-color--disabled) {
-  button.button {
+  .button {
     border: none; //1px solid $background-color;
     background: $background-color;
     color: $text-color;
@@ -61,7 +61,7 @@ a:hover, button:hover {
 }
 
 @mixin inputs($border, $text, $placeholder, $inactive-border) {
-  input.input {
+  .input {
     border-color: $inactive-border;
     color: $text;
     &:focus {
@@ -121,10 +121,12 @@ textarea {
   font-size: 16px;
   height: 36px;
   padding: 4px 0 0;
+  border-style: solid;
   border-width: 0 0 1px 0;
   background: transparent;
   max-width: 100%;
 }
+.input__no-border { border: none; }
 .input__big { font-size: 24px; }
 .input__100, .button__100 { width: 100%; }
 

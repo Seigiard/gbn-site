@@ -8,6 +8,73 @@
       "3-documents",
       "4-check",
       "4-fb-employee"
-    ]
+    ],
+    "priceEditor": {
+      "label": "Стоимость недвижимости",
+      "note": "Не включает расходы на рекламу",
+      "min": 0,
+      "max": 35000000,
+      "step": 1000000,
+      "value": 2000000,
+      "minCommissionValue": 200000,
+      "commissionRange": [
+        {
+          "range": 5000000,
+          "commission": 5.00
+        },
+        {
+          "range": 6000000,
+          "commission": 4.80
+        },
+        {
+          "range": 7000000,
+          "commission": 4.60
+        },
+        {
+          "range": 8000000,
+          "commission": 4.40
+        },
+        {
+          "range": 9000000,
+          "commission": 4.20
+        },
+        {
+          "range": 10000000,
+          "commission": 4.00
+        },
+        {
+          "range": 11000000,
+          "commission": 3.80
+        },
+        {
+          "range": 12000000,
+          "commission": 3.60
+        },
+        {
+          "range": 13000000,
+          "commission": 3.40
+        },
+        {
+          "range": 14000000,
+          "commission": 3.20
+        },
+        {
+          "range": 15000000,
+          "commission": 3.00
+        },
+        {
+          "range": 16000000,
+          "commission": 2.80
+        },
+        {
+          "range": 17000000,
+          "commission": 2.60
+        },
+        {
+          "range": 35000000,
+          "commission": 2.50
+        }
+      ]
+    }
   }
 }

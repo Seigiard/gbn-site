@@ -222,12 +222,12 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   align-content: flex-end;
-  align-items: flex-end;
+  align-items: flex-start;
   padding-bottom: 0;
   .employee--image {
     order: 1;
     flex: 0 0 auto;
-    align-self: center;
+    align-self: flex-start;
     margin: 0 -28px; // blockp padding compensation
   }
   .employee--description {

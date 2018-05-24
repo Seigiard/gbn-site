@@ -85,12 +85,13 @@ label[for], button, input[type="checkbox"], input[type="radio"] {
 @import '_inc/main-page';
 @import '_inc/order-form';
 @import '_inc/svgs';
+@import '_inc/price-editor';
 
 .hs {
   /* Полупробел для
   разделения разрядов чисел:
   10<span class="hs"></span>000 */
-  margin-left: .2em;
+  margin-left: .2em!important;
 }
 
 .rhs {
@@ -98,8 +99,8 @@ label[for], button, input[type="checkbox"], input[type="radio"] {
   если реальный пробел важен,
   например между ценой и валютой:
   1<span class="rhs">&nbsp;</span>$ */
-  font-size: 50%;
-  line-height: 1;
+  font-size: 50%!important;
+  line-height: 1!important;
 }
 
 .visually-hidden {

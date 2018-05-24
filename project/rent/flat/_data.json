@@ -3,6 +3,20 @@
     "layout": "../../_service-list__percent.ejs",
     "services": [
       "1-fb-employee"
-    ]
+    ],
+    "priceEditor": {
+      "label": "Стоимость дома, таунхауса",
+      "note": "Комиссия может быть снижена по договорённости",
+      "min": 0,
+      "max": 250000,
+      "step": 10000,
+      "value": 20000,
+      "commissionRange": [
+        {
+          "range": 250000,
+          "commission": 80.0
+        }
+      ]
+    }
   }
 }

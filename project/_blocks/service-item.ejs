@@ -8,7 +8,7 @@
       return htmlString;
     }
     const priceString = stripHtml(htmlString).replace(/\s+/gm, '');
-    const price = priceString.replace(/(\d)(?=(\d{3})$)/g, '$1<span class="hs"></span>');
+    const price = priceString.replace(/\D/g, '').replace(/(\d)(?=(\d{3})$)/g, '$1<span class="hs"></span>');
 
     return `${price}`;
   }

@@ -1,0 +1,84 @@
+
+.PriceEditor-price {
+  .PriceEditor-priceInput {
+    display: none;
+  }
+  .PriceEditor-priceFormatted {
+    display: block;
+  }
+  &--isActive {
+    .PriceEditor-priceInput {
+      display: block;
+    }
+    .PriceEditor-priceFormatted {
+      display: none;
+    }
+  }
+}
+
+.rangeslider,
+.rangeslider__fill {
+  display: block;
+}
+
+.rangeslider {
+  background: rgba(255,255,255,0.3);
+  position: relative;
+  &--active {
+    background: #fff;
+  }
+}
+
+.rangeslider--horizontal {
+  height: 1px;
+  width: 100%;
+}
+
+.rangeslider--disabled {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  opacity: 0.4;
+}
+
+.rangeslider__fill {
+  background: #fff;
+  position: absolute;
+}
+.rangeslider--horizontal .rangeslider__fill {
+  top: 0;
+  height: 100%;
+}
+
+.rangeslider__handle {
+  cursor: pointer;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  top: -3px;
+  touch-action: pan-y;
+  -ms-touch-action: pan-y;
+  &:hover {
+    top: -4px;
+    width: 9px;
+    height: 9px;
+    transform: translateX(-1px)
+  }
+}
+.rangeslider__handle:active, .rangeslider--active .rangeslider__handle {
+  top: -4px;
+  width: 9px;
+  height: 9px;
+  transform: translateX(-1px)
+}
+
+input:focus + input[type="range"] + .rangeslider {
+  background: #fff;
+}
+input[type="range"]:focus + .rangeslider .rangeslider__handle {
+  top: -4px;
+  width: 9px;
+  height: 9px;
+  transform: translateX(-1px)
+}

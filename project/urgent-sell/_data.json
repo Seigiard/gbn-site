@@ -3,6 +3,21 @@
     "layout": "../_service-list__percent.ejs",
     "services": [
       "1-fb-employee"
-    ]
+    ],
+    "priceEditor": {
+      "label": "Стоимость квартиры",
+      "note": "Выплата зависит от состояния квартиры и ситуации на рынке",
+      "min": 0,
+      "max": 12000000,
+      "step": 500000,
+      "value": 1000000,
+      "maxInputValue": 12000000,
+      "commissionRange": [
+        {
+          "range": 12000000,
+          "commission": 80.0
+        }
+      ]
+    }
   }
 }

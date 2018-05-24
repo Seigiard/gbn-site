@@ -1,5 +1,5 @@
 class PriceEditor {
-  constructor (options) {
+  constructor(options) {
     var self = this;
     this.$priceInput = $(".PriceEditor-priceInput");
     this.$priceFormatted = $(".PriceEditor-priceFormatted");
@@ -33,8 +33,8 @@ class PriceEditor {
     if (this.maxInputValue) this.$priceInput.on('input', this.checkPriceInputValue.bind(this));
   }
 
-  formatPrice (price) {
-    var semispace = '<span class="PriceEditor-semispace"> </span>';
+  formatPrice(price) {
+    var semispace = '<span class="hs"></span>';
     // reverse string because we need split price from end of string
     var reversePrice = price.split('').reverse().join('');
     var splittedPrice = reversePrice.match(/.{1,3}/g);
@@ -43,28 +43,28 @@ class PriceEditor {
       splittedPrice[i] = splittedPrice[i].split('').reverse().join('');
     }
     var formattedPrice = splittedPrice.reverse().join(semispace);
-    return formattedPrice;
+    return formattedPrice + '<span class="rhs">&nbsp;</span>₽';
   }
 
-  priceChangeState () {
+  priceChangeState() {
     $('.PriceEditor-price').toggleClass('PriceEditor-price--isActive');
   }
 
-  onPriceFormattedClick (e) {
+  onPriceFormattedClick(e) {
     e.stopPropagation();
     this.priceChangeState();
-    $(window).on('click', this.onInputBlurCheck);
+    $(window).on('click', this.onInputBlurCheck.bind(this));
     this.$priceInput.focus();
   }
 
-  onInputBlurCheck (e) {
+  onInputBlurCheck(e) {
     // If click on input, we don't need to hide input
     if (e.target == this.$priceInput[0]) return;
     $(window).off('click', this.onInputBlurCheck);
     this.priceChangeState();
   }
 
-  onPriceInputKeydown (e) {
+  onPriceInputKeydown(e) {
     // If Enter is pressed
     if (e.which == 13) {
       $(window).off('click', this.onInputBlurCheck);
@@ -72,19 +72,19 @@ class PriceEditor {
     }
   }
 
-  onPriceInputChange () {
+  onPriceInputChange() {
     this.$priceRange.val(this.$priceInput.val());
     this.isInputChanged = true;
     this.$priceRange.rangeslider('update', true);
   }
 
-  checkPriceInputValue () {
+  checkPriceInputValue() {
     if (parseInt(this.$priceInput.val()) > this.maxInputValue) {
       this.$priceInput.val(this.maxInputValue);
     }
   }
 
-  changeCommissionValue (price, type) {
+  changeCommissionValue(price, type) {
     // If price is greater then all range values, take percentage from last range
     var commission = this.commissionRange[this.commissionRange.length - 1].commission;
     var calculatedCommission;
@@ -116,11 +116,11 @@ class PriceEditor {
     }
   }
 
-  calculateCommission (price, percentage) {
-      return Math.max(Math.round(price * percentage / 100), this.minCommissionValue);
+  calculateCommission(price, percentage) {
+    return Math.max(Math.round(price * percentage / 100), this.minCommissionValue);
   }
 
-  calculatePercentage (price, commission) {
+  calculatePercentage(price, commission) {
     return (commission / price * 100).toFixed(2);
   }
 }

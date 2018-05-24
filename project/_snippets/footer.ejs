@@ -1,7 +1,7 @@
 <%
   const hash = new Date().getTime();
 %>
-<footer class="site-footer"><div class="site-footer--rotate"><p>Сделано в&nbsp;школе Бюро&nbsp;Горбунова</p></div></footer>
+<footer class="site-footer"><div class="site-footer--rotate"><p>Сделано в&nbsp;Школе Бюро&nbsp;Горбунова</p></div></footer>
 
 <script src="/js/vendor/jquery-3.2.1.min.js"></script>
 <script src="/js/vendor/inputmask/inputmask.min.js"></script>
@@ -13,67 +13,12 @@
 <script src="/js/plugins.js?<%- hash %>"></script>
 <script src="/js/main.js?<%- hash %>"></script>
 
-
+<% if(!!locals.priceEditor) { %>
 <script>
   var priceEditor = new PriceEditor({
-    minCommissionValue: 200000,
-    commissionRange: [
-        {
-          'range': 5000000,
-          'commission': '5.00'
-        },
-        {
-          'range': 6000000,
-          'commission': '4.80'
-        },
-        {
-          'range': 7000000,
-          'commission': '4.60'
-        },
-        {
-          'range': 8000000,
-          'commission': '4.40'
-        },
-        {
-          'range': 9000000,
-          'commission': '4.20'
-        },
-        {
-          'range': 10000000,
-          'commission': '4.00'
-        },
-        {
-          'range': 11000000,
-          'commission': '3.80'
-        },
-        {
-          'range': 12000000,
-          'commission': '3.60'
-        },
-        {
-          'range': 13000000,
-          'commission': '3.40'
-        },
-        {
-          'range': 14000000,
-          'commission': '3.20'
-        },
-        {
-          'range': 15000000,
-          'commission': '3.00'
-        },
-        {
-          'range': 16000000,
-          'commission': '2.80'
-        },
-        {
-          'range': 17000000,
-          'commission': '2.60'
-        },
-        {
-          'range': 35000000,
-          'commission': '2.50'
-        },
-      ]
+    <% if(priceEditor.maxInputValue) { %>maxInputValue: <%- priceEditor.maxInputValue %>, <% } %>
+    <% if(priceEditor.minCommissionValue) { %>minCommissionValue: <%- priceEditor.minCommissionValue %>, <% } %>
+    commissionRange: <%- JSON.stringify(priceEditor.commissionRange) %>
   });
 </script>
+<% } %>

@@ -9,6 +9,72 @@
       "3-fb-client",
       "4-check",
 	    "4-fb-employee"
-    ]
+    ],
+    "priceEditor": {
+      "label": "Стоимость дома, таунхауса",
+      "min": 0,
+      "max": 100000000,
+      "step": 2500000,
+      "value": 5000000,
+      "minCommissionValue": 250000,
+      "commissionRange": [
+        {
+          "range": 20000000,
+          "commission": 5.00
+        },
+        {
+          "range": 22500000,
+          "commission": 4.80
+        },
+        {
+          "range": 25000000,
+          "commission": 4.60
+        },
+        {
+          "range": 27500000,
+          "commission": 4.40
+        },
+        {
+          "range": 30000000,
+          "commission": 4.20
+        },
+        {
+          "range": 32500000,
+          "commission": 4.00
+        },
+        {
+          "range": 35000000,
+          "commission": 3.80
+        },
+        {
+          "range": 37500000,
+          "commission": 3.60
+        },
+        {
+          "range": 40000000,
+          "commission": 3.40
+        },
+        {
+          "range": 42500000,
+          "commission": 3.20
+        },
+        {
+          "range": 45000000,
+          "commission": 3.00
+        },
+        {
+          "range": 47500000,
+          "commission": 2.80
+        },
+        {
+          "range": 50000000,
+          "commission": 2.60
+        },
+        {
+          "range": 100000000,
+          "commission": 2.50
+        }
+      ]
+    }
   }
 }

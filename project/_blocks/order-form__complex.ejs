@@ -1,11 +1,20 @@
 <div class="order-form">
   <div class="order-form--controls">
-    <div class="control-row">
-      <label for="housePrice">Стоимость дома, таунхауса</label>
-      <input required id="housePrice"
-        value="2000000" type="text" name="house_price"
-        class="input input__big input__100" placeholder="Стоимость дома, таунхауса" />
-    </div>
+    <% if(locals.priceEditor) { %>
+      <div class="control-row PriceEditor-price">
+        <label for="housePrice"><%- priceEditor.label %></label>
+        <div class="input input__big input__100 PriceEditor-priceFormatted input__no-border"></div>
+        <input required id="housePrice" placeholder="<%- priceEditor.label %>"
+          value="<%- priceEditor.value %>" type="text" name="house_price"
+          class="input input__big input__100 input__no-border PriceEditor-priceInput" />
+        <input class="PriceEditor-priceRange"
+          type="range"
+          min="<%- priceEditor.min %>"
+          max="<%- priceEditor.max %>"
+          step="<%- priceEditor.step %>"
+          value="<%- priceEditor.value %>">
+      </div>
+    <% } %>
     <div class="control-row">
       <div class="order-form--email-form">
           <input disable-on-submit required save id="clientEmail"
@@ -18,8 +27,8 @@
     </div>
   </div>
   <div class="order-form--price">
-    <label>Комиссия 5%</label>
-    <span><span id="totalPrice">100&thinsp;000</span><span class="rhs">&nbsp;</span>₽</span>
+    <label>Комиссия <span class="PriceEditor-commissionPercentage">5</span><span class="PriceEditor-percentage">%</span></label>
+    <span><span id="totalPrice" class="PriceEditor-commissionValue"></span></span>
     <input type="hidden" name="price" value="100000" />
   </div>
 </div>
