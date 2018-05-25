@@ -66,6 +66,11 @@ $(function () {
   $('form').each(initForm);
 
   $('[focus-on-load]').focus();
+
+  $('[scroll-one-page]').click(function(e){
+    e.preventDefault();
+    $scrollContainer.animate({ scrollTop: $body.height() }, 500);
+  });
 });
 
 var elements = document.querySelectorAll('.service-header');

@@ -7,11 +7,13 @@
     </aside>
     <main class="layout--content">
       <div class="main-page">
-        <div class="main-page--welcome">
+        <div class="main-page--welcome bg-black">
           <p class="subheader">Москва и Подмосковье</p>
           <h1>Квартиры, дома <br>и коммерческая <br>недвижимость</h1>
           <p>Помогаем купить, продать, получить ипотеку, сдать и&nbsp;арендовать недвижимость. Сопровождаем сделки на&nbsp;всех&nbsp;этапах, проверяем юридическую чистоту и&nbsp;помогаем в&nbsp;сложных ситуациях.</p>
-          <img src="/img/icon-arrow-down.svg" alt="Пролистайте вниз" class="main-page--navigation-arrow">
+          <button scroll-one-page class="button__icon main-page--navigation-arrow" type="button" title="Пролистайте вниз">
+            <%- partial("_snippets/svg-icon.ejs", { name: 'arrow-down' }) %>
+          </button>
         </div>
         <div class="row">
           <div class="col-6 main-page--description">
