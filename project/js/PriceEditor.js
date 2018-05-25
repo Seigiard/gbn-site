@@ -1,6 +1,7 @@
 class PriceEditor {
   constructor(options) {
     var self = this;
+    this.$priceInputLabel = $("label[for='housePrice']");
     this.$priceInput = $(".PriceEditor-priceInput");
     this.$priceFormatted = $(".PriceEditor-priceFormatted");
     this.$priceRange = $(".PriceEditor-priceRange");
@@ -13,6 +14,7 @@ class PriceEditor {
     this.minCommissionValue = options.minCommissionValue || 0;
     this.commissionType = options.commissionType;
     this.commissionRange = options.commissionRange;
+
     this.$priceRange.rangeslider({
       polyfill: false,
 
@@ -28,8 +30,9 @@ class PriceEditor {
     });
 
     this.$priceFormatted.on('click', this.onPriceFormattedClick.bind(this));
+    this.$priceInputLabel.on('click', this.onPriceFormattedClick.bind(this));
     this.$priceInput.on('keydown', this.onPriceInputKeydown.bind(this));
-    this.$priceInput.on('change', this.onPriceInputChange.bind(this));
+    this.$priceInput.on('change input', this.onPriceInputChange.bind(this));
     this.onPriceInputChange();
     if (this.maxInputValue) this.$priceInput.on('input', this.checkPriceInputValue.bind(this));
   }
@@ -61,7 +64,7 @@ class PriceEditor {
   onInputBlurCheck(e) {
     // If click on input, we don't need to hide input
     if (e.target == this.$priceInput[0]) return;
-    $(window).off('click', this.onInputBlurCheck);
+    $(window).off('click');
     this.priceChangeState();
   }
 
@@ -69,7 +72,7 @@ class PriceEditor {
     // If Enter is pressed
     if (e.which == 13) {
       e.preventDefault();
-      $(window).off('click', this.onInputBlurCheck);
+      $(window).off('click');
       this.priceChangeState();
     } else {
       // this.$priceInput.change();

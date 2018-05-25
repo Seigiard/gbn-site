@@ -108,7 +108,10 @@
     }
   }
   .main-page--video {
-    padding: 0;
+    padding: 0 0 43.75%;
+    position: relative;
+    background: url(../img/youtube-video.jpg) center center no-repeat;
+    background-size: cover;
   }
   .main-page--employee {
     padding-bottom: 0;
