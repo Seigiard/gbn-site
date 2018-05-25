@@ -71,7 +71,8 @@
   top: -4px;
   width: 9px;
   height: 9px;
-  transform: translateX(-1px)
+  transform: translateX(-1px);
+  transition: none;
 }
 
 input:focus + input[type="range"] + .rangeslider {

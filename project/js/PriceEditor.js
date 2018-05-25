@@ -6,6 +6,7 @@ class PriceEditor {
     this.$priceRange = $(".PriceEditor-priceRange");
     this.$commissionPercentage = $('.PriceEditor-commissionPercentage');
     this.$commissionValue = $('.PriceEditor-commissionValue');
+    this.$commissionValueInput = $('.PriceEditor-commissionValueInput');
     this.$percentage = $('.PriceEditor-percentage');
     this.isInputChanged = false;
     this.maxInputValue = options.maxInputValue;
@@ -104,10 +105,12 @@ class PriceEditor {
       this.$commissionPercentage.html(commission);
       calculatedCommission = this.calculateCommission(price, parseFloat(commission));
       this.$commissionValue.html(this.formatPrice(calculatedCommission.toString()));
+      this.$commissionValueInput.val(calculatedCommission);
     }
     if (type == 'percentage') {
       this.$commissionValue.html(this.formatPrice(commission));
       calculatedPercentage = this.calculatePercentage(price, parseInt(commission));
+      this.$commissionValueInput.val(calculatedPercentage);
       if (price == 0) {
         this.$commissionPercentage.hide();
         this.$percentage.hide();

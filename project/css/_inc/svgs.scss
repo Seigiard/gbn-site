@@ -24,3 +24,13 @@
     fill: $color-white;
   }
 }
+
+.info__content-visible:not(.info__content-transition) .info--toggle:hover svg {
+  .svg-primary-stroke, .svg-bg-fill {
+    stroke: $color-red;
+    fill: $color-red;
+  }
+  .svg-primary-fill {
+    fill: $color-white;
+  }
+}

@@ -3,9 +3,10 @@
     <% if(locals.priceEditor) { %>
       <div class="control-row PriceEditor-price">
         <label for="housePrice"><%- priceEditor.label %></label>
+        <input type="hidden" name="label" value="<%- priceEditor.label %>">
         <div class="input input__big input__100 PriceEditor-priceFormatted input__no-border"></div>
         <input required id="housePrice" placeholder="<%- priceEditor.label %>"
-          value="<%- priceEditor.value %>" type="text" name="house_price"
+          value="<%- priceEditor.value %>" type="text" name="object_price"
           class="input input__big input__100 input__no-border PriceEditor-priceInput" />
         <input class="PriceEditor-priceRange"
           type="range"
@@ -29,6 +30,7 @@
   <div class="order-form--price">
     <label>Комиссия <span class="PriceEditor-commissionPercentage">5</span><span class="PriceEditor-percentage">%</span></label>
     <span><span id="totalPrice" class="PriceEditor-commissionValue"></span></span>
-    <input type="hidden" name="price" value="100000" />
+    <input type="hidden" name="price" value="100000" class="PriceEditor-commissionValueInput" />
+    <div class="order-form--note"><%- priceEditor.note %></div>
   </div>
 </div>

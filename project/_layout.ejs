@@ -50,7 +50,7 @@
             </div>
 
             <div class="proposal-block--images">
-              <a href="https://www.sberbank.ru/ru/person/credits/homenew" title="Сбербанк"><%- partial("_snippets/svg-icon.ejs", { name: 'bank-sber' }) %></a>
+              <a class="proposal-block--image__margin-right" href="https://www.sberbank.ru/ru/person/credits/homenew" title="Сбербанк"><%- partial("_snippets/svg-icon.ejs", { name: 'bank-sber' }) %></a>
               <a href="https://www.vtb.ru/personal/ipoteka/" title="Банк ВТБ"><%- partial("_snippets/svg-icon.ejs", { name: 'bank-vtb' }) %></a>
             </div>
           </div>
@@ -118,7 +118,7 @@
                 <input type="hidden" name="template" value="vacancy">
                 <div class="control-row">
                   <input disable-on-submit phone-mask required save id="phoneNumber"
-                    class="input input__100" type="tel" name="phone" placeholder="Номер" />
+                    class="input input__100" type="tel" name="phone" placeholder="Ваш номер" />
                 </div>
                 <div class="control-row">
                   <button disable-on-submit class="button button__100" type="submit">
@@ -134,7 +134,7 @@
           <div class="col-4 main-page--address address-block">
             <div class="address-block--top">
               <h3>Адрес офиса</h3>
-              <p>Москва, ул. Мясницкая, д. 35, стр. 2</p>
+              <p>Мясницкая улица, д.&nbsp;35, стр.&nbsp;2, Москва</p>
               <p>Офис открыт по&nbsp;будням с&nbsp;10&nbsp;до&nbsp;18</p>
               <p>Вход с&nbsp;проспекта Академика Сахарова</p>
               <p>Рядом платная парковка</p>
@@ -149,6 +149,7 @@
         </div>
       </div>
     </main>
+    <footer class="site-footer"><div class="site-footer--rotate bg-red"><p>Сделано <nobr><a href="https://bureau.ru/school/">в&nbsp;Школе Бюро&nbsp;Горбунова</a></nobr> в&nbsp;2018&nbsp;году</p></div></footer>
     <%- partial("_snippets/footer.ejs") %>
   </body>
 </html>
