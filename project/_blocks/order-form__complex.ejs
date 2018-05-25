@@ -28,7 +28,12 @@
     </div>
   </div>
   <div class="order-form--price">
-    <label>Комиссия <span class="PriceEditor-commissionPercentage">5</span><span class="PriceEditor-percentage">%</span></label>
+    <label><nobr>
+      <%- priceEditor.labelPrice ? priceEditor.labelPrice : 'Комиссия' %>
+      <% if(!priceEditor.hidePercent) { %>
+        <span class="PriceEditor-commissionPercentage">5</span><span class="PriceEditor-percentage">%</span>
+      <% } %>
+    </nobr></label>
     <span><span id="totalPrice" class="PriceEditor-commissionValue"></span></span>
     <input type="hidden" name="price" value="100000" class="PriceEditor-commissionValueInput" />
     <div class="order-form--note"><%- priceEditor.note %></div>
