@@ -128,6 +128,7 @@
   padding-right: $content-padding-right;
   max-width: $column-width;
   box-sizing: content-box;
+  margin-left: 1px;
   .control-row {
     button + p {
       padding: 10px 0 0 0;

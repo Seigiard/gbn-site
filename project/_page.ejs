@@ -2,6 +2,9 @@
   <%- partial("_snippets/head.ejs") %>
   <body class="<%- partial("_snippets/body-class.ejs") %>">
     <%- partial("_snippets/header.ejs") %>
+    <a href="/" class="icon-close">
+      <%- partial("./_snippets/svg-icon.ejs", { name: 'close' }) %>
+    </a>
     <aside class="layout--sidebar menu-wrapper">
       <%- partial('_snippets/menu.ejs') %>
     </aside>

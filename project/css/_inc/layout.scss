@@ -100,3 +100,10 @@ body {
     min-width: #{$min-width - $has-sidebars_active - 10};
   }
 }
+
+.icon-close {
+  position: absolute;
+  top: $header-height + 20px;
+  right: 26px;
+  z-index: 20;
+}

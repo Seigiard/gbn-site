@@ -1,28 +1,23 @@
 @import 'variables';
-
 .service-header {
   padding: 0px 0px 0px;
-  margin-top: 33px;
+  margin-top: 36px;
   position: sticky;
   top: 0;
   z-index: 10;
-  background: #fff;
+  background: transparent;
+  transition: background-color .05s linear;
   h1 {
     white-space: nowrap;
     padding: 15px 40px 9px 23px;
-    margin: 0 20px 0 17px;
-    border-bottom: 2px solid #fff;
-    .js-sticky & {
-      border-color: #000;
-    }
+    margin: 0 16px;
+    border-bottom: 2px solid transparent;
+    transition: border-color .05s linear;
   }
-  nav {
-    float: right;
-    margin-top: 20px;
-    margin-right: 20px;
-    a {
-      display: block;
-      text-decoration: none;
+  .js-sticky & {
+    background: #fff;
+    h1 {
+      border-color: #000;
     }
   }
 }
@@ -30,35 +25,39 @@
 .service-lead {
   padding-left: $content-padding-left;
   padding-right: $content-padding-right;
+  margin-top: -11px;
   max-width: $column-width;
   box-sizing: content-box;
 }
 
 .service-list {
-  padding-left: $content-padding-left;
-  padding-right: $content-padding-right;
+  padding: 9px $content-padding-right 0 $content-padding-left;
   max-width: $column-width;
   box-sizing: content-box;
-  padding-top: 4px;
 }
+
 .service-item {
   &.service-item__feeedback:first-child:last-child {
     border-top: 1px solid #C5C5C5;
     padding-top: 16px;
   }
-  padding: 10px 100px 5px 0;
+  padding: 9px 100px 6px 0;
   position: relative;
   border-top: 1px solid #C5C5C5;
   font-size: 13px;
+  & + h2 {
+    padding-top: 20px;
+  }
   h3 {
     font-weight: normal;
-    padding-bottom: 8px;
+    padding-bottom: 3px;
     label {
       padding: 3px 0;
       cursor: pointer;
     }
   }
-  p, li {
+  p,
+  li {
     line-height: 16px;
   }
   ol {
@@ -70,20 +69,23 @@
     margin: 0;
     padding: 0;
   }
-  li + li {
-    padding-top: .5rem;
+  li+li {
+    padding-top: 9px;
   }
 }
+
 .service-item__feeedback {
   border-top: none;
   position: static;
 }
+
 .service-item__extra {
-  padding-bottom: 10px;
+  padding-bottom: 17px;
 }
+
 .service-item--price {
   position: absolute;
-  top: 7px;
+  top: 8px;
   right: 0;
   font-size: 16px;
   ul {
@@ -109,7 +111,8 @@
 
 .service-list__percent .service-item {
   padding-right: 0;
-  .service-item--price, .service-item--checkbox {
+  .service-item--price,
+  .service-item--checkbox {
     display: none;
   }
   label {
@@ -119,7 +122,7 @@
 }
 
 .feedback {
-  margin: 5px 0 20px;
+  margin: -1px 0 20px;
   padding: 0;
 }
 
@@ -143,6 +146,7 @@
     }
   }
 }
+
 .feedback--image {
   height: 35px;
   float: left;
@@ -155,12 +159,22 @@
 }
 
 .feedback__employee {
-  margin-top: 8px;
-  margin-bottom: 5px;
+  // margin-top: -9px;
+
+  margin-bottom: 10px;
   .feedback--text {
-    padding-top: 10px;
+    padding-top: 6px;
+  }
+  .feedback--author {
+    align-items: flex-start;
+    p {
+      font-size: 16px;
+      line-height: 1.15;
+      padding: 2px 0 0 0;
+    }
   }
 }
+
 .feedback__client {
   background-color: transparent;
   background-image: url(/img/corner-top-left.svg), url(/img/corner-bottom-right.svg);
@@ -169,7 +183,7 @@
   background-repeat: no-repeat, no-repeat;
   .feedback--text {
     text-align: center;
-    padding: 20px 10% 0;
+    padding: 16px 10% 4px;
   }
   .feedback--image img {
     border-radius: 50%;
@@ -177,13 +191,14 @@
 }
 
 .info {}
+
 .info--toggle {
   border: none;
   background: transparent;
   width: 40px;
   height: 30px;
-  margin: -14px 0 0 -10px;
-  padding: 7px 10px;
+  margin: -17px 0 0 -10px;
+  padding: 7px 10px 4px;
   span {
     background: transparent url(/img/icon-toggle.svg) top center no-repeat;
     background-size: 20px 20px;
@@ -191,16 +206,24 @@
     height: 10px;
     display: inline-block;
   }
-  &:hover, &:active {
-    span { background-position: bottom center; }
+  &:hover,
+  &:active {
+    span {
+      background-position: bottom center;
+    }
   }
 }
+
 .info__content-visible {
-  .info--toggle span { background-position: bottom center; }
+  .info--toggle span {
+    background-position: bottom center;
+  }
   .info--content {
     display: block;
   }
 }
+
 .info--content {
   display: none;
+  padding: 0 0 15px;
 }

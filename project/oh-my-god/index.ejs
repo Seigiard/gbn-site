@@ -1,28 +1,24 @@
-<div class="service--content">
-  <header class="service-header">
-    <nav><a href="../" class="icon-close">
-      <%- partial("../_snippets/svg-icon.ejs", { name: 'close' }) %>
-    </a></nav>
-    <h1>Всё сложно</h1>
-  </header>
-  <div class="service-lead">
-    <p>Мы поможем в&nbsp;непростых случаях: когда нужно одновременно купить и&nbsp;продать недвижимость, провести сделку с&nbsp;опекой, снять арест с&nbsp;квартиры или&nbsp;даже сделать всё за&nbsp;вас, если вы в&nbsp;другом городе и&nbsp;не&nbsp;можете приехать. Опишите ситуацию, и&nbsp;мы перезвоним в&nbsp;течение суток.</h1></p>
-  </div>
-  <form action="<%- partial("../_snippets/sender-path.ejs") %>" target="blank" method="post" class="form__complicated">
-    <input type="hidden" name="template" value="oh-my-god">
-    <div class="control-row">
-      <textarea name="message" placeholder="Описание ситуации" focus-on-load></textarea>
-    </div>
-    <div class="control-row control-row__small">
-      <input disable-on-submit phone-mask required save id="phoneNumber"
-        class="input input__100" type="tel" name="phone" placeholder="Номер, куда перезвонить">
-    </div>
-    <div class="control-row control-row__small">
-      <button disable-on-submit class="button button__100" type="submit">
-        <span class="on-disable--show">Описание отправлено</span>
-        <span class="on-disable--hide">Отправить описание</span>
-      </button>
-      <p><small>Перезвоним в течение суток</small></p>
-    </div>
-  </form>
+
+<header class="service-header">
+  <h1>Всё сложно</h1>
+</header>
+<div class="service-lead">
+  <p>Мы поможем в&nbsp;непростых случаях: когда нужно одновременно купить и&nbsp;продать недвижимость, провести сделку с&nbsp;опекой, снять арест с&nbsp;квартиры или&nbsp;даже сделать всё за&nbsp;вас, если вы в&nbsp;другом городе и&nbsp;не&nbsp;можете приехать. Опишите ситуацию, и&nbsp;мы перезвоним в&nbsp;течение суток.</h1></p>
 </div>
+<form action="<%- partial("../_snippets/sender-path.ejs") %>" target="blank" method="post" class="form__complicated">
+  <input type="hidden" name="template" value="oh-my-god">
+  <div class="control-row">
+    <textarea name="message" placeholder="Описание ситуации" focus-on-load></textarea>
+  </div>
+  <div class="control-row control-row__small">
+    <input disable-on-submit phone-mask required save id="phoneNumber"
+      class="input input__100" type="tel" name="phone" placeholder="Номер, куда перезвонить">
+  </div>
+  <div class="control-row control-row__small">
+    <button disable-on-submit class="button button__100" type="submit">
+      <span class="on-disable--show">Описание отправлено</span>
+      <span class="on-disable--hide">Отправить описание</span>
+    </button>
+    <p><small>Перезвоним в течение суток</small></p>
+  </div>
+</form>

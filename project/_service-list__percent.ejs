@@ -17,6 +17,9 @@ const header = getHeaderFromHtml(yield)
   <%- partial("_snippets/head.ejs") %>
   <body class="has-service-footer-complex <%- partial("_snippets/body-class.ejs") %>">
     <%- partial("_snippets/header.ejs") %>
+    <a href="/" class="icon-close">
+      <%- partial("./_snippets/svg-icon.ejs", { name: 'close' }) %>
+    </a>
     <aside class="layout--sidebar menu-wrapper">
         <%- partial('_snippets/menu.ejs') %>
     </aside>
@@ -26,9 +29,6 @@ const header = getHeaderFromHtml(yield)
       <main class="layout--content">
         <div class="service--content">
           <header class="service-header">
-            <nav><a href="/" class="icon-close">
-              <%- partial("_snippets/svg-icon.ejs", { name: 'close' }) %>
-            </a></nav>
             <h1><%- header %></h1>
           </header>
 
