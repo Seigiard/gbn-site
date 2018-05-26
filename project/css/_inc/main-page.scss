@@ -5,13 +5,17 @@
   overflow-y: scroll;
 }
 
+.mp-pad--default {
+  padding: 27px 28px 60px;
+}
+
 .main-page--welcome {
   height: $layout-height;
   background: #000 url(../img/bg-main-page.jpg) 0 10% no-repeat;
   background-size: cover;
   border-bottom: 2px solid #000;
   color: #fff;
-  padding: 51px 30px 19px;
+  padding: 51px 30px 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -36,11 +40,22 @@
       padding-bottom: 9px;
     }
   }
-  .main-page--navigation-arrow {
-    margin-top: 11px;
-    margin-left: -10px;
-    padding: 10px;
-  }
+}
+.main-page--navigation-arrow {
+  margin-top: 11px;
+  margin-left: -10px;
+  padding: 10px;
+}
+.main-page--photo-description {
+  color: #B9B9B9;
+  font-size: 13px;
+  line-height: 1.25;
+  align-self: flex-end;
+  transform: rotate(90deg) translateY(-24px) translateX(17px);
+  transform-origin: top right;
+}
+.flip-360 {
+  transform: rotate(180deg);
 }
 
 .main-page {
@@ -64,7 +79,6 @@
   .row>*[class^="col"] {
     border: 2px solid #000;
     border-width: 0 2px;
-    padding: 27px 28px 31px;
   }
   .row>*[class^="col"]:first-child {
     border-left: none;
@@ -74,79 +88,81 @@
   }
 }
 
-.main-page .row {
-  .main-page--description {
-    padding: 40px 50px 40px 30px;
-  }
-  .main-page--expirience {
-    display: flex;
-    align-items: center;
-    p {
-      padding: 0;
-      font-size: 20px;
-    }
-    b {
-      display: block;
-      font-size: 100px;
-      font-weight: 400;
-      line-height: 1;
-      height: 0.9em;
-      margin-left: -4px;
-    }
-  }
-  .main-page--discount {
-    padding: 20px;
-    p {
-      display: flex;
-      padding: 0;
-    }
-    b {
-      flex: 0 0 50px;
-      font-size: 70px;
-      font-weight: 400;
-      line-height: 1;
-      padding: 0 23px 0 0;
-      height: 0.85em;
-    }
-  }
-  .main-page--video {
-    padding: 0 0 43.75%;
-    position: relative;
-    background: url(../img/youtube-video.jpg) center center no-repeat;
-    background-size: cover;
-  }
-  .main-page--employee {
-    padding-bottom: 0;
-  }
-  .main-page--vacancy {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-content: flex-end;
-    align-items: flex-end;
+.main-page--description {
+  padding: 40px 50px 60px 30px;
+}
+
+.main-page--expirience {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 42px;
+  p {
     padding: 0;
-    background: $color-black;
-    .bg-white {
-      padding: 27px 28px 31px;
-      min-height: 250px;
-    }
+    font-size: 20px;
   }
-  .main-page--address {
-    color: #fff;
-    border-top: 75px solid #000;
-    padding-bottom: 3px;
+  b {
+    display: block;
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 1;
+    height: 0.9em;
+    margin-left: -4px;
   }
-  .main-page--map {
+}
+
+.main-page--discount {
+  padding: 20px;
+  p {
+    display: flex;
     padding: 0;
-    height: 450px;
-    background-color: #fff;
-    background: url(/img/bg-map.png) center center no-repeat;
-    background-size: cover;
   }
-  .proposal-block {
-    padding: 26px 35px 23px 30px;
+  b {
+    flex: 0 0 50px;
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 0 23px 0 0;
+    height: 0.85em;
   }
+}
+
+.main-page--video {
+  padding: 41.65% 28px 12px;
+  background: url(../img/youtube-video.jpg) center center no-repeat;
+  background-size: cover;
+}
+.main-page--video-description {
+  color: #B9B9B9;
+  font-size: 13px;
+  line-height: 1;
+  padding: 0;
+}
+.main-page--employee {
+}
+.main-page--vacancy {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-content: flex-end;
+  align-items: flex-end;
+  background: $color-black;
+  .bg-white {
+    min-height: 250px;
+  }
+}
+
+.main-page--address {
+  color: #fff;
+  border-top: 75px solid #000!important;
+  padding-bottom: 3px;
+}
+.main-page--map {
+  padding: 0;
+  height: 450px;
+  background-color: #fff;
+  background: url(/img/bg-map.png) center center no-repeat;
+  background-size: cover;
 }
 
 .proposal-block {
@@ -156,6 +172,8 @@
   justify-content: space-between;
   align-content: stretch;
   align-items: flex-start;
+  padding-right: 35px;
+  padding-bottom: 23px;
 }
 
 .proposal-block--description {
@@ -183,7 +201,7 @@
 }
 
 .employee-list {
-  padding: 0!important;
+  padding: 0;
   display: flex;
   flex-direction: column;
   .employee__horizontal {
@@ -233,7 +251,6 @@
     order: 1;
     flex: 0 0 auto;
     align-self: flex-start;
-    margin: 0 -28px; // blockp padding compensation
   }
   .employee--description {
     order: 0;

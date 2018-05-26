@@ -1,7 +1,6 @@
 class PriceEditor {
   constructor(options) {
     var self = this;
-    this.$priceInputLabel = $("label[for='housePrice']");
     this.$priceInput = $(".PriceEditor-priceInput");
     this.$priceFormatted = $(".PriceEditor-priceFormatted");
     this.$priceRange = $(".PriceEditor-priceRange");
@@ -30,7 +29,6 @@ class PriceEditor {
     });
 
     this.$priceFormatted.on('click', this.onPriceFormattedClick.bind(this));
-    this.$priceInputLabel.on('click', this.onPriceFormattedClick.bind(this));
     this.$priceInput.on('keydown', this.onPriceInputKeydown.bind(this));
     this.$priceInput.on('change input', this.onPriceInputChange.bind(this));
     this.onPriceInputChange();

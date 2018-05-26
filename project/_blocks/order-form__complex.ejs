@@ -2,7 +2,7 @@
   <div class="order-form--controls">
     <% if(locals.priceEditor) { %>
       <div class="control-row PriceEditor-price">
-        <label for="housePrice"><%- priceEditor.label %></label>
+        <label><%- priceEditor.label %></label>
         <input type="hidden" name="label" value="<%- priceEditor.label %>">
         <div class="input input__big input__100 PriceEditor-priceFormatted input__no-border"></div>
         <input required id="housePrice" placeholder="<%- priceEditor.label %>"

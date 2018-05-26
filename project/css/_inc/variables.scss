@@ -35,14 +35,13 @@ $base-font-size: 16px;
 
 $font-family: 'Formular', Roboto, Verdana, sans-serif;
 
-// $min-width: 920px;
-$min-width: 1100px;
+$min-width: 1000px;
 
 $header-height: 69px;
 $border-height: 10px;
 $footer-height-simple: 71px;
 $footer-height-complex: 139px;
-$layout-height: calc(100vh - #{$header-height + $border-height});
+$layout-height: calc(100vh - #{$header-height + $border-height - 1});
 $layout-height-simple: calc(100vh - #{$header-height + $border-height + $footer-height-simple});
 $layout-height-complex: calc(100vh - #{$header-height + $border-height + $footer-height-complex});
 

@@ -14,6 +14,9 @@
           <button scroll-one-page class="button__icon main-page--navigation-arrow" type="button" title="Пролистайте вниз">
             <%- partial("_snippets/svg-icon.ejs", { name: 'arrow-down' }) %>
           </button>
+          <div class="main-page--photo-description"><div class="flip-360">
+            Фото: Сергей Скуратов Architects
+          </div></div>
         </div>
         <div class="row">
           <div class="col-6 main-page--description">
@@ -21,19 +24,19 @@
             <p>Мы работаем с&nbsp;любой недвижимостью в&nbsp;Москве и&nbsp;Подмосковье. Берёмся за&nbsp;сделки с&nbsp;новостройками и&nbsp;вторичным жильём. Избавляем клиентов от&nbsp;юридической волокиты и&nbsp;бесконечных переговоров.</p>
             <p>Помогаем в&nbsp;сложных случаях: когда&nbsp;вовлечены органы опеки, или&nbsp;не&nbsp;оформлено наследство, или&nbsp;нужно снять арест с&nbsp;объекта, или&nbsp;другая сторона внезапно отказывается выходить на&nbsp;сделку, или&nbsp;всё&nbsp;вместе.</p>
           </div>
-          <div class="col-2 main-page--expirience bg-blue">
+          <div class="col-2 main-page--expirience mp-pad--default bg-blue">
             <p>
               <b>5+</b>
-              минимальный опыт риелтора в&nbsp;бюро — пять&nbsp;лет
+              минималь&shy;ный опыт риелтора в&nbsp;бюро — пять&nbsp;лет
             </p>
           </div>
         </div>
         <div class="row">
           <div class="col-2 bg-black"></div>
-          <div class="col-2">
+          <div class="col-2 mp-pad--default">
             <p><strong>Бесплатно</strong><br/>консультируем и&nbsp;оцениваем недвижимость</p>
           </div>
-          <div class="col-4">
+          <div class="col-4 mp-pad--default">
             <h3>Оплата после оказания услуг</h3>
             <p>Исключение только одно: вы&nbsp;платите до&nbsp;окончания сделки, если мы&nbsp;вносим аванс продавцу при&nbsp;покупке недвижимости.</p>
           </div>
@@ -45,7 +48,7 @@
           <div class="col-1 bg-black"></div>
         </div>
         <div class="row">
-          <div class="col-4 proposal-block">
+          <div class="col-4 proposal-block mp-pad--default">
             <div class="proposal-block--description">
               <h3>Льготные условия от&nbsp;банков</h3>
               <p>Сниженная ставка по&nbsp;ипотеке и&nbsp;помощь в&nbsp;подаче документов</p>
@@ -56,7 +59,7 @@
               <a href="https://www.vtb.ru/personal/ipoteka/" title="Банк ВТБ"><%- partial("_snippets/svg-icon.ejs", { name: 'bank-vtb' }) %></a>
             </div>
           </div>
-          <div class="col-4 proposal-block">
+          <div class="col-4 proposal-block mp-pad--default">
             <div class="proposal-block--description">
               <h3>Скидки от&nbsp;дизайн-студий</h3>
               <p>Скидка от&nbsp;10 до&nbsp;20% на&nbsp;дизайн интерьера и&nbsp;ремонт</p>
@@ -68,10 +71,14 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8 main-page--video">&nbsp;</div>
+          <div class="col-8 main-page--video bg-black">
+            <div class="main-page--video-description">
+              Фото: Сергей Скуратов Architects
+            </div>
+          </div>
         </div>
         <div class="row">
-          <div class="col-2 main-page--employee employee employee__vertical">
+          <div class="col-2 mp-pad--default main-page--employee employee employee__vertical">
             <div class="employee--image">
               <img src="/img/employee-kozlova.jpg" width="198px" alt="">
             </div>
@@ -113,7 +120,7 @@
             </div>
           </div>
           <div class="col-2 main-page--vacancy">
-            <div class="bg-white">
+            <div class="bg-white mp-pad--default">
               <h3>Работа в бюро</h3>
               <p>Если хотите в&nbsp;нашу команду, отправьте свой&nbsp;номер телефона. Мы&nbsp;перезвоним в&nbsp;течение суток.</p>
               <form action="<%- partial("_snippets/sender-path.ejs") %>" target="blank" method="post">
@@ -133,7 +140,7 @@
           </div>
         </div>
         <div class="row bg-blue">
-          <div class="col-4 main-page--address address-block">
+          <div class="col-4 mp-pad--default main-page--address address-block">
             <div class="address-block--top">
               <h3>Адрес офиса</h3>
               <p>Мясницкая улица, д.&nbsp;35, стр.&nbsp;2, Москва</p>

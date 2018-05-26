@@ -21,16 +21,26 @@
   display: block;
 }
 
+@mixin thinLine($color) {
+  background-image: linear-gradient($color, $color);
+}
+
 .rangeslider {
-  background: rgba(255,255,255,0.3);
+  @include thinLine(rgba(255,255,255,0.3));
+  background-size: 1px 1px;
+  background-position: left center;
+  background-repeat: repeat-x;
+  cursor: pointer;
+  // background: rgba(255,255,255,0.3);
   position: relative;
   &--active {
-    background: #fff;
+    @include thinLine(#fff);
   }
 }
 
 .rangeslider--horizontal {
-  height: 1px;
+  height: 9px;
+  transform: translateY(-4px);
   width: 100%;
 }
 
@@ -40,7 +50,11 @@
 }
 
 .rangeslider__fill {
-  background: #fff;
+  background-size: 1px 1px;
+  background-position: left center;
+  background-repeat: repeat-x;
+  cursor: pointer;
+  @include thinLine(#fff);
   position: absolute;
 }
 .rangeslider--horizontal .rangeslider__fill {
@@ -54,29 +68,27 @@
   width: 7px;
   height: 7px;
   position: absolute;
+  top:1px;
   background: #fff;
   border-radius: 50%;
-  top: -3px;
   touch-action: pan-y;
   -ms-touch-action: pan-y;
   transition: left .1s ease-in-out;
   &:hover {
-    top: -4px;
+    top:0;
     width: 9px;
     height: 9px;
-    transform: translateX(-1px)
   }
 }
 .rangeslider__handle:active, .rangeslider--active .rangeslider__handle {
-  top: -4px;
+  top: 0px;
   width: 9px;
   height: 9px;
-  transform: translateX(-1px);
   transition: none;
 }
 
 input:focus + input[type="range"] + .rangeslider {
-  background: #fff;
+  @include thinLine(#fff);
 }
 input[type="range"]:focus + .rangeslider .rangeslider__handle {
   top: -4px;
