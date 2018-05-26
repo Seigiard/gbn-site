@@ -33,14 +33,14 @@
   cursor: pointer;
   // background: rgba(255,255,255,0.3);
   position: relative;
-  &--active {
+  &--active, &:hover {
     @include thinLine(#fff);
   }
 }
 
 .rangeslider--horizontal {
-  height: 9px;
-  transform: translateY(-4px);
+  height: 15px;
+  transform: translateY(-7px);
   width: 100%;
 }
 
@@ -68,22 +68,18 @@
   width: 7px;
   height: 7px;
   position: absolute;
-  top:1px;
+  top:4px;
   background: #fff;
   border-radius: 50%;
   touch-action: pan-y;
   -ms-touch-action: pan-y;
-  transition: left .1s ease-in-out;
+  transition: left .1s ease-in-out, transform .1s ease-in-out;
   &:hover {
-    top:0;
-    width: 9px;
-    height: 9px;
+    transform: scale(1.2);
   }
 }
 .rangeslider__handle:active, .rangeslider--active .rangeslider__handle {
-  top: 0px;
-  width: 9px;
-  height: 9px;
+  transform: scale(1.2);
   transition: none;
 }
 
@@ -91,8 +87,5 @@ input:focus + input[type="range"] + .rangeslider {
   @include thinLine(#fff);
 }
 input[type="range"]:focus + .rangeslider .rangeslider__handle {
-  top: -4px;
-  width: 9px;
-  height: 9px;
-  transform: translateX(-1px)
+  transform: translateX(-1px) scale(1.2);
 }
