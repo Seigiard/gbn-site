@@ -51,7 +51,7 @@ $(function () {
   const $footer = $('.site-footer');
 
   function onScrollFunc() {
-    const fn = $scrollContainer.scrollTop() > 36 ? 'addClass' : 'removeClass';
+    const fn = $scrollContainer.scrollTop() > 29 ? 'addClass' : 'removeClass';
     $body[fn]('js-sticky');
 
     const minMenuOffset = 20;

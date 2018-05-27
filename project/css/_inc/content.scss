@@ -1,7 +1,7 @@
 @import 'variables';
 .service-header {
   padding: 0px 0px 0px;
-  margin-top: 36px;
+  margin-top: 29px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -9,7 +9,7 @@
   transition: background-color .05s linear;
   h1 {
     white-space: nowrap;
-    padding: 15px 40px 9px 23px;
+    padding: 15px 40px 9px 24px;
     margin: 0 16px;
     border-bottom: 2px solid transparent;
     transition: border-color .05s linear;
@@ -25,23 +25,28 @@
 .service-lead {
   padding-left: $content-padding-left;
   padding-right: $content-padding-right;
-  margin-top: -11px;
-  max-width: $column-width;
+  margin-top: -7px;
+  max-width: $column-width - 100px;
   box-sizing: content-box;
 }
 
 .service-list {
-  padding: 9px $content-padding-right 0 $content-padding-left;
+  padding: 10px $content-padding-right 0 $content-padding-left;
   max-width: $column-width;
   box-sizing: content-box;
+  &.service-list__percent {
+    max-width: $column-width - 100px;
+  }
 }
 
 .service-item {
   &.service-item__feeedback:first-child:last-child {
-    border-top: 1px solid #C5C5C5;
-    padding-top: 16px;
+    border-top: none;
+    margin: 0px;
+    padding-top: 0;
+    width: 600px;
   }
-  padding: 9px 100px 6px 0;
+  padding: 5px 100px 23px 0;
   position: relative;
   border-top: 1px solid #C5C5C5;
   font-size: 13px;
@@ -50,7 +55,7 @@
   }
   h3 {
     font-weight: normal;
-    padding-bottom: 3px;
+    padding-bottom: 5px;
     label {
       padding: 3px 0;
       cursor: pointer;
@@ -61,7 +66,7 @@
     line-height: 16px;
   }
   ol {
-    padding: 0 0 1rem 0;
+    padding: 0 0 10px 0;
     margin: 0;
     list-style-position: inside;
   }
@@ -70,7 +75,7 @@
     padding: 0;
   }
   li+li {
-    padding-top: 9px;
+    padding-top: 7px;
   }
 }
 
@@ -85,7 +90,7 @@
 
 .service-item--price {
   position: absolute;
-  top: 8px;
+  top: 4px;
   right: 0;
   font-size: 16px;
   ul {
@@ -105,7 +110,7 @@
   display: block;
   position: absolute;
   right: 100%;
-  top: 8px;
+  top: 2px;
   width: 23px;
 }
 
@@ -122,7 +127,7 @@
 }
 
 .feedback {
-  margin: -1px 0 20px;
+  margin: -20px 0 50px;
   padding: 0;
 }
 
@@ -159,19 +164,31 @@
 }
 
 .feedback__employee {
-  // margin-top: -9px;
-
-  margin-bottom: 10px;
-  .feedback--text {
-    padding-top: 6px;
-  }
+  margin-top: -16px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
   .feedback--author {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
     align-items: flex-start;
+    flex: 0 0 140px;
+    width: 140px;
+    display: block;
     p {
-      font-size: 16px;
-      line-height: 1.15;
       padding: 2px 0 0 0;
     }
+  }
+  .feedback--image {
+    float: none;
+    margin: 4px 0 7px 0;
+  }
+  .feedback--text {
+    font-size: 24px;
+    line-height: 1.167;
   }
 }
 
@@ -193,11 +210,12 @@
 .info {}
 
 .info--toggle {
+  float: right;
   border: none;
   background: transparent;
   width: 40px;
   height: 30px;
-  margin: -17px 0 0 -10px;
+  margin: -36px -30px 0 0px;
   padding: 7px 10px 4px;
   span {
     background: transparent url(/img/icon-toggle.svg) top center no-repeat;
@@ -225,5 +243,5 @@
 
 .info--content {
   display: none;
-  padding: 0 0 15px;
+  padding: 5px 0 0;
 }
