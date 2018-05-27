@@ -158,7 +158,9 @@
         </div>
       </div>
     </main>
+    <% if(current.path.length === 1 && current.path[0] === 'index') { %>
     <footer class="site-footer"><div class="site-footer--rotate bg-red"><p>Сделано <span class="nwrp"><a href="https://bureau.ru/school/">в&nbsp;Школе Бюро&nbsp;Горбунова</a></span> в&nbsp;2018&nbsp;году</p></div></footer>
+    <% } %>
     <%- partial("_snippets/footer.ejs") %>
   </body>
 </html>

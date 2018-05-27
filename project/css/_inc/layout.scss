@@ -67,6 +67,7 @@ body {
 }
 
 .layout--content {
+  overflow-x: hidden;
   overflow-y: scroll;
   transform: translateZ(0px);
   height: $layout-height;
@@ -102,8 +103,12 @@ body {
 }
 
 .icon-close {
-  position: absolute;
+  position: fixed;
   top: $header-height + 20px;
   right: 26px;
   z-index: 20;
+  @media screen and (max-width: #{$min-width}) {
+    right: auto;
+    left: #{$min-width - 20px - 26px};
+  }
 }

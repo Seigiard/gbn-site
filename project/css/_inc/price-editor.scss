@@ -33,7 +33,7 @@
   cursor: pointer;
   // background: rgba(255,255,255,0.3);
   position: relative;
-  &--active, &:hover {
+  &--active {
     @include thinLine(#fff);
   }
 }
@@ -85,6 +85,9 @@
 
 input:focus + input[type="range"] + .rangeslider {
   @include thinLine(#fff);
+}
+input:focus + input[type="range"] + .rangeslider .rangeslider__handle {
+  display: none;
 }
 input[type="range"]:focus + .rangeslider .rangeslider__handle {
   transform: translateX(-1px) scale(1.2);

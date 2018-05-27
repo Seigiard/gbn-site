@@ -12,9 +12,6 @@
   .has-service-footer-simple & {
     max-width: 600px;
   }
-  @media screen and (max-width: 1100px) {
-    max-width: 600px;
-  }
   label {
     display: block;
     font-size: 13px;
@@ -29,8 +26,8 @@
 .order-form--controls {
   flex: 1 1 auto;
   .has-service-footer-complex & {
-    width: 600px;
-    max-width: 600px;
+    width: $column-width - 100px;
+    max-width: $column-width - 100px;
   }
 }
 .order-form--price {
@@ -53,9 +50,6 @@
     text-align: right;
     height: auto;
   }
-  .has-service-footer-complex & {
-    width: 200px;
-  }
   height: 107px;
   position: relative;
 }
@@ -69,6 +63,9 @@
 
 .control-row + .control-row {
   margin-top: 20px;
+  .has-service-footer-complex & {
+    margin-top: 6px;
+  }
   .main-page--vacancy & {
     margin-top: 12px;
   }
