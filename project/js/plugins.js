@@ -43,7 +43,7 @@ function rafThrottle(callback) {
     return throttled
 }
 
-function isNumber(value) {
+function isNumber (value) {
     return typeof value === 'number' && isFinite(value);
 }
 
@@ -89,33 +89,32 @@ function initForm(id, form) {
     const $inputs = $(':input:not([disable-on-submit])', $form);
 
     function enableInputs() {
-        $disabledButtons.prop('disabled', false);
-        $disabledInputs.removeClass('disabled');
+      $disabledButtons.prop('disabled', false);
+      $disabledInputs.removeClass('disabled');
     }
-
     function disableInputs() {
-        $disabledButtons.prop('disabled', true);
-        $disabledInputs.addClass('disabled');
+      $disabledButtons.prop('disabled', true);
+      $disabledInputs.addClass('disabled');
     }
 
     $form.submit(function (event) {
-        event.preventDefault();
+      event.preventDefault();
 
-        $.ajax({
-            type: "POST",
-            url: $form.attr('action'),
-            data: $form.serialize(),
-            success: function (r) {
-                if (r.status !== 'sent') {
-                    console.error(r);
-                }
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                enableInputs();
-            }
-        });
+      $.ajax({
+        type: "POST",
+        url: $form.attr('action'),
+        data: $form.serialize(),
+        success: function(r) {
+          if(r.status !== 'sent') {
+            console.error(r);
+          }
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+          enableInputs();
+        }
+      });
 
-        disableInputs();
+      disableInputs();
     });
 
     $inputs.on('blur focus input change', enableInputs);
@@ -127,4 +126,4 @@ function initForm(id, form) {
 
     $('[phone-mask]', $form).inputmask("+7 999 999-99-99");
     $('[save][id]', $form).savy('load');
-}
+  }

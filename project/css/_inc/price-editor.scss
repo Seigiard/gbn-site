@@ -86,6 +86,9 @@
 input:focus + input[type="range"] + .rangeslider {
   @include thinLine(#fff);
 }
+input:focus + input[type="range"] + .rangeslider {
+  pointer-events: none;
+}
 input:focus + input[type="range"] + .rangeslider .rangeslider__handle {
   display: none;
 }
