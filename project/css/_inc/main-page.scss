@@ -140,15 +140,27 @@
 .main-page--employee {
 }
 .main-page--vacancy {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-content: flex-end;
-  align-items: flex-end;
-  background: $color-black;
-  .bg-white {
-    min-height: 250px;
+  border-top: 37px solid #000!important;
+  padding-bottom: 1rem;
+}
+
+
+@media screen and (max-width: 1100px) {
+  .has-sidebars .main-page--grid-10-sm {
+    grid-template-columns: repeat(16,1fr);
+    .main-page--employee {
+      grid-column: 4 span;
+    }
+    .employee-list {
+      grid-column: 7 span;
+    }
+    .employee--image img {
+      margin-right: 0;
+      width: 150px;
+    }
+    .main-page--vacancy {
+      grid-column: 5 span;
+    }
   }
 }
 
@@ -251,6 +263,7 @@
     order: 1;
     flex: 0 0 auto;
     align-self: flex-start;
+    margin: 0 -28px;
   }
   .employee--description {
     order: 0;

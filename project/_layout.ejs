@@ -77,7 +77,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row main-page--grid-10-sm">
           <div class="col-2 mp-pad--default main-page--employee employee employee__vertical">
             <div class="employee--image">
               <img src="/img/employee-kozlova.jpg" width="198px" alt="">
@@ -119,24 +119,22 @@
               </div>
             </div>
           </div>
-          <div class="col-2 main-page--vacancy">
-            <div class="bg-white mp-pad--default">
-              <h3>Работа в бюро</h3>
-              <p>Если хотите в&nbsp;нашу команду, отправьте свой&nbsp;номер телефона. Мы&nbsp;перезвоним в&nbsp;течение суток.</p>
-              <form action="<%- partial("_snippets/sender-path.ejs") %>" target="blank" method="post">
-                <input type="hidden" name="template" value="vacancy">
-                <div class="control-row">
-                  <input disable-on-submit phone-mask required save id="phoneNumber"
-                    class="input input__100" type="tel" name="phone" placeholder="Ваш номер" />
-                </div>
-                <div class="control-row">
-                  <button disable-on-submit class="button button__100" type="submit">
-                    <span class="on-disable--show">Перезвоним</span>
-                    <span class="on-disable--hide">Отправить</span>
-                  </button>
-                </div>
-              </form>
-            </div>
+          <div class="col-2 main-page--vacancy bg-white mp-pad--default">
+            <h3>Работа в бюро</h3>
+            <p>Если хотите в&nbsp;нашу команду, отправьте свой&nbsp;номер телефона. Мы&nbsp;перезвоним в&nbsp;течение суток.</p>
+            <form action="<%- partial("_snippets/sender-path.ejs") %>" target="blank" method="post">
+              <input type="hidden" name="template" value="vacancy">
+              <div class="control-row">
+                <input disable-on-submit phone-mask required save id="phoneNumber"
+                  class="input input__100" type="tel" name="phone" placeholder="Ваш номер" />
+              </div>
+              <div class="control-row">
+                <button disable-on-submit class="button button__100" type="submit">
+                  <span class="on-disable--show">Перезвоним</span>
+                  <span class="on-disable--hide">Отправить</span>
+                </button>
+              </div>
+            </form>
           </div>
         </div>
         <div class="row bg-blue">
