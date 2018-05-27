@@ -4,6 +4,7 @@
     "services": [
       "1-fb-employee"
     ],
+    "mailTitle": "Расчёт на&nbsp;сдачу квартиры, комнаты или&nbsp;дома",
     "priceEditor": {
       "label": "Арендная плата в месяц",
       "labelPrice": "Комиссия до",

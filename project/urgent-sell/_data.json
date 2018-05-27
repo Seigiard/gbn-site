@@ -4,6 +4,7 @@
     "services": [
       "1-fb-employee"
     ],
+    "mailTitle": "Расчёт на&nbsp;срочный выкуп квартиры",
     "priceEditor": {
       "label": "Стоимость квартиры",
       "labelPrice": "Максимальная выплата",

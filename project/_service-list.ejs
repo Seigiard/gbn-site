@@ -25,7 +25,7 @@ const header = getHeaderFromHtml(yield)
     </aside>
     <form action="<%- partial("_snippets/sender-path.ejs") %>" method="post" calculate-total>
       <input type="hidden" name="template" value="simple-form">
-      <input type="hidden" name="title" value="<%- header %>">
+      <input type="hidden" name="title" value="<%- mailTitle %>">
       <main class="layout--content">
         <div class="service--content">
           <header class="service-header">

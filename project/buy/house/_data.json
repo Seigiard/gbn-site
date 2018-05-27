@@ -10,6 +10,7 @@
       "4-check",
 	    "4-fb-employee"
     ],
+    "mailTitle": "Расчёт на&nbsp;покупку дома или&nbsp;таунхауса",
     "priceEditor": {
       "label": "Стоимость дома, таунхауса",
       "min": 0,
