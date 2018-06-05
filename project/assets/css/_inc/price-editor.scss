@@ -33,9 +33,6 @@
   cursor: pointer;
   // background: rgba(255,255,255,0.3);
   position: relative;
-  &--active {
-    @include thinLine(#fff);
-  }
 }
 
 .rangeslider--horizontal {
@@ -78,6 +75,7 @@
     transform: scale(1.2);
   }
 }
+.rangeslider:hover .rangeslider__handle,
 .rangeslider__handle:active, .rangeslider--active .rangeslider__handle {
   transform: scale(1.2);
   transition: none;
@@ -85,10 +83,9 @@
 
 input:focus + input[type="range"] + .rangeslider {
   @include thinLine(#fff);
-}
-input:focus + input[type="range"] + .rangeslider {
   pointer-events: none;
 }
+input:focus + input[type="range"] + .rangeslider .rangeslider__fill,
 input:focus + input[type="range"] + .rangeslider .rangeslider__handle {
   display: none;
 }

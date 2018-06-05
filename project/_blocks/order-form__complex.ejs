@@ -6,6 +6,7 @@
         <input type="hidden" name="label" value="<%- priceEditor.label %>">
         <div class="input input__big input__100 PriceEditor-priceFormatted input__no-border"></div>
         <input required id="housePrice" placeholder="<%- priceEditor.label %>"
+          price-mask
           value="<%- priceEditor.value %>" type="text" name="object_price"
           class="input input__big input__100 input__no-border PriceEditor-priceInput" />
         <input class="PriceEditor-priceRange"

@@ -124,6 +124,7 @@ function initForm(id, form) {
         setCalculateTotal($form);
     }
 
+    $('[price-mask]', $form).inputmask({"mask": "9{1,30}", showMaskOnFocus: false, showMaskOnInput: false});
     $('[phone-mask]', $form).inputmask("+7 999 999-99-99");
     $('[save][id]', $form).savy('load');
   }

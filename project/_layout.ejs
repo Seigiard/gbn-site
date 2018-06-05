@@ -72,15 +72,15 @@
         </div>
         <div class="row">
           <div class="col-8 main-page--video bg-black">
-            <div class="main-page--video-description">
-              Фото: Сергей Скуратов Architects
+            <div class="main-page--video-embed">
+              <iframe src="https://www.youtube.com/embed/wsC_59MFrvg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
           </div>
         </div>
         <div class="row main-page--grid-10-sm">
           <div class="col-2 mp-pad--default main-page--employee employee employee__vertical">
             <div class="employee--image">
-              <img src="/img/employee-kozlova.jpg" width="198px" alt="">
+              <img src="/assets/img/employee-kozlova.jpg" width="198px" alt="">
             </div>
             <div class="employee--description">
               <h3>Оксана Козлова</h3>
@@ -94,7 +94,7 @@
           <div class="col-4 employee-list">
             <div class="employee employee__horizontal">
               <div class="employee--image">
-                <img src="/img/employee-kudina.jpg" width="198px" alt="">
+                <img src="/assets/img/employee-kudina.jpg" width="198px" alt="">
               </div>
               <div class="employee--description">
                 <h3>Людмила Кудина</h3>
@@ -107,7 +107,7 @@
             </div>
             <div class="employee employee__horizontal">
               <div class="employee--image">
-                <img src="/img/employee-raevskaya.jpg" width="198px" alt="">
+                <img src="/assets/img/employee-raevskaya.jpg" width="198px" alt="">
               </div>
               <div class="employee--description">
                 <h3>Юлия Раевская</h3>
@@ -156,9 +156,6 @@
         </div>
       </div>
     </main>
-    <% if(current.path.length === 1 && current.path[0] === 'index') { %>
-    <footer class="site-footer"><div class="site-footer--rotate bg-red"><p>Сделано <span class="nwrp"><a href="https://bureau.ru/school/">в&nbsp;Школе Бюро&nbsp;Горбунова</a></span> в&nbsp;2018&nbsp;году</p></div></footer>
-    <% } %>
     <%- partial("_snippets/footer.ejs") %>
   </body>
 </html>

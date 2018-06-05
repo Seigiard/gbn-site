@@ -98,7 +98,7 @@ textarea {
 }
 
 .button {
-  font-size: 16px;
+  @include fontSize(16px);
   height: 36px;
   padding: 3px 16px 0;
   .on-disable--show {
@@ -118,7 +118,7 @@ textarea {
 }
 
 .input {
-  font-size: 16px;
+  @include fontSize(16px);
   height: 36px;
   padding: 4px 0 0;
   border-style: solid;
@@ -127,7 +127,7 @@ textarea {
   max-width: 100%;
 }
 .input__no-border { border: none; }
-.input__big { font-size: 24px; }
+.input__big { @include fontSize(24px); }
 .input__100, .button__100 { width: 100%; }
 
 .input-combined {

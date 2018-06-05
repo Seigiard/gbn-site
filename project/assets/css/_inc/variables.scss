@@ -1,3 +1,5 @@
+@import 'rfs.scss';
+
 $base-font-size: 16px;
 @function rem($px) {
   @return ($px / $base-font-size) * 1rem;
@@ -6,6 +8,23 @@ $base-font-size: 16px;
 @function inPercent($px, $width) {
   @return (100 * $px / $width) * 1%;
 }
+
+@mixin fontSize($fz) {
+  font-size: rem($fz);
+}
+
+
+@mixin fluid-type($min-font-size: 12px, $max-font-size: 21px, $lower-range: 420px, $upper-range: 900px) {
+  font-size: calc(#{$min-font-size} + #{(($max-font-size / ($max-font-size * 0 + 1)) - ($min-font-size / ($min-font-size * 0 + 1)))} * ( (100vw - #{$lower-range}) / #{(($upper-range / ($upper-range * 0 + 1)) - ($lower-range / ($lower-range * 0 + 1)))}));
+
+  @media screen and (max-width: $lower-range) {
+    font-size: $min-font-size;
+  }
+  @media screen and (min-width: $upper-range){
+    font-size: $max-font-size;
+  }
+}
+
 
 @mixin link($link-color, $link-active-color, $bg-color: #fff) {
   $link-border-color: rgba($link-color, .4);

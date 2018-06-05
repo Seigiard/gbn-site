@@ -1,5 +1,4 @@
 @import 'variables';
-
 .scroll-container {
   height: $layout-height;
   overflow-y: scroll;
@@ -24,14 +23,14 @@
   align-content: stretch;
   align-items: flex-start;
   h1 {
-    font-size: 59px;
+    @include fontSize(59px);
     line-height: 1.11;
     margin: 0;
     padding: 0 0 20px 0;
   }
   p {
     max-width: 592px;
-    font-size: 20px;
+    @include fontSize(20px);
     line-height: 1.5;
     margin: 0;
     padding: 0;
@@ -41,26 +40,29 @@
     }
   }
 }
+
 .main-page--navigation-arrow {
   margin-top: 11px;
   margin-left: -10px;
   padding: 10px;
 }
+
 .main-page--photo-description {
   color: #B9B9B9;
-  font-size: 13px;
+  @include fontSize(13px);
   line-height: 1.25;
   align-self: flex-end;
   transform: rotate(90deg) translateY(-24px) translateX(17px);
   transform-origin: top right;
 }
+
 .flip-360 {
   transform: rotate(180deg);
 }
 
 .main-page {
   h2 {
-    font-size: 40px;
+    @include fontSize(40px);
     padding: 0 0 10px 0;
   }
   h3 {
@@ -98,11 +100,11 @@
   padding-top: 42px;
   p {
     padding: 0;
-    font-size: 20px;
+    @include fontSize(20px);
   }
   b {
     display: block;
-    font-size: 100px;
+    @include fontSize(100px);
     font-weight: 400;
     line-height: 1;
     height: 0.9em;
@@ -118,7 +120,7 @@
   }
   b {
     flex: 0 0 50px;
-    font-size: 70px;
+    @include fontSize(70px);
     font-weight: 400;
     line-height: 1;
     padding: 0 23px 0 0;
@@ -127,27 +129,33 @@
 }
 
 .main-page--video {
-  padding: 41.65% 28px 12px;
-  background: url(../img/youtube-video.jpg) center center no-repeat;
-  background-size: cover;
 }
-.main-page--video-description {
-  color: #B9B9B9;
-  font-size: 13px;
-  line-height: 1;
-  padding: 0;
+
+.main-page--video-embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
-.main-page--employee {
-}
+
+.main-page--employee {}
+
 .main-page--vacancy {
-  border-top: 37px solid #000!important;
+  border-top: 37px solid #000 !important;
   padding-bottom: 1rem;
 }
 
-
 @media screen and (max-width: 1100px) {
   .has-sidebars .main-page--grid-10-sm {
-    grid-template-columns: repeat(16,1fr);
+    grid-template-columns: repeat(16, 1fr);
     .main-page--employee {
       grid-column: 4 span;
     }
@@ -166,9 +174,10 @@
 
 .main-page--address {
   color: #fff;
-  border-top: 75px solid #000!important;
+  border-top: 75px solid #000 !important;
   padding-bottom: 3px;
 }
+
 .main-page--map {
   padding: 0;
   height: 450px;
@@ -200,7 +209,7 @@
   a {
     display: inline-block;
   }
-  a + a {
+  a+a {
     margin-left: 2rem;
   }
   .icon-kmstudio {
@@ -287,10 +296,12 @@
   align-content: stretch;
   align-items: flex-start;
 }
+
 .address-block--top,
 .address-block--bottom {
   max-width: 190px;
 }
+
 .address-block--bottom p {
   line-height: 1.4;
 }

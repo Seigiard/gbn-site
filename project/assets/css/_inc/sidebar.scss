@@ -14,8 +14,17 @@
   padding: 40px 0;
   border-right: 4px solid #000;
   max-width: 194px;
+  .has-sidebar & {
+    width: 194px;
+  }
+  .has-sidebars & {
+    width: 318px;
+  }
+  .has-sidebars_active & {
+    width: 248px;
+  }
   &.menu__shrinked {
-    font-size: 13px;
+    @include fontSize(13px);
     line-height: 1.2;
     max-width: 124px;
   }
