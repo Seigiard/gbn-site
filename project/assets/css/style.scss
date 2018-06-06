@@ -3,7 +3,7 @@
 html {
   margin: 0;
   padding: 0;
-  @include fluid-type(16px, 20px, 1000px, 1600px)
+  @include fluid-type($base-font-size, $base-font-size+4px, 1000px, 1600px)
   // font-size: $base-font-size;
 }
 

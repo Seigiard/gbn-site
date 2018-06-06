@@ -95,8 +95,7 @@
     width: 100%;
     border: none;
     @include fontSize(16px);
-    height: 28px;
-    line-height: 28px;
+    height: rem(28px);
     ::placeholder {
       color: #7f7f7f;
     }
