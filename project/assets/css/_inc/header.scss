@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-content: stretch;
   align-items: center;
-  padding: 15px 30px 14px 15px;
+  padding: px(15px) px(30px) px(14px) px(15px);
   min-width: $min-width;
 }
 
@@ -19,10 +19,10 @@
 .header--logo {
   @include fontSize(20px);
   svg {
-    width: 30px;
-    height: 41px;
+    width: px(30px);
+    height: px(41px);
     vertical-align: middle;
-    margin-right: 10px;
+    margin-right: px(10px);
   }
 }
 

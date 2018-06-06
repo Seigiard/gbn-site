@@ -93,19 +93,19 @@ textarea {
   display: block;
   border: none;
   width: 100%;
-  height: 300px;
-  height: calc(100vh - 510px);
-  min-height: 100px;
+  height: px(300px);
+  height: calc(100vh - px(510px));
+  min-height: px(100px);
   border: 1px solid #C5C5C5;
-  padding: 21px 45px 21px 12px;
+  padding: px(21px) px(45px) px(21px) px(12px);
   box-sizing: border-box;
-  margin-bottom: 60px;
+  margin-bottom: px(60px);
 }
 
 .button {
   @include fontSize(16px);
-  height: 36px;
-  padding: 3px 16px 0;
+  height: px(36px);
+  padding: px(3px) px(16px) 0;
   @include hover-transition();
   .on-disable--show {
     display: none;
@@ -125,8 +125,8 @@ textarea {
 
 .input {
   @include fontSize(16px);
-  height: 36px;
-  padding: 4px 0 0;
+  height: px(36px);
+  padding: px(4px) 0 0;
   border-style: solid;
   border-width: 0 0 1px 0;
   background: transparent;

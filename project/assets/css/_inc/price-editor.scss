@@ -36,8 +36,8 @@
 }
 
 .rangeslider--horizontal {
-  height: 15px;
-  transform: translateY(-7px);
+  height: px(15px);
+  transform: translateY(px(-7px));
   width: 100%;
 }
 
@@ -62,10 +62,10 @@
 .rangeslider__handle {
   cursor: pointer;
   display: inline-block;
-  width: 7px;
-  height: 7px;
+  width: px(7px);
+  height: px(7px);
   position: absolute;
-  top:4px;
+  top:px(4px);
   background: #fff;
   border-radius: 50%;
   touch-action: pan-y;
@@ -90,5 +90,5 @@ input:focus + input[type="range"] + .rangeslider .rangeslider__handle {
   display: none;
 }
 input[type="range"]:focus + .rangeslider .rangeslider__handle {
-  transform: translateX(-1px) scale(1.2);
+  transform: translateX(px(-1px)) scale(1.2);
 }

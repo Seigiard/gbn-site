@@ -1,8 +1,8 @@
 @import 'variables';
 
 .order-form {
-  margin: 0 0 0 40px;
-  padding: 16px 0;
+  margin: 0 0 0 px(40px);
+  padding: px(16px) 0;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -10,13 +10,13 @@
   align-items: flex-start;
   color: #fff;
   .has-service-footer-simple & {
-    max-width: rem($column-width);
+    max-width: $column-width;
   }
   label {
     display: block;
     @include fontSize(13px);
     line-height: 1;
-    padding-bottom: 2px;
+    padding-bottom: px(2px);
   }
 }
 .order-form__va {
@@ -26,15 +26,15 @@
 .order-form--controls {
   flex: 1 1 auto;
   .has-service-footer-complex & {
-    width: $column-width - 100px;
-    max-width: $column-width - 100px;
+    width: #{$column-width - px(100px)};
+    max-width: #{$column-width - px(100px)};
   }
 }
 .order-form--price {
   flex: 0 0 auto;
-  padding-left: 50px;
+  padding-left: px(50px);
   label {
-    padding-bottom: 9px;
+    padding-bottom: px(9px);
     span {
       font-size: inherit;
       line-height: inherit;
@@ -45,16 +45,16 @@
     line-height: 1;
   }
   .has-service-footer-simple & {
-    width: 150px;
+    width: px(150px);
     padding-left: 0;
     text-align: right;
     height: auto;
   }
-  height: 107px;
+  height: px(107px);
   position: relative;
 }
 .order-form--note {
-  bottom: -5px;
+  bottom: px(-5px);
   position: absolute;
   @include fontSize(13px);
   line-height: 1.25;
@@ -62,16 +62,16 @@
 }
 
 .control-row + .control-row {
-  margin-top: 20px;
+  margin-top: px(20px);
   .has-service-footer-complex & {
-    margin-top: 6px;
+    margin-top: px(6px);
   }
   .main-page--vacancy & {
-    margin-top: 12px;
+    margin-top: px(12px);
   }
 }
 .control-row__small {
-  width: 240px;
+  width: px(240px);
 }
 
 .order-form--email-form {
@@ -81,21 +81,21 @@
   }
   .button {
     flex: 0 0 auto;
-    margin-left: 20px;
+    margin-left: px(20px);
   }
 }
 
 .hire-form {
   display: flex;
   border-bottom: 1px solid #666;
-  padding-top: 14px;
+  padding-top: px(14px);
 
   input {
     flex: 1 1 auto;
     width: 100%;
     border: none;
     @include fontSize(16px);
-    height: rem(28px);
+    height: px(28px);
     ::placeholder {
       color: #7f7f7f;
     }
@@ -105,8 +105,8 @@
     border: none;
     background: transparent;
     margin: 0;
-    padding: 0 0 0 10px;
-    height: 28px;
+    padding: 0 0 0 px(10px);
+    height: px(28px);
     cursor: pointer;
     &:active, &:focus {
       opacity: .7;
@@ -119,15 +119,15 @@
 }
 
 .form__complicated {
-  padding-top: 10px;
+  padding-top: px(10px);
   padding-left: $content-padding-left;
   padding-right: $content-padding-right;
   max-width: $column-width;
   box-sizing: content-box;
-  margin-left: 1px;
+  margin-left: px(1px);
   .control-row {
     button + p {
-      padding: 10px 0 0 0;
+      padding: px(10px) 0 0 0;
     }
   }
 }

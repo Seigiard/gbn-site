@@ -11,25 +11,25 @@
 }
 
 .menu {
-  padding: 40px 0;
-  border-right: 4px solid #000;
-  max-width: 194px;
+  padding: px(40px) 0;
+  border-right: px(4px) solid #000;
+  max-width: $has-sidebar;
   @include fontSize(16px);
   // font-size: 16px;
   .has-sidebar & {
-    width: 194px;
+    width: $has-sidebar;
   }
   .has-sidebars & {
-    width: 318px;
+    width: $has-sidebars;
   }
   .has-sidebars_active & {
-    width: 248px;
+    width: $has-sidebars_active;
   }
   &.menu__shrinked {
     @include fontSize(13px);
     // font-size: 13px;
     line-height: 1.2;
-    max-width: 124px;
+    max-width: rem(124px);
   }
   ul {
     margin: 0;
@@ -54,10 +54,10 @@
     display: block;
     height: 1px;
     background-color: rgba(0,0,0,0.2);
-    margin: 0 25px 0 15px;
+    margin: 0 px(25px) 0 px(15px);
   }
   a, span {
-    padding: 8px 21px 8px 15px;
+    padding: px(8px) px(21px) px(8px) px(15px);
     display: inline-block;
   }
   span {

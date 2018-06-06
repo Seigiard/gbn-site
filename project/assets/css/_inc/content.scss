@@ -1,7 +1,7 @@
 @import 'variables';
 .service-header {
   padding: 0px 0px 0px;
-  margin-top: 29px;
+  margin-top: px(29px);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -9,8 +9,8 @@
   transition: background-color .05s linear;
   h1 {
     white-space: nowrap;
-    padding: 15px 40px 9px 24px;
-    margin: 0 16px;
+    padding: px(15px) px(40px) px(9px) px(24px);
+    margin: 0 px(16px);
     border-bottom: 2px solid transparent;
     transition: border-color .05s linear;
   }
@@ -25,17 +25,17 @@
 .service-lead {
   padding-left: $content-padding-left;
   padding-right: $content-padding-right;
-  margin-top: -7px;
-  max-width: rem($column-width - 100px);
+  margin-top: px(-7px);
+  max-width: #{$column-width - px(100px)};
   box-sizing: content-box;
 }
 
 .service-list {
-  padding: 10px $content-padding-right 0 $content-padding-left;
-  max-width: rem($column-width);
+  padding: px(10px) $content-padding-right 0 $content-padding-left;
+  max-width: $column-width;
   box-sizing: content-box;
   &.service-list__percent {
-    max-width: rem($column-width - 100px);
+    max-width: #{$column-width - px(100px)};
   }
 }
 
@@ -44,9 +44,9 @@
     border-top: none;
     margin: 0px;
     padding-top: 0;
-    width: rem($column-width);
+    width: $column-width;
   }
-  padding: 5px 100px 23px 0;
+  padding: px(5px) px(100px) px(23px) 0;
   position: relative;
   border-top: 1px solid #C5C5C5;
   @include fontSize(13px);
@@ -55,9 +55,9 @@
   }
   h3 {
     font-weight: normal;
-    padding-bottom: 5px;
+    padding-bottom: px(5px);
     label {
-      padding: 3px 0;
+      padding: px(3px) 0;
       cursor: pointer;
     }
   }
@@ -66,7 +66,7 @@
     line-height: 1.23;
   }
   ol {
-    padding: 0 0 10px 0;
+    padding: 0 0 px(10px) 0;
     margin: 0;
     list-style-position: inside;
   }
@@ -75,7 +75,7 @@
     padding: 0;
   }
   li+li {
-    padding-top: 7px;
+    padding-top: px(7px);
   }
 }
 
@@ -85,18 +85,18 @@
 }
 
 .service-item__extra {
-  padding-bottom: 30px;
+  padding-bottom: px(30px);
 }
 
 .service-item--price {
   position: absolute;
-  top: 4px;
+  top: px(4px);
   right: 0;
   @include fontSize(16px);
   ul {
     margin: 0;
-    padding: 5px 0 0 0;
-    max-width: 90px;
+    padding: px(5px) 0 0 0;
+    max-width: px(90px);
     list-style-type: none;
     @include fontSize(14px);
   }
@@ -110,8 +110,8 @@
   display: block;
   position: absolute;
   right: 100%;
-  top: 3px;
-  width: 23px;
+  top: px(3px);
+  width: px(23px);
 }
 
 .service-list__percent .service-item {
@@ -127,7 +127,7 @@
 }
 
 .feedback {
-  margin: -20px 0 50px;
+  margin: px(-20px) 0 px(50px);
   padding: 0;
 }
 
@@ -144,7 +144,7 @@
   display: flex;
   align-items: center;
   p {
-    padding: 3px 0 0 0;
+    padding: px(3px) 0 0 0;
     @include fontSize(13px);
     span {
       white-space: nowrap;
@@ -153,19 +153,19 @@
 }
 
 .feedback--image {
-  height: 35px;
+  height: px(35px);
   float: left;
-  margin-right: 10px;
-  flex: 0 0 35px;
+  margin-right: px(10px);
+  flex: 0 0 px(35px);
   img {
-    width: 35px;
-    height: 35px;
+    width: px(35px);
+    height: px(35px);
   }
 }
 
 .feedback__employee {
-  margin-top: -16px;
-  margin-bottom: 60px;
+  margin-top: px(-16px);
+  margin-bottom: px(60px);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -175,16 +175,16 @@
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
-    flex: 0 0 140px;
-    width: 140px;
+    flex: 0 0 px(140px);
+    width: px(140px);
     display: block;
     p {
-      padding: 2px 0 0 0;
+      padding: px(2px) 0 0 0;
     }
   }
   .feedback--image {
     float: none;
-    margin: 4px 0 7px 0;
+    margin: px(4px) 0 px(7px) 0;
   }
   .feedback--text {
     @include fontSize(24px);
@@ -196,11 +196,11 @@
   background-color: transparent;
   background-image: url(../img/corner-top-left.svg), url(../img/corner-bottom-right.svg);
   background-position: top left, bottom right;
-  background-size: 20px 20px, 20px 20px;
+  background-size: px(20px) px(20px), px(20px) px(20px);
   background-repeat: no-repeat, no-repeat;
   .feedback--text {
     text-align: center;
-    padding: 16px 10% 4px;
+    padding: px(16px) 10% px(4px);
   }
   .feedback--image img {
     border-radius: 50%;
@@ -212,10 +212,14 @@
 .info--toggle {
   border: none;
   background: transparent;
-  width: 40px;
-  height: 30px;
-  margin: -18px 0px 5px -10px;
-  padding: 7px 10px 4px;
+  width: px(40px);
+  height: px(30px);
+  margin: px(-18px) 0px px(5px) px(-10px);
+  padding: px(7px) px(10px) px(4px);
+  svg {
+    width: px(20px);
+    height: px(10px);
+  }
 }
 
 .info__content-visible {
@@ -229,5 +233,5 @@
 
 .info--content {
   display: none;
-  padding: 5px 0 0;
+  padding: px(5px) 0 0;
 }

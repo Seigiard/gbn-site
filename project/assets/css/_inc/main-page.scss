@@ -5,16 +5,16 @@
 }
 
 .mp-pad--default {
-  padding: 27px 28px 60px;
+  padding: px(27px) px(28px) px(60px);
 }
 
 .main-page--welcome {
   height: $layout-height;
   background: #000 url(../img/bg-main-page.jpg) 0 10% no-repeat;
   background-size: cover;
-  border-bottom: 2px solid #000;
+  border-bottom: px(2px) solid #000;
   color: #fff;
-  padding: 51px 30px 10px;
+  padding: px(51px) px(30px) px(10px);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -26,25 +26,25 @@
     @include fontSize(59px);
     line-height: 1.11;
     margin: 0;
-    padding: 0 0 20px 0;
+    padding: 0 0 px(20px) 0;
   }
   p {
-    max-width: 592px;
+    max-width: px(592px);
     @include fontSize(20px);
     line-height: 1.5;
     margin: 0;
     padding: 0;
     &.subheader {
       line-height: 1;
-      padding-bottom: 9px;
+      padding-bottom: px(9px);
     }
   }
 }
 
 .main-page--navigation-arrow {
-  margin-top: 11px;
-  margin-left: -10px;
-  padding: 10px;
+  margin-top: px(11px);
+  margin-left: px(-10px);
+  padding: px(10px);
 }
 
 .main-page--photo-description {
@@ -52,7 +52,7 @@
   @include fontSize(13px);
   line-height: 1.25;
   align-self: flex-end;
-  transform: rotate(90deg) translateY(-24px) translateX(17px);
+  transform: rotate(90deg) translateY(px(-24px)) translateX(px(17px));
   transform-origin: top right;
 }
 
@@ -63,24 +63,24 @@
 .main-page {
   h2 {
     @include fontSize(40px);
-    padding: 0 0 10px 0;
+    padding: 0 0 px(10px) 0;
   }
   h3 {
-    padding: 0 0 1px 0;
+    padding: 0 0 px(1px) 0;
   }
   .row {
-    border: 2px solid black;
-    border-width: 2px 0;
+    border: px(2px) solid black;
+    border-width: px(2px) 0;
   }
   .main-page+.row {
-    border-top-width: 4px;
+    border-top-width: px(4px);
   }
   .row:last-child {
     border-bottom: none;
   }
   .row>*[class^="col"] {
-    border: 2px solid #000;
-    border-width: 0 2px;
+    border: px(2px) solid #000;
+    border-width: 0 px(2px);
   }
   .row>*[class^="col"]:first-child {
     border-left: none;
@@ -91,13 +91,13 @@
 }
 
 .main-page--description {
-  padding: 40px 50px 60px 30px;
+  padding: px(40px) px(50px) px(60px) px(30px);
 }
 
 .main-page--expirience {
   display: flex;
   align-items: flex-start;
-  padding-top: 42px;
+  padding-top: px(42px);
   p {
     padding: 0;
     @include fontSize(20px);
@@ -108,22 +108,22 @@
     font-weight: 400;
     line-height: 1;
     height: 0.9em;
-    margin-left: -4px;
+    margin-left: px(-4px);
   }
 }
 
 .main-page--discount {
-  padding: 20px;
+  padding: px(20px);
   p {
     display: flex;
     padding: 0;
   }
   b {
-    flex: 0 0 50px;
+    flex: 0 0 px(50px);
     @include fontSize(70px);
     font-weight: 400;
     line-height: 1;
-    padding: 0 23px 0 0;
+    padding: 0 px(23px) 0 0;
     height: 0.85em;
   }
 }
@@ -135,7 +135,7 @@
   position: relative;
   padding-bottom: 56.25%;
   /* 16:9 */
-  padding-top: 25px;
+  padding-top: px(25px);
   height: 0;
   iframe {
     position: absolute;
@@ -149,7 +149,7 @@
 .main-page--employee {}
 
 .main-page--vacancy {
-  border-top: 37px solid #000 !important;
+  border-top: px(37px) solid #000 !important;
   padding-bottom: 1rem;
 }
 
@@ -164,7 +164,7 @@
     }
     .employee--image img {
       margin-right: 0;
-      width: 150px;
+      width: px(150px);
     }
     .main-page--vacancy {
       grid-column: 5 span;
@@ -174,13 +174,13 @@
 
 .main-page--address {
   color: #fff;
-  border-top: 75px solid #000 !important;
-  padding-bottom: 3px;
+  border-top: px(75px) solid #000 !important;
+  padding-bottom: px(3px);
 }
 
 .main-page--map {
   padding: 0;
-  height: 450px;
+  height: px(450px);
   background-color: #fff;
   background: url(../img/bg-map.png) center center no-repeat;
   background-size: cover;
@@ -193,8 +193,8 @@
   justify-content: space-between;
   align-content: stretch;
   align-items: flex-start;
-  padding-right: 35px;
-  padding-bottom: 23px;
+  padding-right: px(35px);
+  padding-bottom: px(23px);
 }
 
 .proposal-block--description {
@@ -205,19 +205,12 @@
   text-align: right;
   flex: 0 1 auto;
   align-self: flex-end;
-  padding: 25px 0 0 0;
+  padding: px(25px) 0 0 0;
   a {
     display: inline-block;
   }
   a+a {
     margin-left: 2rem;
-  }
-  .icon-kmstudio {
-    background: url(../img/proposal-kmstudio-bg.png) top left no-repeat;
-    background-size: 61px 106px;
-  }
-  a:hover .icon-kmstudio {
-    background-position: bottom left;
   }
 }
 
@@ -226,8 +219,8 @@
   display: flex;
   flex-direction: column;
   .employee__horizontal {
-    border: 2px solid #000;
-    border-width: 2px 0;
+    border: px(2px) solid #000;
+    border-width: px(2px) 0;
   }
   .employee__horizontal:first-child {
     border-top: none;
@@ -247,7 +240,7 @@
   }
   li {
     margin: 0;
-    padding: 0 0 10px 0px;
+    padding: 0 0 px(10px) 0px;
   }
 }
 
@@ -255,9 +248,9 @@
   flex: 0 0 auto;
   align-self: flex-end;
   img {
-    width: 171px;
+    width: px(171px);
     max-width: 100%;
-    margin-right: 20px;
+    margin-right: px(20px);
   }
 }
 
@@ -272,7 +265,7 @@
     order: 1;
     flex: 0 0 auto;
     align-self: flex-start;
-    margin: 0 -28px;
+    margin: 0 px(-28px);
   }
   .employee--description {
     order: 0;
@@ -284,7 +277,7 @@
 .employee__horizontal {
   flex: 0 0 50%;
   .employee--description {
-    padding: 27px 20px 0 0;
+    padding: px(27px) px(20px) 0 0;
   }
 }
 
@@ -299,7 +292,7 @@
 
 .address-block--top,
 .address-block--bottom {
-  max-width: 190px;
+  max-width: px(190px);
 }
 
 .address-block--bottom p {

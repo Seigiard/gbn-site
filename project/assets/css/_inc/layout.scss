@@ -14,8 +14,8 @@ html {
 
 body {
   padding-top: $header-height;
-  border: 10px solid $color-black;
-  border-width: 0 10px 10px 0;
+  border: px(10px) solid $color-black;
+  border-width: 0 px(10px) px(10px) 0;
   height: 100vh;
   min-width: $min-width;
   overflow-y: hidden;
@@ -80,35 +80,35 @@ body {
 }
 
 .service--content {
-  padding: 0 0 100px 0;
+  padding: 0 0 px(100px) 0;
 }
 .service--footer {
-  border-top: 4px solid #000;
+  border-top: rem(4px) solid #000;
   position: absolute;
-  bottom: 10px;
+  bottom: px(10px);
   left: 0;
-  right: 10px;
+  right: px(10px);
   .has-sidebar & {
     left: $has-sidebar;
-    min-width: #{$min-width - $has-sidebar - 10};
+    min-width: #{$min-width - $has-sidebar - px(10px)};
   }
   .has-sidebars & {
     left: $has-sidebars;
-    min-width: #{$min-width - $has-sidebars - 10};
+    min-width: #{$min-width - $has-sidebars - px(10px)};
   }
   .has-sidebars_active & {
     left: $has-sidebars_active;
-    min-width: #{$min-width - $has-sidebars_active - 10};
+    min-width: #{$min-width - $has-sidebars_active - px(10px)};
   }
 }
 
 .icon-close {
   position: fixed;
-  top: $header-height + 20px;
-  right: 26px;
+  top: $header-height + px(20px);
+  right: px(26px);
   z-index: 20;
   @media screen and (max-width: #{$min-width}) {
     right: auto;
-    left: #{$min-width - 20px - 26px};
+    left: #{$min-width - px(20px) - px(26px)};
   }
 }
