@@ -21,16 +21,21 @@ a:hover, button:hover {
 @mixin svg-fill-stroke($colorName, $color) {
   .svg-#{$colorName}-fill {
     fill: $color;
+    transition: all .3s ease-out;
   }
   .svg-#{$colorName}-stroke {
     stroke: $color;
   }
-  a:hover, button:hover {
-    .svg-#{$colorName}-fill--hover {
-      fill: $color;
-    }
-    .svg-#{$colorName}-stroke--hover {
-      stroke: $color;
+  a, button {
+    &:hover, &:active, &:focus {
+      .svg-#{$colorName}-fill--hover {
+        fill: $color;
+        transition: none;
+      }
+      .svg-#{$colorName}-stroke--hover {
+        stroke: $color;
+        transition: none;
+      }
     }
   }
 }
@@ -101,6 +106,7 @@ textarea {
   @include fontSize(16px);
   height: 36px;
   padding: 3px 16px 0;
+  @include hover-transition();
   .on-disable--show {
     display: none;
   }
@@ -125,6 +131,7 @@ textarea {
   border-width: 0 0 1px 0;
   background: transparent;
   max-width: 100%;
+  @include hover-transition();
 }
 .input__no-border { border: none; }
 .input__big { @include fontSize(24px); }
@@ -144,7 +151,10 @@ textarea {
   }
 }
 
-a { text-decoration: none; }
+a {
+  text-decoration: none;
+  @include hover-transition(.2s);
+}
 $primary-color: $color-black;
 $secondary-color: $color-red;
 $background-color: $color-white;
