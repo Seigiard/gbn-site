@@ -194,7 +194,7 @@
 
 .feedback__client {
   background-color: transparent;
-  background-image: url(/img/corner-top-left.svg), url(/img/corner-bottom-right.svg);
+  background-image: url(../img/corner-top-left.svg), url(../img/corner-bottom-right.svg);
   background-position: top left, bottom right;
   background-size: 20px 20px, 20px 20px;
   background-repeat: no-repeat, no-repeat;
@@ -216,19 +216,6 @@
   height: 30px;
   margin: -18px 0px 5px -10px;
   padding: 7px 10px 4px;
-  span {
-    background: transparent url(/img/icon-toggle.svg) top center no-repeat;
-    background-size: 20px 20px;
-    width: 20px;
-    height: 10px;
-    display: inline-block;
-  }
-  &:hover,
-  &:active {
-    span {
-      background-position: bottom center;
-    }
-  }
 }
 
 .info__content-visible {
