@@ -58,7 +58,7 @@
   position: absolute;
   @include fontSize(13px);
   line-height: 1.25;
-  width: 160px;
+  width: px(160px);
 }
 
 .control-row + .control-row {
