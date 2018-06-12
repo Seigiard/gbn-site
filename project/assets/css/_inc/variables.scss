@@ -55,13 +55,13 @@ $font-family: 'Formular', Roboto, Verdana, sans-serif;
 
 $min-width: px(1000px);
 
-$header-height: px(69px);
-$border-height: px(10px);
+$header-height: 69px;
+$border-height: 10px;
 $footer-height-simple: px(71px);
 $footer-height-complex: px(139px);
-$layout-height: calc(100vh - #{$header-height + $border-height - px(1px)});
-$layout-height-simple: calc(100vh - #{$header-height + $border-height + $footer-height-simple});
-$layout-height-complex: calc(100vh - #{$header-height + $border-height + $footer-height-complex});
+$layout-height: calc(100vh - #{$header-height + $border-height} - 1px);
+$layout-height-simple: calc(100vh - #{$header-height + $border-height} + #{$footer-height-simple});
+$layout-height-complex: calc(100vh - #{$header-height + $border-height} + #{$footer-height-complex});
 
 $color-white: #fff;
 $color-black: #000;
@@ -76,6 +76,9 @@ $column-width: px(600px);
 $content-padding-left: px(40px);
 $content-padding-right: px(20px);
 
-$has-sidebar: px(194px);
-$has-sidebars: px(318px);
-$has-sidebars_active: px(248px);
+// $has-sidebar: px(194px);
+// $has-sidebars: px(318px);
+// $has-sidebars_active: px(248px);
+$has-sidebar: 194px;
+$has-sidebars: 318px;
+$has-sidebars_active: 248px;

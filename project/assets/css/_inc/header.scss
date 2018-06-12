@@ -7,7 +7,8 @@
   justify-content: space-between;
   align-content: stretch;
   align-items: center;
-  padding: px(15px) px(30px) px(14px) px(15px);
+  // padding: px(15px) px(30px) px(14px) px(15px);
+  padding: 15px 30px 14px 15px;
   min-width: $min-width;
 }
 
@@ -17,17 +18,22 @@
 }
 
 .header--logo {
-  @include fontSize(20px);
+  // @include fontSize(20px);
+  font-size: 20px;
   svg {
-    width: px(30px);
-    height: px(41px);
     vertical-align: middle;
-    margin-right: px(10px);
+    width: 30px;
+    height: 41px;
+    margin-right: 10px;
+    // width: px(30px);
+    // height: px(41px);
+    // margin-right: px(10px);
   }
 }
 
 .header--phone a {
   text-decoration: none;
-  @include fontSize(20px);
+  font-size: 20px;
+  // @include fontSize(20px);
   line-height: 1;
 }

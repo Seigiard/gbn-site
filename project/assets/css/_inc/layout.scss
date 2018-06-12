@@ -83,30 +83,34 @@ body {
   padding: 0 0 px(100px) 0;
 }
 .service--footer {
-  border-top: rem(4px) solid #000;
+  border-top: 4px solid #000;
   position: absolute;
   bottom: px(10px);
   left: 0;
   right: px(10px);
   .has-sidebar & {
     left: $has-sidebar;
-    min-width: #{$min-width - $has-sidebar - px(10px)};
+    min-width: calc(#{$min-width - px(10px)} - #{$has-sidebar});
   }
   .has-sidebars & {
     left: $has-sidebars;
-    min-width: #{$min-width - $has-sidebars - px(10px)};
+    min-width: calc(#{$min-width - px(10px)} - #{$has-sidebars});
   }
   .has-sidebars_active & {
     left: $has-sidebars_active;
-    min-width: #{$min-width - $has-sidebars_active - px(10px)};
+    min-width: calc(#{$min-width - px(10px)} - #{$has-sidebars_active});
   }
 }
 
 .icon-close {
   position: fixed;
-  top: $header-height + px(20px);
+  top: calc(#{$header-height} + #{px(20px)});
   right: px(26px);
   z-index: 20;
+  svg {
+    width: rem(22px);
+    height: rem(22px);
+  }
   @media screen and (max-width: #{$min-width}) {
     right: auto;
     left: #{$min-width - px(20px) - px(26px)};
