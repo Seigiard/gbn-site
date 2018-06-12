@@ -90,6 +90,9 @@ function initForm(id, form) {
 
     function enableInputs() {
       $disabledButtons.prop('disabled', false);
+      enableInputsOnly();
+    }
+    function enableInputsOnly() {
       $disabledInputs.removeClass('disabled');
     }
     function disableInputs() {
@@ -118,7 +121,8 @@ function initForm(id, form) {
     });
 
     $inputs.on('blur focus input change', enableInputs);
-    $disabledInputs.click(enableInputs);
+    $disabledInputs.on('click', enableInputsOnly);
+    $disabledInputs.on('input', enableInputs);
 
     if ($form.is('[calculate-total]')) {
         setCalculateTotal($form);
