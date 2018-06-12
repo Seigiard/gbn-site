@@ -1,10 +1,9 @@
-<% if(current.path.length === 1 && current.path[0] === 'index') { %>
 <footer class="site-footer"><div class="site-footer--rotate bg-red"><p>Сделано <span class="nwrp"><a href="https://bureau.ru/school/">в&nbsp;Школе Бюро&nbsp;Горбунова</a></span><br />в&nbsp;2018&nbsp;году</p></div></footer>
-<% } %>
 <%
   const hash = new Date().getTime();
 %>
 
+<script src="https://cdn.jsdelivr.net/npm/barba.js@1.0.0/dist/barba.min.js" integrity="sha256-H0TPKZAP4+uKmBpntUUMrKgH4VXBQNDZumun6fvan4w=" crossorigin="anonymous"></script>
 <script src="/assets/js/vendor/jquery-3.2.1.min.js"></script>
 <script src="/assets/js/vendor/inputmask/inputmask.min.js"></script>
 <script src="/assets/js/vendor/inputmask/jquery.inputmask.min.js"></script>
@@ -14,6 +13,7 @@
 <script src="/assets/js/PriceEditor.js?<%- hash %>"></script>
 <script src="/assets/js/plugins.js?<%- hash %>"></script>
 <script src="/assets/js/main.js?<%- hash %>"></script>
+<script src="/assets/js/animation.js?<%- hash %>"></script>
 
 <% if(!!locals.priceEditor) { %>
 <script>

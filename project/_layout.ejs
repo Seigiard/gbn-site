@@ -1,11 +1,10 @@
 <html>
   <%- partial("_snippets/head.ejs") %>
-  <body class="<%- partial("_snippets/body-class.ejs") %>">
+  <body id="barba-wrapper" class="<%- partial("_snippets/body-class.ejs") %>">
+    <div class="barba-container"></div>
     <%- partial("_snippets/header.ejs") %>
-    <aside class="layout--sidebar menu-wrapper">
-      <%- partial('_snippets/menu.ejs') %>
-    </aside>
-    <main class="layout--content">
+    <%- partial('_snippets/menu.ejs') %>
+    <div id="content"><main class="layout--content">
       <div class="main-page">
         <div class="main-page--welcome bg-black">
           <p class="subheader">Москва и Подмосковье</p>
@@ -155,7 +154,7 @@
           </div>
         </div>
       </div>
-    </main>
+    </main></div>
     <%- partial("_snippets/footer.ejs") %>
   </body>
 </html>

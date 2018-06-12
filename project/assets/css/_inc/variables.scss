@@ -25,7 +25,12 @@ $base-font-size: 16px;
 }
 
 @mixin hover-transition($duration: .3s) {
-  transition: all $duration ease-out;
+  transition:
+    color $duration ease-out,
+    background-color $duration ease-out,
+    border-bottom-color $duration ease-out,
+    fill $duration ease-out,
+    stroke $duration ease-out;
   &:hover, &:active, &:focus {
     transition: none;
   }
@@ -82,6 +87,8 @@ $column-width: 600px;
 $content-padding-left: 40px;
 $content-padding-right: 20px;
 
+$menu-width: 194px;
+$menu-width--shrinked: 124px;
 $has-sidebar: 194px;
 $has-sidebars: 318px;
 $has-sidebars_active: 248px;

@@ -1,0 +1,29 @@
+@import 'variables';
+
+.animate-sidebar--bars-to-bars_active {
+  animation: bodyBarsToBarsActive .5s ease-in forwards;
+  .layout--sidebar .menu__level2 {
+    @include fontSize(13px);
+    line-height: 1.2;
+    ul {
+      width: $menu-width--shrinked - 4px;
+    }
+    animation: widthBarsToBarsActive .5s ease-in forwards;
+  }
+}
+
+
+@keyframes widthBarsToBarsActive {
+  from { width: $menu-width; }
+  to { width: $menu-width--shrinked; }
+}
+@keyframes bodyBarsToBarsActive {
+  from { padding-left: $menu-width; }
+  to { padding-left: $menu-width--shrinked; }
+}
+
+
+@keyframes widthBarsActiveToBars {
+  from { width: $menu-width--shrinked;}
+  to { width: $menu-width; }
+}

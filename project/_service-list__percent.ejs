@@ -15,15 +15,14 @@ const header = getHeaderFromHtml(yield)
 %>
 <html>
   <%- partial("_snippets/head.ejs") %>
-  <body class="has-service-footer-complex <%- partial("_snippets/body-class.ejs") %>">
+  <body id="barba-wrapper" class="has-service-footer-complex <%- partial("_snippets/body-class.ejs") %>">
+    <div class="barba-container"></div>
     <%- partial("_snippets/header.ejs") %>
     <a href="/" class="icon-close">
       <%- partial("./_snippets/svg-icon.ejs", { name: 'close' }) %>
     </a>
-    <aside class="layout--sidebar menu-wrapper">
-        <%- partial('_snippets/menu.ejs') %>
-    </aside>
-    <form action="<%- partial("_snippets/sender-path.ejs") %>" method="post">
+    <%- partial('_snippets/menu.ejs') %>
+    <div id="content"><form action="<%- partial("_snippets/sender-path.ejs") %>" method="post">
       <input type="hidden" name="template" value="complex-form">
       <input type="hidden" name="title" value="<%- mailTitle %>">
       <main class="layout--content">
@@ -44,7 +43,7 @@ const header = getHeaderFromHtml(yield)
       <div class="service--footer bg-blue">
         <%- partial("_blocks/order-form__complex.ejs") %>
       </div>
-    </form>
+    </form></div>
     <%- partial("_snippets/footer.ejs") %>
   </body>
 </html>

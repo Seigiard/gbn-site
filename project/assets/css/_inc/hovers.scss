@@ -21,20 +21,19 @@ a:hover, button:hover {
 @mixin svg-fill-stroke($colorName, $color) {
   .svg-#{$colorName}-fill {
     fill: $color;
-    transition: all .3s ease-out;
+    @include hover-transition();
   }
   .svg-#{$colorName}-stroke {
     stroke: $color;
+    @include hover-transition();
   }
   a, button {
     &:hover, &:active, &:focus {
       .svg-#{$colorName}-fill--hover {
         fill: $color;
-        transition: none;
       }
       .svg-#{$colorName}-stroke--hover {
         stroke: $color;
-        transition: none;
       }
     }
   }

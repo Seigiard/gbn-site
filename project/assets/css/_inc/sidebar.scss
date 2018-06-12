@@ -13,24 +13,29 @@
 .menu {
   padding: 40px 0;
   border-right: 4px solid #000;
-  max-width: 194px;
+  max-width: $menu-width;
+  ul {
+    margin: 0;
+    padding: 0;
+    width: $menu-width - 4px;
+    transition: font-size .001s linear;
+  }
   .has-sidebar & {
-    width: 194px;
+    width: $has-sidebar;
   }
   .has-sidebars & {
-    width: 318px;
+    width: $has-sidebars;
   }
   .has-sidebars_active & {
-    width: 248px;
+    width: $has-sidebars_active;
   }
   &.menu__shrinked {
     @include fontSize(13px);
     line-height: 1.2;
-    max-width: 124px;
-  }
-  ul {
-    margin: 0;
-    padding: 0;
+    max-width: $menu-width--shrinked;
+    ul {
+      width: $menu-width--shrinked - 4px;
+    }
   }
 }
 
