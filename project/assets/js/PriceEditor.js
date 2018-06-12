@@ -32,7 +32,7 @@ class PriceEditor {
     this.$priceInput.on('keydown', this.onPriceInputKeydown.bind(this));
     this.$priceInput.on('change input', this.onPriceInputChange.bind(this));
     this.onPriceInputChange();
-    if (this.maxInputValue) this.$priceInput.on('input', this.checkPriceInputValue.bind(this));
+    // if (this.maxInputValue) this.$priceInput.on('input', this.checkPriceInputValue.bind(this));
   }
 
   formatPrice(price) {
@@ -78,15 +78,14 @@ class PriceEditor {
   }
 
   onPriceInputChange() {
-    this.$priceRange.val(this.$priceInput.val());
+    let value = this.$priceInput.val();
+    if (this.maxInputValue && value > this.maxInputValue) {
+      value = this.maxInputValue;
+      this.$priceInput.val(value);
+    }
+    this.$priceRange.val(value)
     this.isInputChanged = true;
     this.$priceRange.rangeslider('update', true);
-  }
-
-  checkPriceInputValue() {
-    if (parseInt(this.$priceInput.val()) > this.maxInputValue) {
-      this.$priceInput.val(this.maxInputValue);
-    }
   }
 
   changeCommissionValue(price, type) {
