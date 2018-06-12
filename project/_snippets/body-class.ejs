@@ -14,5 +14,6 @@ let sidebarClass = 'has-sidebar';
 if (isMenu1ShrinkedClass()) {
   sidebarClass = isMenu2ShrinkedClass() ? 'has-sidebars_active' : 'has-sidebars'
 }
+if(current.path.length === 1) sidebarClass += ' main-page';
 %>
 <%- sidebarClass %>

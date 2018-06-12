@@ -19,6 +19,9 @@ body {
   height: 100vh;
   min-width: $min-width;
   overflow-y: hidden;
+  .js-animate & {
+    transition: padding-left $uiTransitionDuration $uiTransitionFunction;
+  }
   &.has-service-footer-simple {
     padding-bottom: $footer-height-simple;
   }
@@ -86,8 +89,11 @@ body {
   border-top: 4px solid #000;
   position: absolute;
   bottom: 10px;
-  left: 0;
+  left: $has-sidebars;
   right: 10px;
+  .js-animate & {
+    transition: left $uiTransitionDuration $uiTransitionFunction;
+  }
   .has-sidebar & {
     left: $has-sidebar;
     min-width: #{$min-width - $has-sidebar - 10};

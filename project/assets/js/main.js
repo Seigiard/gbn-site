@@ -26,7 +26,18 @@ function getDurationTime($component) {
   return time;
 }
 
-$(function () {
+function checkIsEmpty(event) {
+  var input = event.target;
+  var fn = !!input.value ? 'remove' : 'add';
+  input.classList[fn]('is_empty');
+}
+
+function setOffsetForButton(el) {
+  var button = el.querySelector('button');
+  el.querySelector('input').style.paddingRight = button.offsetWidth + 8 + 'px';
+}
+
+function initAll() {
   $('.service-item').each(function (id, block) {
     var $block = $(block);
     var $content = $('.info--content', $block);
@@ -71,22 +82,21 @@ $(function () {
     e.preventDefault();
     $scrollContainer.animate({ scrollTop: $body.height() }, 500);
   });
+
+  var elements = document.querySelectorAll('.service-header');
+  Stickyfill.add(elements);
+
+  if(window.priceEditor) {
+    const priceEditor = new PriceEditor(window.priceEditor);
+  }
+
+  [].concat(_toConsumableArray(document.querySelectorAll('input[type="text"], input[type="number"], input[type="email"]'))).forEach(function (el) {
+    return el.addEventListener('blur', checkIsEmpty);
+  });
+  [].concat(_toConsumableArray(document.querySelectorAll('.input-combined'))).forEach(setOffsetForButton);
+}
+
+$(function () {
+  initAll();
 });
 
-var elements = document.querySelectorAll('.service-header');
-Stickyfill.add(elements);
-
-function checkIsEmpty(event) {
-  var input = event.target;
-  var fn = !!input.value ? 'remove' : 'add';
-  input.classList[fn]('is_empty');
-}
-[].concat(_toConsumableArray(document.querySelectorAll('input[type="text"], input[type="number"], input[type="email"]'))).forEach(function (el) {
-  return el.addEventListener('blur', checkIsEmpty);
-});
-
-function setOffsetForButton(el) {
-  var button = el.querySelector('button');
-  el.querySelector('input').style.paddingRight = button.offsetWidth + 8 + 'px';
-}
-[].concat(_toConsumableArray(document.querySelectorAll('.input-combined'))).forEach(setOffsetForButton);

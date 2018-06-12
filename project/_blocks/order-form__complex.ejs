@@ -39,4 +39,14 @@
     <input type="hidden" name="price" value="100000" class="PriceEditor-commissionValueInput" />
     <div class="order-form--note"><%- priceEditor.note %></div>
   </div>
+
+  <% if(!!locals.priceEditor) { %>
+  <script>
+    var priceEditor = {
+      <% if(priceEditor.maxInputValue) { %>maxInputValue: <%- priceEditor.maxInputValue %>, <% } %>
+      <% if(priceEditor.minCommissionValue) { %>minCommissionValue: <%- priceEditor.minCommissionValue %>, <% } %>
+      commissionRange: <%- JSON.stringify(priceEditor.commissionRange) %>
+    };
+  </script>
+  <% } %>
 </div>

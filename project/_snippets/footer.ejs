@@ -14,13 +14,3 @@
 <script src="/assets/js/plugins.js?<%- hash %>"></script>
 <script src="/assets/js/main.js?<%- hash %>"></script>
 <script src="/assets/js/animation.js?<%- hash %>"></script>
-
-<% if(!!locals.priceEditor) { %>
-<script>
-  var priceEditor = new PriceEditor({
-    <% if(priceEditor.maxInputValue) { %>maxInputValue: <%- priceEditor.maxInputValue %>, <% } %>
-    <% if(priceEditor.minCommissionValue) { %>minCommissionValue: <%- priceEditor.minCommissionValue %>, <% } %>
-    commissionRange: <%- JSON.stringify(priceEditor.commissionRange) %>
-  });
-</script>
-<% } %>

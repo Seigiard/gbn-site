@@ -44,7 +44,6 @@ var PageTransition = Barba.BaseTransition.extend({
     // As soon the loading is finished and the old page is faded out, let's fade the new page
     this.newContainerLoading
       .then(this.initContainers.bind(this))
-      // .then(this.pageOut.bind(this))
       .then(this.pageIn.bind(this))
       .then(this.reinitJs.bind(this));
   },
@@ -57,15 +56,25 @@ var PageTransition = Barba.BaseTransition.extend({
     this.$newContainer = new Container($(newPage).find('body'));
   },
 
-  pageOut: function() {
+  animateSidebar: function() {
+    const $menu1 = this.$container.$sidebar.find('.menu__level1')
+    const $menu2 = this.$container.$sidebar.find('.menu__level2')
+    const $newMenu1 = this.$newContainer.$sidebar.find('.menu__level1')
+    const $newMenu2 = this.$newContainer.$sidebar.find('.menu__level2')
+
+    $menu1.html($newMenu1.html());
+    $menu2.html($newMenu2.html());
+    $menu1[0].className = [...$newMenu1[0].classList].join(' ');
+    $menu2[0].className = [...$newMenu2[0].classList].join(' ');
+
     return Promise.resolve();
   },
 
   pageIn: function() {
     this.$container[0].className = [...this.$newContainer[0].classList].join(' ');
 
+    this.animateSidebar();
 
-    this.$container.$sidebar.html(this.$newContainer.$sidebar.html());
     if (!(isMainPage(this.$container) && isMainPage(this.$newContainer))) {
       this.$container.$content.html(this.$newContainer.$content.html());
     }
@@ -73,7 +82,7 @@ var PageTransition = Barba.BaseTransition.extend({
     this.done();
   },
   reinitJs: function() {
-    console.warn('init all');
+    initAll();
   }
 });
 
@@ -85,3 +94,4 @@ Barba.Pjax.getTransition = function() {
 };
 
 Barba.Pjax.start();
+document.getElementsByTagName('html')[0].classList.add('js-animate');

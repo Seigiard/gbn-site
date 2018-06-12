@@ -1,6 +1,9 @@
 @import 'variables';
-
 .site-footer {
+  display: none;
+}
+.main-page .site-footer {
+  display: block;
   position: absolute;
   bottom: -5px;
   left: 15px;
