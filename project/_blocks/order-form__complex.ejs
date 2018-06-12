@@ -22,7 +22,7 @@
           <input disable-on-submit required save id="clientEmail"
             type="email" name="mail" id="mail" class="input" placeholder="Электронная почта" />
           <button disable-on-submit type="submit" class="button">
-            <span class="on-disable--show">Расчёт отправлен</span>
+            <span class="on-disable--show">Расчёт отправлен <i><%- partial("../_snippets/svg-icon.ejs", { name: 'check' }) %></i></span>
             <span class="on-disable--hide">Отправить расчёт</span>
           </button>
       </div>

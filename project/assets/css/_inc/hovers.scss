@@ -106,6 +106,20 @@ textarea {
   @include fontSize(16px);
   height: 36px;
   padding: 3px 16px 0;
+  .mp-pad--default & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  i {
+    display: inline-block;
+    margin-left: 0px;
+    width: 0px;
+    opacity: 0;
+    transition:
+      margin .3s ease-out,
+      width .3s ease-out,
+      opacity .3s ease-out;
+  }
   @include hover-transition();
   .on-disable--show {
     display: none;
@@ -116,6 +130,11 @@ textarea {
   &:disabled {
     .on-disable--show {
       display: inline-block;
+      i {
+        margin-left: 2px;
+        width: 13px;
+        opacity: 1;
+      }
     }
     .on-disable--hide {
       display: none;
