@@ -24,8 +24,13 @@ $base-font-size: 16px;
   }
 }
 
-@mixin hover-transition($duration: .3s) {
-  transition: all $duration ease-out;
+@mixin hover-transition($duration: .25s) {
+  transition:
+    color $duration ease-out,
+    background-color $duration ease-out,
+    border-bottom-color $duration ease-out,
+    fill $duration ease-out,
+    stroke $duration ease-out;
   &:hover, &:active, &:focus {
     transition: none;
   }

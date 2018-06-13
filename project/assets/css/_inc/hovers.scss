@@ -172,7 +172,7 @@ textarea {
 
 a {
   text-decoration: none;
-  @include hover-transition(.2s);
+  @include hover-transition();
 }
 $primary-color: $color-black;
 $secondary-color: $color-red;
