@@ -24,6 +24,13 @@
     vertical-align: middle;
     margin-right: 10px;
   }
+  .main-page & a {
+    pointer-events: none;
+    transition: none;
+    .svg-primary-fill, .svg-secondary-fill--hover {
+      fill: #fff;
+    }
+  }
 }
 
 .header--phone a {
