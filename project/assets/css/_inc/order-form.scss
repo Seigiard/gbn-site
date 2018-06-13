@@ -76,12 +76,35 @@
 
 .order-form--email-form {
   display: flex;
-  .input {
+  .input, .error-message {
     flex: 1 0 auto;
   }
   .button {
     flex: 0 0 195px;
     margin-left: 20px;
+  }
+}
+
+.error-message {
+ line-height: 35px;
+ border-bottom-color: transparent!important;
+}
+
+.is-error {
+  display: none;
+}
+.control-row.is-success + .control-row.is-error {
+  margin-top: 0;
+}
+form[error] {
+  .is-error {
+    display: block;
+  }
+  .order-form--email-form.is-error {
+    display: flex;
+  }
+  .is-success {
+    display: none;
   }
 }
 

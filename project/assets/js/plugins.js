@@ -96,6 +96,8 @@ function setCalculateTotal(form) {
 
 function initForm(id, form) {
     const $form = $(form);
+    const $errorMessage = $('.error-message', $form);
+    const $resetButtons = $('button[reset-form]', $form);
     const $disabledButtons = $('button[disable-on-submit]', $form);
     const $disabledInputs = $('input[disable-on-submit]', $form);
     const $inputs = $(':input:not([disable-on-submit])', $form);
@@ -132,11 +134,15 @@ function initForm(id, form) {
             data: $form.serialize(),
             success: function (r) {
                 if (r.status !== 'sent') {
-                    console.error(r);
+                    const errors = r.error.split(':').map(x => x.trim());
+                    errors[0] && $errorMessage.text(errors[0]);
+                    $form.attr('error', true);
+                    return;
                 }
+                $form.attr('error', false);
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                enableInputs();
+                $form.attr('error', true);
             }
         });
 
@@ -146,6 +152,11 @@ function initForm(id, form) {
     $inputs.on('blur focus input change', enableInputs);
     $disabledInputs.on('click', enableInputsOnly);
     $disabledInputs.on('input', enableInputs);
+    $resetButtons.on('click', () => {
+        enableInputs();
+        $form.removeAttr('error', false);
+        $errorMessage.text('He получилось')
+    });
 
     if ($form.is('[calculate-total]')) {
         setCalculateTotal($form);

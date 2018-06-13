@@ -124,15 +124,25 @@
             <p>Если хотите в&nbsp;нашу команду, отправьте свой&nbsp;номер телефона. Мы&nbsp;перезвоним в&nbsp;течение суток.</p>
             <form action="<%- partial("_snippets/sender-path.ejs") %>" target="blank" method="post">
               <input type="hidden" name="template" value="vacancy">
-              <div class="control-row">
-                <input disable-on-submit phone-mask required save id="phoneNumber"
-                  class="input input__100" type="tel" name="phone" placeholder="Ваш номер" />
+              <div class="is-success">
+                <div class="control-row">
+                  <input disable-on-submit phone-mask required save id="phoneNumber"
+                    class="input input__100" type="tel" name="phone" placeholder="Ваш номер" />
+                </div>
+                <div class="control-row">
+                  <button disable-on-submit class="button button__100" type="submit">
+                    <span class="on-disable--show">Перезвоним <i><%- partial("./_snippets/svg-icon.ejs", { name: 'check' }) %></i></span>
+                    <span class="on-disable--hide">Отправить</span>
+                  </button>
+                </div>
               </div>
-              <div class="control-row">
-                <button disable-on-submit class="button button__100" type="submit">
-                  <span class="on-disable--show">Перезвоним <i><%- partial("./_snippets/svg-icon.ejs", { name: 'check' }) %></i></span>
-                  <span class="on-disable--hide">Отправить</span>
-                </button>
+              <div class="is-error">
+                <div class="control-row">
+                  <div class="error-message input">Не получилось</div>
+                </div>
+                <div class="control-row">
+                  <button reset-form class="button button__100" type="button">Повторить</button>
+                </div>
               </div>
             </form>
           </div>
