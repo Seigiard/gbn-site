@@ -127,7 +127,7 @@ textarea {
   .on-disable--hide {
     display: inline-block;
   }
-  &:disabled {
+  &.disabled {
     .on-disable--show {
       display: inline-block;
       i {
