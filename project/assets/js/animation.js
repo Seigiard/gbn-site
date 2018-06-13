@@ -1,15 +1,3 @@
-function sidebarStatus(el) {
-  return Array.prototype.filter
-    .call(el.classList, function(x) { return x.includes('has-sidebar'); })
-    .join('').replace('has-side', '') || 'none';
-}
-
-function serviceFooterStatus(el) {
-  return Array.prototype.filter
-    .call(el.classList, function(x) { return x.includes('has-service-footer'); })
-    .join('').replace('has-service-footer-', '') || 'none';
-}
-
 function isMainPage($container) {
   return !!$container.$content.has('.layout--content .main-page').length;
 }
@@ -21,15 +9,8 @@ function Container($el) {
   return object;
 }
 
-function getTransformationsFromTo(oldEl, newEl) {
-  const transformations = [];
-  if(oldEl.sidebarStatus !== newEl.sidebarStatus) {
-    transformations.push('animate-sidebar--' + oldEl.sidebarStatus + '-to-' + newEl.sidebarStatus)
-  }
-  if(oldEl.serviceFooterStatus !== newEl.serviceFooterStatus) {
-    transformations.push('animate-service-footer--' + oldEl.serviceFooterStatus + '-to-' + newEl.serviceFooterStatus)
-  }
-  return transformations;
+function delayPromise(msec) {
+  return new Promise(resolve => setTimeout(resolve, msec))
 }
 
 //Please note, the DOM should be ready
@@ -42,25 +23,46 @@ var PageTransition = Barba.BaseTransition.extend({
      */
 
     // As soon the loading is finished and the old page is faded out, let's fade the new page
-    this.newContainerLoading
-      .then(this.initContainers.bind(this))
+
+    this.isLoadingStart();
+    return Promise.all([this.newContainerLoading, delayPromise(1000)])
       .then(this.pageIn.bind(this))
       .then(this.reinitJs.bind(this));
   },
 
-  initContainers: function() {
-    this.$container = new Container($('body'));
+  isLoadingStart() {
+    $('body').addClass('is-loading');
+  },
 
-    var newPage = document.createElement( 'html' );
-    newPage.innerHTML = Barba.Pjax.Dom.currentHTML;
-    this.$newContainer = new Container($(newPage).find('body'));
+  isLoadingEnd() {
+    $('body').removeClass('is-loading');
+  },
+
+  getCurrentContainer: function() {
+    if (!this.$newContainer) {
+      this.$container = new Container($('body'));
+    }
+    return this.$container;
+  },
+
+  getNewContainer: function() {
+    if (!this.$newContainer) {
+      var newPage = document.createElement( 'html' );
+      newPage.innerHTML = Barba.Pjax.Dom.currentHTML;
+      this.$newContainer = new Container($(newPage).find('body'));
+    }
+
+    return this.$newContainer;
   },
 
   animateSidebar: function() {
-    const $menu1 = this.$container.$sidebar.find('.menu__level1')
-    const $menu2 = this.$container.$sidebar.find('.menu__level2')
-    const $newMenu1 = this.$newContainer.$sidebar.find('.menu__level1')
-    const $newMenu2 = this.$newContainer.$sidebar.find('.menu__level2')
+    $container = this.getCurrentContainer();
+    $newContainer = this.getNewContainer();
+
+    const $menu1 = $container.$sidebar.find('.menu__level1')
+    const $menu2 = $container.$sidebar.find('.menu__level2')
+    const $newMenu1 = $newContainer.$sidebar.find('.menu__level1')
+    const $newMenu2 = $newContainer.$sidebar.find('.menu__level2')
 
     $menu1.html($newMenu1.html());
     $menu2.html($newMenu2.html());
@@ -71,14 +73,15 @@ var PageTransition = Barba.BaseTransition.extend({
   },
 
   pageIn: function() {
-    this.$container[0].className = [...this.$newContainer[0].classList].join(' ');
+    $container = this.getCurrentContainer();
+    $newContainer = this.getNewContainer();
 
     this.animateSidebar();
-
-    if (!(isMainPage(this.$container) && isMainPage(this.$newContainer))) {
-      this.$container.$content.html(this.$newContainer.$content.html());
+    if (!(isMainPage($container) && isMainPage($newContainer))) {
+      $container.$content.html($newContainer.$content.html());
     }
-
+    $container[0].className = [...$newContainer[0].classList].join(' ');
+    this.isLoadingEnd();
     this.done();
   },
   reinitJs: function() {
