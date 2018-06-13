@@ -24,7 +24,7 @@ $base-font-size: 16px;
   }
 }
 
-@mixin hover-transition($duration: .3s) {
+@mixin hover-transition($duration: .25s) {
   transition:
     color $duration ease-out,
     background-color $duration ease-out,
