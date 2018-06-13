@@ -139,7 +139,7 @@ function initForm(id, form) {
                     $form.attr('error', true);
                     return;
                 }
-                $form.attr('error', false);
+                $form.removeAttr('error');
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
                 $form.attr('error', true);
@@ -154,7 +154,7 @@ function initForm(id, form) {
     $disabledInputs.on('input', enableInputs);
     $resetButtons.on('click', () => {
         enableInputs();
-        $form.removeAttr('error', false);
+        $form.removeAttr('error');
         $errorMessage.text('He получилось')
     });
 
