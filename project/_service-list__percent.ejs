@@ -18,9 +18,6 @@ const header = getHeaderFromHtml(yield)
   <body id="barba-wrapper" class="has-service-footer-complex <%- partial("_snippets/body-class.ejs") %>">
     <div class="barba-container"></div>
     <%- partial("_snippets/header.ejs") %>
-    <a href="/" class="icon-close">
-      <%- partial("./_snippets/svg-icon.ejs", { name: 'close' }) %>
-    </a>
     <%- partial('_snippets/menu.ejs') %>
     <div id="content"><form action="<%- partial("_snippets/sender-path.ejs") %>" method="post">
       <input type="hidden" name="template" value="complex-form">

@@ -2,6 +2,9 @@
 <%
   const hash = new Date().getTime();
 %>
+<a href="/" class="icon-close">
+  <%- partial("../_snippets/svg-icon.ejs", { name: 'close' }) %>
+</a>
 <div class="fader"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/barba.js@1.0.0/dist/barba.min.js" integrity="sha256-H0TPKZAP4+uKmBpntUUMrKgH4VXBQNDZumun6fvan4w=" crossorigin="anonymous"></script>

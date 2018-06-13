@@ -6,38 +6,24 @@
   right: 0;
   bottom: 0;
   top: 0;
+  z-index: 50;
   border: 10px solid #000;
-  background: rgba($color-white, .7);
+  background: rgba($color-white, .9);
   display: none;
+  &:before {
+    content: 'ГБН рулит!';
+    font-size: 15vw;
+    font-weight: 900;
+    color: #000;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+  }
 }
 .is-loading .fader {
   display: block;
-}
-
-.animate-sidebar--bars-to-bars_active {
-  animation: bodyBarsToBarsActive .5s ease-in forwards;
-  .layout--sidebar .menu__level2 {
-    @include fontSize(13px);
-    line-height: 1.2;
-    ul {
-      width: $menu-width--shrinked - 4px;
-    }
-    animation: widthBarsToBarsActive .5s ease-in forwards;
-  }
-}
-
-
-@keyframes widthBarsToBarsActive {
-  from { width: $menu-width; }
-  to { width: $menu-width--shrinked; }
-}
-@keyframes bodyBarsToBarsActive {
-  from { padding-left: $menu-width; }
-  to { padding-left: $menu-width--shrinked; }
-}
-
-
-@keyframes widthBarsActiveToBars {
-  from { width: $menu-width--shrinked;}
-  to { width: $menu-width; }
 }

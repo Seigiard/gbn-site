@@ -19,9 +19,9 @@ body {
   height: 100vh;
   min-width: $min-width;
   overflow-y: hidden;
-  .js-animate & {
-    transition: padding-left $uiTransitionDuration $uiTransitionFunction;
-  }
+  // .js-animate & {
+  //   transition: padding-left $uiTransitionDuration $uiTransitionFunction;
+  // }
   &.has-service-footer-simple {
     padding-bottom: $footer-height-simple;
   }
@@ -55,7 +55,7 @@ body {
   top: $header-height;
   bottom: 0;
   left: 0;
-  z-index: 90;
+  z-index: 40;
   // height: $layout-height;
 }
 
@@ -91,9 +91,9 @@ body {
   bottom: 10px;
   left: $has-sidebars;
   right: 10px;
-  .js-animate & {
-    transition: left $uiTransitionDuration $uiTransitionFunction;
-  }
+  // .js-animate & {
+  //   transition: left $uiTransitionDuration $uiTransitionFunction;
+  // }
   .has-sidebar & {
     left: $has-sidebar;
     min-width: #{$min-width - $has-sidebar - 10};
@@ -112,9 +112,17 @@ body {
   position: fixed;
   top: $header-height + 20px;
   right: 26px;
-  z-index: 20;
+  z-index: 10;
+  display: none;
+  pointer-events: none;
   @media screen and (max-width: #{$min-width}) {
     right: auto;
     left: #{$min-width - 20px - 26px};
+  }
+}
+.has-service-footer-simple, .has-service-footer-complex {
+  .icon-close {
+    display: block;
+    pointer-events: all;
   }
 }

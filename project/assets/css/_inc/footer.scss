@@ -1,15 +1,13 @@
 @import 'variables';
 .site-footer {
-  display: none;
-}
-.main-page .site-footer {
-  display: block;
+  pointer-events: none;
   position: absolute;
   bottom: -5px;
   left: 15px;
   @include fontSize(13px);
   line-height: 1;
   z-index: 110;
+  opacity: 0;
   transition: opacity .33s ease-out, transform .33s ease-out;
   p {
     margin: 0;
@@ -17,6 +15,10 @@
   }
   a {
     padding: .5em 0;
+  }
+  .main-page & {
+    opacity: 1;
+    pointer-events: all;
   }
   @media screen and (max-height: 730px) {
     width: 160px;
@@ -40,7 +42,7 @@
   }
 }
 
-.js {
+.js.main-page {
   .site-footer {
     transform: translateY(10px);
     opacity: 0;

@@ -80,7 +80,7 @@ var PageTransition = Barba.BaseTransition.extend({
     if (!(isMainPage($container) && isMainPage($newContainer))) {
       $container.$content.html($newContainer.$content.html());
     }
-    $container[0].className = [...$newContainer[0].classList].join(' ');
+    $container[0].className = [...$newContainer[0].classList, 'js'].join(' ');
     this.isLoadingEnd();
     this.done();
   },

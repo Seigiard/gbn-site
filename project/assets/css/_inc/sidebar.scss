@@ -21,11 +21,11 @@
   border-right: 4px solid #000;
   max-width: $menu-width;
   overflow: hidden;
-  .js-animate & {
-    transition:
-      width $uiTransitionDuration $uiTransitionFunction,
-      border-right-width $uiTransitionDuration $uiTransitionFunction;
-  }
+  // .js-animate & {
+  //   transition:
+  //     width $uiTransitionDuration $uiTransitionFunction,
+  //     border-right-width $uiTransitionDuration $uiTransitionFunction;
+  // }
   ul {
     margin: 0;
     padding: 0;
