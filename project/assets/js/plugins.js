@@ -134,7 +134,7 @@ function initForm(id, form) {
             data: $form.serialize(),
             success: function (r) {
                 if (r.status !== 'sent') {
-                    const errors = r.error.split(':').map(x => x.trim());
+                    const errors = (r.error || '').split(':').map(x => x.trim());
                     errors[0] && $errorMessage.text(errors[0]);
                     $form.attr('error', true);
                     return;

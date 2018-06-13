@@ -88,6 +88,9 @@
 .error-message {
  line-height: 35px;
  border-bottom-color: transparent!important;
+  .main-page--vacancy .is-error & {
+    color: rgba($color-black, .5);
+  }
 }
 
 .is-error {

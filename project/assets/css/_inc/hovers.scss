@@ -179,7 +179,7 @@ $secondary-color: $color-red;
 $background-color: $color-white;
 @include a-colors($primary-color, $secondary-color);
 @include svg-colors($primary-color, $secondary-color, $background-color);
-@include buttons($color-black, $color-white, $color-red, $color-white, #7f7f7f, $color-white);
+@include buttons($color-black, $color-white, $color-red, $color-white, #7f7f7f, rgba($color-white, .5));
 @include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
 
 
@@ -192,31 +192,31 @@ $background-color: $color-white;
 
 .bg-white {
   @include render-block($color-white, $color-black, $color-red);
-  @include buttons($color-black, $color-white, $color-red, $color-white, #7f7f7f, $color-white);
+  @include buttons($color-black, $color-white, $color-red, $color-white, #7f7f7f, rgba($color-white, .5));
   @include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
 }
 
 .bg-blue {
   @include render-block($color-blue, $color-white, $color-red);
-  @include buttons($color-black, $color-white, $color-white, $color-black, #626fa1, $color-white);
+  @include buttons($color-black, $color-white, $color-white, $color-black, #626fa1, rgba($color-white, .5));
   @include inputs($color-white, $color-white, rgba($color-white, .3), rgba($color-white, .3));
 }
 
 .bg-yellow {
   @include render-block($color-yellow, $color-black, $color-white);
-  @include buttons($color-black, $color-white, $color-white, $color-black, #999999, $color-white);
+  @include buttons($color-black, $color-white, $color-white, $color-black, #999999, rgba($color-white, .5));
   @include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
 }
 
 .bg-red {
   @include render-block($color-red, $color-black, $color-white);
-  @include buttons($color-black, $color-white, $color-white, $color-black, #888, $color-white);
+  @include buttons($color-black, $color-white, $color-white, $color-black, #888, rgba($color-white, .5));
   @include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
 }
 
 .bg-black {
   @include render-block($color-black, $color-white, $color-red);
-  @include buttons($color-white, $color-black, $color-red, $color-black, rgba($color-white, .4), $color-black);
+  @include buttons($color-white, $color-black, $color-red, $color-black, rgba($color-white, .4), rgba($color-black, .5));
   @include inputs($color-white, $color-white, rgba($color-white, .3), rgba($color-white, .4));
 }
 
