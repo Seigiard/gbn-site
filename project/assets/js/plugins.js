@@ -68,27 +68,23 @@ function calculateTotal(inputs) {
     return result;
 };
 
-let isDisabled = false;
-
 function setCalculateTotal(form) {
     const priceInputs = $('[data-price]', form);
     const totalPriceSpan = $('.js-span-total-price', form);
     const totalPriceInput = $('.js-input-total-price', form);
     const $disabledButton = $('button[type="submit"]', form);
-    console.warn($disabledButton);
 
     // const calcFn = calculateAndSetTotal(priceInputs, totalPriceSpan, totalPriceInput);
     const calcFn = rafThrottle(() => {
         const total = calculateTotal(priceInputs);
         totalPriceSpan.html(formatPrice(total));
         totalPriceInput.val(total);
-        console.log(total);
         if (total > 0) {
             $disabledButton.prop('disabled', false);
-            isDisabled = false;
+            form.prop('invalid', false);
         } else {
             $disabledButton.attr('disabled', true);
-            isDisabled = true;
+            form.prop('invalid', true);
         }
     })
 
@@ -105,7 +101,7 @@ function initForm(id, form) {
     const $inputs = $(':input:not([disable-on-submit])', $form);
 
     function enableInputs() {
-        if (isDisabled) {
+        if ($form.prop('invalid')) {
             return
         }
         $disabledButtons.prop('disabled', false).removeClass('disabled');
@@ -113,14 +109,14 @@ function initForm(id, form) {
     }
 
     function enableInputsOnly() {
-        if (isDisabled) {
+        if ($form.prop('invalid')) {
             return
         }
         $disabledInputs.removeClass('disabled');
     }
 
     function disableInputs() {
-        if (isDisabled) {
+        if ($form.prop('invalid')) {
             return
         }
         $disabledButtons.prop('disabled', true).addClass('disabled');
@@ -155,11 +151,37 @@ function initForm(id, form) {
         setCalculateTotal($form);
     }
 
+    $('[save][id]', $form).savy('load');
     $('[price-mask]', $form).inputmask({
         "mask": "9{1,30}",
         showMaskOnFocus: false,
         showMaskOnInput: false
     });
-    $('[phone-mask]', $form).inputmask("+7 999 999-99-99");
-    $('[save][id]', $form).savy('load');
+    $('[phone-mask]', $form).each(function(id, el) {
+        const $el = $(el);
+        const form = $el.closest('form');
+        const submit = form.find('button[type="submit"]')
+        const disableSubmit = () => {
+            submit.not(':disabled').prop('disabled', true);
+            form.prop('invalid', true);
+        }
+        const enableSubmit = () => {
+            submit.is(':disabled') && submit.prop('disabled', false);
+            form.prop('invalid', false);
+        }
+        const validForm = () => {
+            if($el.inputmask("isComplete")) {
+                enableSubmit();
+            } else {
+                disableSubmit();
+            }
+        }
+        $el.inputmask("+7 999 999-99-99",{
+            oncomplete: enableSubmit,
+            onincomplete: disableSubmit,
+            onKeyDown: validForm,
+        })
+        validForm();
+
+    });
 }
