@@ -30,7 +30,7 @@ function animateMenuFromTo($menu, $newMenu) {
   const widthMenu = getMenuWidth($menu);
   const widthNewMenu = getMenuWidth($newMenu);
 
-  console.log('menu resize from', widthMenu, ' to ', widthNewMenu);
+  // console.log('menu resize from', widthMenu, ' to ', widthNewMenu);
 
   if (widthNewMenu === 0 && widthMenu !== 0) {
     return $menu.animate({ 'width': '0px' }, DURATION).promise()
@@ -70,7 +70,7 @@ function animateBodyFromTo($body, $newBody) {
   const paddingMenu = getBodyPadding($body);
   const paddingNewMenu = getBodyPadding($newBody);
 
-  console.log('body resize', paddingNewMenu - paddingMenu);
+  // console.log('body resize', paddingNewMenu - paddingMenu);
 
   if (paddingNewMenu === paddingMenu) {
     return Promise.resolve();
@@ -93,7 +93,7 @@ function animateFooterFromTo($body, $newBody) {
   const paddingMenu = getBodyPadding($body);
   const paddingNewMenu = getBodyPadding($newBody);
 
-  console.log('body resize', paddingNewMenu - paddingMenu);
+  // console.log('body resize', paddingNewMenu - paddingMenu);
 
   if (paddingNewMenu === paddingMenu) {
     return Promise.resolve();
@@ -119,11 +119,21 @@ function delayPromise(msec) {
   return new Promise(resolve => setTimeout(resolve, msec))
 }
 
+let isCurrentPageMainPage
+let isNextPageMainPage
+
+Barba.Dispatcher.on('linkClicked', function(el) {
+  isNextPageMainPage = el.dataset.mainPage;
+});
+
 //Please note, the DOM should be ready
 var PageTransition = Barba.BaseTransition.extend({
   start: function () {
+    $container = this.getCurrentContainer();
+    isCurrentPageMainPage = isMainPage($container);
     this.$body = $('body');
     this.$fader = $('.fader');
+
     this.isLoadingStart();
     const pageTransform = this.newContainerLoading.then(this.animateSidebar.bind(this));
     return Promise.all([pageTransform, delayPromise(MIN_WAITING)])
@@ -133,7 +143,10 @@ var PageTransition = Barba.BaseTransition.extend({
   },
 
   isLoadingStart() {
-    this.$body.addClass('is-loading');
+    // this.$body.addClass('is-loading');
+    if (isCurrentPageMainPage && isNextPageMainPage) {
+      return Promise.resolve();
+    }
     this.$fader.css({zIndex: 50, display: 'block'})
     anime({
       targets: this.$fader[0],
@@ -144,8 +157,11 @@ var PageTransition = Barba.BaseTransition.extend({
   },
 
   isLoadingEnd() {
-    this.$body.removeClass('is-loading');
-    anime({
+    // this.$body.removeClass('is-loading');
+    if (isCurrentPageMainPage && isNextPageMainPage) {
+      return Promise.resolve();
+    }
+    return anime({
       targets: this.$fader[0],
       opacity: 0,
       duration: 300,
@@ -193,7 +209,7 @@ var PageTransition = Barba.BaseTransition.extend({
     $container = this.getCurrentContainer();
     $newContainer = this.getNewContainer();
 
-    if (!(isMainPage($container) && isMainPage($newContainer))) {
+    if (!(isCurrentPageMainPage && isNextPageMainPage)) {
       $container.$content.replaceWith($newContainer.$content);
     }
     $container[0].className = [...$newContainer[0].classList, 'js'].join(' ');

@@ -8,6 +8,7 @@ const MENU_TITLES = {
   let: 'Сдать в&nbsp;аренду',
   'oh-my-god': 'Всё сложно'
 }
+const MENU_LAYOUT = ['sell', 'buy', 'let', 'rent']
 
 const menuArray = Object.keys(public._data);
 
@@ -28,7 +29,7 @@ function menuShrinkedClass() {
         <% if (isActiveMainMenuItem(menu)) { %>
           <li><span><%- MENU_TITLES[menu] %></span></li>
         <% } else { %>
-          <li><a href="/<%- menu %>"><%- MENU_TITLES[menu] %></a></li>
+          <li><a data-main-page="<%- !!MENU_LAYOUT[menu] %>" href="/<%- menu %>"><%- MENU_TITLES[menu] %></a></li>
         <% } %>
       <% } %>
     <% }) %>
