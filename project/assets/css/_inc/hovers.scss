@@ -27,7 +27,7 @@ a:hover, button:hover {
     stroke: $color;
   }
   a, button {
-    &:hover, &:active, &:focus {
+    &:hover, &:active {
       .svg-#{$colorName}-fill--hover {
         fill: $color;
         transition: none;
