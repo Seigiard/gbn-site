@@ -1,5 +1,4 @@
 @import 'variables';
-
 .order-form {
   margin: 0 0 0 40px;
   padding: 16px 0;
@@ -19,6 +18,7 @@
     padding-bottom: 2px;
   }
 }
+
 .order-form__va {
   align-items: center;
 }
@@ -30,6 +30,7 @@
     max-width: $column-width - 100px;
   }
 }
+
 .order-form--price {
   flex: 0 0 auto;
   padding-left: 50px;
@@ -53,6 +54,7 @@
   height: 107px;
   position: relative;
 }
+
 .order-form--note {
   bottom: -5px;
   position: absolute;
@@ -61,7 +63,7 @@
   width: 160px;
 }
 
-.control-row + .control-row {
+.control-row+.control-row {
   margin-top: 20px;
   .has-service-footer-complex & {
     margin-top: 6px;
@@ -70,13 +72,15 @@
     margin-top: 12px;
   }
 }
+
 .control-row__small {
   width: 240px;
 }
 
 .order-form--email-form {
   display: flex;
-  .input, .error-message {
+  .input,
+  .error-message {
     flex: 1 0 auto;
   }
   .button {
@@ -86,8 +90,9 @@
 }
 
 .error-message {
- line-height: 35px;
- border-bottom-color: transparent!important;
+  display: inline-block;
+  line-height: 35px;
+  border-bottom-color: transparent !important;
   .main-page--vacancy .is-error & {
     color: rgba($color-black, .5);
   }
@@ -96,9 +101,11 @@
 .is-error {
   display: none;
 }
-.control-row.is-success + .control-row.is-error {
+
+.control-row.is-success+.control-row.is-error {
   margin-top: 0;
 }
+
 form[error] {
   .is-error {
     display: block;
@@ -115,7 +122,6 @@ form[error] {
   display: flex;
   border-bottom: 1px solid #666;
   padding-top: 14px;
-
   input {
     flex: 1 1 auto;
     width: 100%;
@@ -135,11 +141,11 @@ form[error] {
     padding: 0 0 0 10px;
     height: 28px;
     cursor: pointer;
-    &:active, &:focus {
+    &:active,
+    &:focus {
       opacity: .7;
     }
   }
-
   &:focus-within {
     border-bottom-color: #000;
   }
@@ -153,7 +159,7 @@ form[error] {
   box-sizing: content-box;
   margin-left: 1px;
   .control-row {
-    button + p {
+    button+p {
       padding: 10px 0 0 0;
     }
   }
