@@ -5,16 +5,7 @@
   const hash = new Date().getTime();
 %>
 
-<script src="/assets/js/vendor/jquery-3.2.1.min.js"></script>
-<script src="/assets/js/vendor/inputmask/inputmask.min.js"></script>
-<script src="/assets/js/vendor/inputmask/jquery.inputmask.min.js"></script>
-<script src="/assets/js/vendor/savy.min.js?<%- hash %>"></script>
-<script src="/assets/js/vendor/stickyfill.js?<%- hash %>"></script>
-<script src="/assets/js/vendor/rangeslider.js-2.3.0/rangeslider.min.js"></script>
-<script src="/assets/js/PriceEditor.js?<%- hash %>"></script>
-<script src="/assets/js/plugins.js?<%- hash %>"></script>
-<script src="/assets/js/main.js?<%- hash %>"></script>
-
+<script src="/assets/build.vendor.js?<%- hash %>"></script>
 <% if(!!locals.priceEditor) { %>
 <script>
   var priceEditor = new PriceEditor({
