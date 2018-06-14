@@ -1,5 +1,76 @@
+const DURATION = 300;
+const MIN_WAITING = 500;
+
 function isMainPage($container) {
   return !!$container.$content.has('.layout--content .main-page').length;
+}
+
+function getMenuWidth($menu) {
+  if ($menu.hasClass('menu__virtual')) {
+    return 0;
+  }
+  if ($menu.hasClass('menu__shrinked')) {
+    return 124;
+  }
+  return 194;
+}
+
+function getBodyPadding($body) {
+  if ($body.hasClass('has-sidebars')) {
+    return 318;
+  }
+  if ($body.hasClass('has-sidebars_active')) {
+    return 248;
+  }
+  return 194;
+}
+
+function animateMenuFromTo($menu, $newMenu) {
+  const widthMenu = getMenuWidth($menu);
+  const widthNewMenu = getMenuWidth($newMenu);
+
+  console.log('menu resize from', widthMenu, ' to ', widthNewMenu);
+
+  if (widthNewMenu === 0 && widthMenu !== 0) {
+    return $menu.animate({ 'width': '0px' }, DURATION).promise()
+      .then(() => {
+        $menu.replaceWith($newMenu);
+      });
+  }
+
+  if (widthNewMenu === widthMenu) {
+    console.log('eq');
+    $menu.replaceWith($newMenu);
+    return Promise.resolve();
+  }
+
+  $newMenu.width(widthMenu);
+  $menu.replaceWith($newMenu);
+
+  const props = {
+    width: `${widthNewMenu}px`
+  };
+  console.log(props);
+  return $newMenu.animate(props, DURATION).promise()
+    .then(() => {
+      $newMenu.removeAttr('style');
+    });
+}
+
+function animateBodyFromTo($body, $newBody) {
+  const paddingMenu = getBodyPadding($body);
+  const paddingNewMenu = getBodyPadding($newBody);
+
+  console.log('body resize', paddingNewMenu - paddingMenu);
+
+  if (paddingNewMenu === paddingMenu) {
+    return Promise.resolve();
+  }
+
+  const props = {
+    'padding-left': `${paddingNewMenu}px`
+  };
+  return $body.animate(props, DURATION).promise();
 }
 
 function Container($el) {
@@ -15,17 +86,10 @@ function delayPromise(msec) {
 
 //Please note, the DOM should be ready
 var PageTransition = Barba.BaseTransition.extend({
-  start: function() {
-    /**
-     * This function is automatically called as soon the Transition starts
-     * this.newContainerLoading is a Promise for the loading of the new container
-     * (Barba.js also comes with an handy Promise polyfill!)
-     */
-
-    // As soon the loading is finished and the old page is faded out, let's fade the new page
-
+  start: function () {
     this.isLoadingStart();
-    return Promise.all([this.newContainerLoading, delayPromise(1000)])
+    const pageTransform = this.newContainerLoading.then(this.animateSidebar.bind(this));
+    return Promise.all([pageTransform, delayPromise(MIN_WAITING)])
       .then(this.pageIn.bind(this))
       .then(this.reinitJs.bind(this));
   },
@@ -38,16 +102,16 @@ var PageTransition = Barba.BaseTransition.extend({
     $('body').removeClass('is-loading');
   },
 
-  getCurrentContainer: function() {
+  getCurrentContainer: function () {
     if (!this.$newContainer) {
       this.$container = new Container($('body'));
     }
     return this.$container;
   },
 
-  getNewContainer: function() {
+  getNewContainer: function () {
     if (!this.$newContainer) {
-      var newPage = document.createElement( 'html' );
+      var newPage = document.createElement('html');
       newPage.innerHTML = Barba.Pjax.Dom.currentHTML;
       this.$newContainer = new Container($(newPage).find('body'));
     }
@@ -55,7 +119,7 @@ var PageTransition = Barba.BaseTransition.extend({
     return this.$newContainer;
   },
 
-  animateSidebar: function() {
+  animateSidebar: function () {
     $container = this.getCurrentContainer();
     $newContainer = this.getNewContainer();
 
@@ -64,27 +128,26 @@ var PageTransition = Barba.BaseTransition.extend({
     const $newMenu1 = $newContainer.$sidebar.find('.menu__level1')
     const $newMenu2 = $newContainer.$sidebar.find('.menu__level2')
 
-    $menu1.html($newMenu1.html());
-    $menu2.html($newMenu2.html());
-    $menu1[0].className = [...$newMenu1[0].classList].join(' ');
-    $menu2[0].className = [...$newMenu2[0].classList].join(' ');
-
-    return Promise.resolve();
+    return Promise.all([
+      animateMenuFromTo($menu1, $newMenu1),
+      animateMenuFromTo($menu2, $newMenu2),
+      animateBodyFromTo($container, $newContainer),
+    ]).then(() => console.warn(123));
   },
 
-  pageIn: function() {
+  pageIn: function () {
     $container = this.getCurrentContainer();
     $newContainer = this.getNewContainer();
 
-    this.animateSidebar();
     if (!(isMainPage($container) && isMainPage($newContainer))) {
-      $container.$content.html($newContainer.$content.html());
+      $container.$content.replaceWith($newContainer.$content);
     }
     $container[0].className = [...$newContainer[0].classList, 'js'].join(' ');
+
     this.isLoadingEnd();
     this.done();
   },
-  reinitJs: function() {
+  reinitJs: function () {
     initAll();
   }
 });
@@ -92,7 +155,7 @@ var PageTransition = Barba.BaseTransition.extend({
 /**
  * Next step, you have to tell Barba to use the new Transition
  */
-Barba.Pjax.getTransition = function() {
+Barba.Pjax.getTransition = function () {
   return PageTransition;
 };
 

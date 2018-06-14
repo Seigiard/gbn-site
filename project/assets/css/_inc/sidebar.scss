@@ -14,37 +14,33 @@
   &.js-new {
     z-index: 100;
   }
+  // .has-sidebar & {
+  //   width: $has-sidebar;
+  // }
+  // .has-sidebars & {
+  //   width: $has-sidebars;
+  // }
+  // .has-sidebars_active & {
+  //   width: $has-sidebars_active;
+  // }
 }
 
 .menu {
   padding: 40px 0;
   border-right: 4px solid #000;
-  max-width: $menu-width;
+  width: $menu-width;
   overflow: hidden;
-  // .js-animate & {
-  //   transition:
-  //     width $uiTransitionDuration $uiTransitionFunction,
-  //     border-right-width $uiTransitionDuration $uiTransitionFunction;
-  // }
+  transition: margin-right 300 ease;
   ul {
     margin: 0;
     padding: 0;
     width: $menu-width - 4px;
     transition: font-size .001s linear;
   }
-  .has-sidebar & {
-    width: $has-sidebar;
-  }
-  .has-sidebars & {
-    width: $has-sidebars;
-  }
-  .has-sidebars_active & {
-    width: $has-sidebars_active;
-  }
   &.menu__shrinked {
     @include fontSize(13px);
     line-height: 1.2;
-    max-width: $menu-width--shrinked;
+    width: $menu-width--shrinked;
     ul {
       width: $menu-width--shrinked - 4px;
     }
@@ -53,15 +49,17 @@
 
 .menu__level1 {
   background-color: $menu-bg1;
+  z-index: 20;
 }
 
 .menu__level2 {
   background-color: $menu-bg2;
 }
+
 .has-sidebar, .has-sidebars, .has-sidebars_active {
   .menu__virtual {
     width: 0;
-    border-right-width: 0;
+    margin-left: -4px;
   }
 }
 

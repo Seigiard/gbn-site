@@ -6,10 +6,12 @@
   right: 0;
   bottom: 0;
   top: 0;
-  z-index: 50;
   border: 10px solid #000;
-  background: rgba($color-white, .9);
-  display: none;
+  background: #fff;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity .1s ease;
+  pointer-events: none;
   &:before {
     content: 'ГБН рулит!';
     font-size: 15vw;
@@ -25,5 +27,8 @@
   }
 }
 .is-loading .fader {
-  display: block;
+  opacity: .9;
+  z-index: 50;
+  transition: opacity .2s easy;
+  pointer-events: all;
 }
