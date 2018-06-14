@@ -1,12 +1,12 @@
 <footer class="site-footer"><div class="site-footer--rotate bg-red"><p>Сделано <span class="nwrp"><a href="https://bureau.ru/school/">в&nbsp;Школе Бюро&nbsp;Горбунова</a></span><br />в&nbsp;2018&nbsp;году</p></div></footer>
-<%
-  const hash = new Date().getTime();
-%>
 <a href="/" class="icon-close">
   <%- partial("../_snippets/svg-icon.ejs", { name: 'close' }) %>
 </a>
 <div class="fader"></div>
 
+<%
+  const hash = new Date().getTime();
+%>
 <script src="/assets/build.vendor.js?<%- hash %>"></script>
 <% if(!!locals.priceEditor) { %>
 <script>
