@@ -123,7 +123,7 @@ let isCurrentPageMainPage
 let isNextPageMainPage
 
 Barba.Dispatcher.on('linkClicked', function(el) {
-  isNextPageMainPage = el.dataset.mainPage;
+  isNextPageMainPage = el.dataset.mainPage === 'true';
 });
 
 //Please note, the DOM should be ready
@@ -138,8 +138,8 @@ var PageTransition = Barba.BaseTransition.extend({
     const pageTransform = this.newContainerLoading.then(this.animateSidebar.bind(this));
     return Promise.all([pageTransform, delayPromise(MIN_WAITING)])
       .then(this.pageIn.bind(this))
-      .then(this.isLoadingEnd.bind(this))
-      .then(this.reinitJs.bind(this));
+      .then(this.reinitJs.bind(this))
+      .then(this.isLoadingEnd.bind(this));
   },
 
   isLoadingStart() {
@@ -202,14 +202,15 @@ var PageTransition = Barba.BaseTransition.extend({
       animateMenuFromTo($menu2, $newMenu2),
       animateBodyFromTo($container, $newContainer),
       animateFooterFromTo($container, $newContainer),
-    ]).then(() => console.warn(123));
+    ]);
   },
 
   pageIn: function () {
     $container = this.getCurrentContainer();
     $newContainer = this.getNewContainer();
 
-    if (!(isCurrentPageMainPage && isNextPageMainPage)) {
+    console.log(isCurrentPageMainPage, '→' , isNextPageMainPage);
+    if (!isCurrentPageMainPage || !isNextPageMainPage) {
       $container.$content.replaceWith($newContainer.$content);
     }
     $container[0].className = [...$newContainer[0].classList, 'js'].join(' ');
