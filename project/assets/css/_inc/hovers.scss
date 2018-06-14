@@ -28,7 +28,7 @@ a:hover, button:hover {
     @include hover-transition();
   }
   a, button {
-    &:hover, &:active, &:focus {
+    &:hover, &:active {
       .svg-#{$colorName}-fill--hover {
         fill: $color;
       }
@@ -105,6 +105,24 @@ textarea {
   @include fontSize(16px);
   height: 36px;
   padding: 3px 16px 0;
+  .mp-pad--default & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  i {
+    display: inline-block;
+    margin-left: 0px;
+    width: 0px;
+    opacity: 0;
+    transition:
+      margin .3s ease-out,
+      width .3s ease-out,
+      opacity .3s ease-out;
+    svg {
+      vertical-align: middle;
+      transform: translateY(-4px);
+    }
+  }
   @include hover-transition();
   .on-disable--show {
     display: none;
@@ -112,9 +130,14 @@ textarea {
   .on-disable--hide {
     display: inline-block;
   }
-  &:disabled {
+  &.disabled {
     .on-disable--show {
       display: inline-block;
+      i {
+        margin-left: 2px;
+        width: 13px;
+        opacity: 1;
+      }
     }
     .on-disable--hide {
       display: none;
@@ -159,7 +182,7 @@ $secondary-color: $color-red;
 $background-color: $color-white;
 @include a-colors($primary-color, $secondary-color);
 @include svg-colors($primary-color, $secondary-color, $background-color);
-@include buttons($color-black, $color-white, $color-red, $color-white, #7f7f7f, $color-white);
+@include buttons($color-black, $color-white, $color-red, $color-white, #7f7f7f, rgba($color-white, .5));
 @include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
 
 
@@ -172,31 +195,31 @@ $background-color: $color-white;
 
 .bg-white {
   @include render-block($color-white, $color-black, $color-red);
-  @include buttons($color-black, $color-white, $color-red, $color-white, #7f7f7f, $color-white);
+  @include buttons($color-black, $color-white, $color-red, $color-white, #7f7f7f, rgba($color-white, .5));
   @include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
 }
 
 .bg-blue {
   @include render-block($color-blue, $color-white, $color-red);
-  @include buttons($color-black, $color-white, $color-white, $color-black, #626fa1, $color-white);
+  @include buttons($color-black, $color-white, $color-white, $color-black, #626fa1, rgba($color-white, .5));
   @include inputs($color-white, $color-white, rgba($color-white, .3), rgba($color-white, .3));
 }
 
 .bg-yellow {
   @include render-block($color-yellow, $color-black, $color-white);
-  @include buttons($color-black, $color-white, $color-white, $color-black, #999999, $color-white);
+  @include buttons($color-black, $color-white, $color-white, $color-black, #999999, rgba($color-white, .5));
   @include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
 }
 
 .bg-red {
   @include render-block($color-red, $color-black, $color-white);
-  @include buttons($color-black, $color-white, $color-white, $color-black, #888, $color-white);
+  @include buttons($color-black, $color-white, $color-white, $color-black, #888, rgba($color-white, .5));
   @include inputs($color-black, $color-black, rgba($color-black, .5), rgba($color-black, .4));
 }
 
 .bg-black {
   @include render-block($color-black, $color-white, $color-red);
-  @include buttons($color-white, $color-black, $color-red, $color-black, rgba($color-white, .4), $color-black);
+  @include buttons($color-white, $color-black, $color-red, $color-black, rgba($color-white, .4), rgba($color-black, .5));
   @include inputs($color-white, $color-white, rgba($color-white, .3), rgba($color-white, .4));
 }
 

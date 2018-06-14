@@ -26,7 +26,7 @@
           <div class="col-2 main-page--expirience mp-pad--default bg-blue">
             <p>
               <b>5+</b>
-              минималь&shy;ный опыт риелтора в&nbsp;бюро — пять&nbsp;лет
+              минималь&shy;ный опыт риелтора в&nbsp;бюро&nbsp;— пять&nbsp;лет
             </p>
           </div>
         </div>
@@ -72,14 +72,14 @@
         <div class="row">
           <div class="col-8 main-page--video bg-black">
             <div class="main-page--video-embed">
-              <iframe src="https://www.youtube.com/embed/wsC_59MFrvg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/rftm5neh3Fc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
           </div>
         </div>
         <div class="row main-page--grid-10-sm">
           <div class="col-2 mp-pad--default main-page--employee employee employee__vertical">
             <div class="employee--image">
-              <img src="/assets/img/employee-kozlova.jpg" width="198px" alt="">
+              <img src="/assets/img/employee-kozlova.jpg" width="171px" alt="">
             </div>
             <div class="employee--description">
               <h3>Оксана Козлова</h3>
@@ -93,7 +93,7 @@
           <div class="col-4 employee-list">
             <div class="employee employee__horizontal">
               <div class="employee--image">
-                <img src="/assets/img/employee-kudina.jpg" width="198px" alt="">
+                <img src="/assets/img/employee-kudina.jpg" width="171px" alt="">
               </div>
               <div class="employee--description">
                 <h3>Людмила Кудина</h3>
@@ -106,7 +106,7 @@
             </div>
             <div class="employee employee__horizontal">
               <div class="employee--image">
-                <img src="/assets/img/employee-raevskaya.jpg" width="198px" alt="">
+                <img src="/assets/img/employee-raevskaya.jpg" width="171px" alt="">
               </div>
               <div class="employee--description">
                 <h3>Юлия Раевская</h3>
@@ -123,15 +123,25 @@
             <p>Если хотите в&nbsp;нашу команду, отправьте свой&nbsp;номер телефона. Мы&nbsp;перезвоним в&nbsp;течение суток.</p>
             <form action="<%- partial("_snippets/sender-path.ejs") %>" target="blank" method="post">
               <input type="hidden" name="template" value="vacancy">
-              <div class="control-row">
-                <input disable-on-submit phone-mask required save id="phoneNumber"
-                  class="input input__100" type="tel" name="phone" placeholder="Ваш номер" />
+              <div class="is-success">
+                <div class="control-row">
+                  <input disable-on-submit phone-mask required save id="phoneNumber"
+                    class="input input__100" type="tel" name="phone" placeholder="Ваш номер" />
+                </div>
+                <div class="control-row">
+                  <button disable-on-submit class="button button__100" type="submit">
+                    <span class="on-disable--show">Перезвоним <i><%- partial("./_snippets/svg-icon.ejs", { name: 'check' }) %></i></span>
+                    <span class="on-disable--hide">Отправить</span>
+                  </button>
+                </div>
               </div>
-              <div class="control-row">
-                <button disable-on-submit class="button button__100" type="submit">
-                  <span class="on-disable--show">Перезвоним</span>
-                  <span class="on-disable--hide">Отправить</span>
-                </button>
+              <div class="is-error">
+                <div class="control-row">
+                  <div class="error-message input">Не получилось</div>
+                </div>
+                <div class="control-row">
+                  <button reset-form class="button button__100" type="button">Повторить</button>
+                </div>
               </div>
             </form>
           </div>

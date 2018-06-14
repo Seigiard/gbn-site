@@ -2,16 +2,21 @@
     "name": "gbn-site",
     "version": "0.0.1",
     "scripts": {
-        "start": "npm-run-all --parallel server livereload",
-        "build": "harp compile ./project ./dist",
+        "start": "npm-run-all --parallel server livereload watchJS",
+        "build": "npm run minJS && harp compile ./project ./dist && npm run minCSS",
         "server": "harp server project --port 9000",
         "livereload": "browser-sync start --proxy localhost:9000 --files 'project/**/*.jade, project/**/*.ejs, project/**/*.less, project/**/*.json, project/**/*.js, project/**/*.css, project/**/*.scss' --no-notify",
-        "deploy": "npm run build && push-dir --dir=dist --branch=gh-pages --cleanup"
+        "deploy": "npm run build && push-dir --dir=dist --branch=gh-pages --cleanup",
+        "minJS": "NODE_ENV=production node ./node.minifyJS.js",
+        "watchJS": "node ./node.minifyJS.js",
+        "minCSS": "node ./node.minifyCSS.js"
     },
     "devDependencies": {
+        "babel-minify": "^0.4.3",
         "browser-sync": "^2.24.4",
-        "hoek": "^5.0.3",
+        "csso": "^3.5.1",
         "harp": "^0.25.0",
+        "hoek": "^5.0.3",
         "npm-run-all": "^4.0.2",
         "push-dir": "^0.4.1"
     }

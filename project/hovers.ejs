@@ -5,8 +5,26 @@
 <% bgs.forEach(function(bg){ %>
   <div class="bg-<%- bg %>" style="padding: 2rem 3rem">
     <p><a href="">Ссылка</a></p>
-    <p><input class="input" type="text" placeholder="Ввведите текст" /> <input class="input" type="text" value="Введённый текст" /> <button class="button">Кнопка</button></p>
+    <p><input class="input" type="text" placeholder="Ввведите текст" />
+      <input class="input" type="text" value="Введённый текст" />
+      <button class="button">Кнопка</button></p>
     <p><input class="input" disabled type="text" placeholder="Ввведите текст" value="Введённое значение" /> <button class="button" disabled>Кнопка</button></p>
+
+    <div>
+      <button class="button">Кнопка</button>
+      <button class="button disabled" disabled>Кнопка</button>
+      <button type="submit" class="button disabled" disabled>
+        <span class="on-disable--show">Расчёт отправлен <i><%- partial("./_snippets/svg-icon.ejs", { name: 'check' }) %></i></span>
+      </button>
+      <div class="error-message input">Не получилось</div>
+    </div>
+    <br>
+
+    <div>
+      <input placeholder="Номер" class="input" type="text" name="number">
+      <div class="error-message input">Не получилось</div>
+    </div>
+    <br>
 
     <div class="input-combined">
       <input placeholder="Номер" class="input" type="text" name="number">
