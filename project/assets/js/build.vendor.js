@@ -2,8 +2,10 @@ vendor/jquery-3.2.1.min.js
 vendor/inputmask/inputmask.min.js
 vendor/inputmask/jquery.inputmask.min.js
 vendor/rangeslider.js-2.3.0/rangeslider.min.js
+vendor/barba.min.js
 vendor/savy.min.js
 vendor/stickyfill.js
 main.js
 plugins.js
 PriceEditor.js
+animation.js
