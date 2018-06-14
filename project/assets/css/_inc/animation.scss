@@ -9,22 +9,9 @@
   border: 10px solid #000;
   background: #fff;
   opacity: 0;
-  z-index: 0;
+  z-index: -1;
   transition: opacity .1s ease;
   pointer-events: none;
-  &:before {
-    content: 'ГБН рулит!';
-    font-size: 15vw;
-    font-weight: 900;
-    color: #000;
-    text-align: center;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-  }
 }
 .is-loading .fader {
   opacity: .9;
