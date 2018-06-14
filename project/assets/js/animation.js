@@ -83,11 +83,6 @@ function animateBodyFromTo($body, $newBody) {
     easing: EASING
   });
   return finishedPromise.finished;
-
-  // const props = {
-  //   'padding-left': `${paddingNewMenu}px`
-  // };
-  // return $body.animate(props, DURATION).promise();
 }
 
 function animateFooterFromTo($body, $newBody) {
@@ -111,11 +106,6 @@ function animateFooterFromTo($body, $newBody) {
     easing: EASING
   });
   return finishedPromise.finished;
-
-  // const props = {
-  //   'padding-left': `${paddingNewMenu}px`
-  // };
-  // return $body.animate(props, DURATION).promise();
 }
 
 function Container($el) {
@@ -148,7 +138,7 @@ var PageTransition = Barba.BaseTransition.extend({
     anime({
       targets: this.$fader[0],
       opacity: .9,
-      duration: 300,
+      duration: 100,
       easing: 'easeInQuart'
     })
   },
