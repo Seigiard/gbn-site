@@ -76,10 +76,13 @@
             </div>
           </div>
         </div>
+        <%
+          const hash = new Date().getTime();
+        %>
         <div class="row main-page--grid-10-sm">
           <div class="col-2 mp-pad--default main-page--employee employee employee__vertical">
             <div class="employee--image">
-              <img src="/assets/img/employee-kozlova.jpg" width="171px" alt="">
+              <img src="/assets/img/employee-kozlova.jpg?<%- hash %>" width="171px" alt="">
             </div>
             <div class="employee--description">
               <h3>Оксана Козлова</h3>
@@ -93,7 +96,7 @@
           <div class="col-4 employee-list">
             <div class="employee employee__horizontal">
               <div class="employee--image">
-                <img src="/assets/img/employee-kudina.jpg" width="171px" alt="">
+                <img src="/assets/img/employee-kudina.jpg?<%- hash %>" width="171px" alt="">
               </div>
               <div class="employee--description">
                 <h3>Людмила Кудина</h3>
@@ -106,7 +109,7 @@
             </div>
             <div class="employee employee__horizontal">
               <div class="employee--image">
-                <img src="/assets/img/employee-raevskaya.jpg" width="171px" alt="">
+                <img src="/assets/img/employee-raevskaya.jpg?<%- hash %>" width="171px" alt="">
               </div>
               <div class="employee--description">
                 <h3>Юлия Раевская</h3>
