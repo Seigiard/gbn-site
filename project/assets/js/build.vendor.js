@@ -3,6 +3,7 @@ vendor/inputmask/inputmask.min.js
 vendor/inputmask/jquery.inputmask.min.js
 vendor/rangeslider.js-2.3.0/rangeslider.min.js
 vendor/barba.min.js
+vendor/anime.min.js
 vendor/savy.min.js
 vendor/stickyfill.js
 main.js

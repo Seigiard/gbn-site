@@ -1,4 +1,5 @@
 const DURATION = 300;
+const EASING = 'easeOutQuart';
 const MIN_WAITING = 500;
 
 function isMainPage($container) {
@@ -39,7 +40,6 @@ function animateMenuFromTo($menu, $newMenu) {
   }
 
   if (widthNewMenu === widthMenu) {
-    console.log('eq');
     $menu.replaceWith($newMenu);
     return Promise.resolve();
   }
@@ -47,14 +47,23 @@ function animateMenuFromTo($menu, $newMenu) {
   $newMenu.width(widthMenu);
   $menu.replaceWith($newMenu);
 
-  const props = {
-    width: `${widthNewMenu}px`
-  };
-  console.log(props);
-  return $newMenu.animate(props, DURATION).promise()
-    .then(() => {
-      $newMenu.removeAttr('style');
-    });
+  var finishedPromise = anime({
+    targets: $newMenu[0],
+    width: `${widthNewMenu}px`,
+    duration: DURATION,
+    easing: EASING
+  });
+
+  return finishedPromise.finished;
+
+  // const props = {
+  //   width: `${widthNewMenu}px`
+  // };
+
+  // return $newMenu.animate(props, DURATION).promise()
+  //   .then(() => {
+  //     $newMenu.removeAttr('style');
+  //   });
 }
 
 function animateBodyFromTo($body, $newBody) {
@@ -67,10 +76,46 @@ function animateBodyFromTo($body, $newBody) {
     return Promise.resolve();
   }
 
-  const props = {
-    'padding-left': `${paddingNewMenu}px`
-  };
-  return $body.animate(props, DURATION).promise();
+  var finishedPromise = anime({
+    targets: $body[0],
+    'padding-left': `${paddingNewMenu}px`,
+    duration: DURATION,
+    easing: EASING
+  });
+  return finishedPromise.finished;
+
+  // const props = {
+  //   'padding-left': `${paddingNewMenu}px`
+  // };
+  // return $body.animate(props, DURATION).promise();
+}
+
+function animateFooterFromTo($body, $newBody) {
+  const $footer = $body.find('.service--footer')[0];
+  if(!$footer) {
+    return;
+  }
+  const paddingMenu = getBodyPadding($body);
+  const paddingNewMenu = getBodyPadding($newBody);
+
+  console.log('body resize', paddingNewMenu - paddingMenu);
+
+  if (paddingNewMenu === paddingMenu) {
+    return Promise.resolve();
+  }
+
+  var finishedPromise = anime({
+    targets: $footer,
+    'left': `${paddingNewMenu}px`,
+    duration: DURATION,
+    easing: EASING
+  });
+  return finishedPromise.finished;
+
+  // const props = {
+  //   'padding-left': `${paddingNewMenu}px`
+  // };
+  // return $body.animate(props, DURATION).promise();
 }
 
 function Container($el) {
@@ -87,19 +132,37 @@ function delayPromise(msec) {
 //Please note, the DOM should be ready
 var PageTransition = Barba.BaseTransition.extend({
   start: function () {
+    this.$body = $('body');
+    this.$fader = $('.fader');
     this.isLoadingStart();
     const pageTransform = this.newContainerLoading.then(this.animateSidebar.bind(this));
     return Promise.all([pageTransform, delayPromise(MIN_WAITING)])
       .then(this.pageIn.bind(this))
+      .then(this.isLoadingEnd.bind(this))
       .then(this.reinitJs.bind(this));
   },
 
   isLoadingStart() {
-    $('body').addClass('is-loading');
+    this.$body.addClass('is-loading');
+    this.$fader.css({zIndex: 50, display: 'block'})
+    anime({
+      targets: this.$fader[0],
+      opacity: .9,
+      duration: 300,
+      easing: 'easeInQuart'
+    })
   },
 
   isLoadingEnd() {
-    $('body').removeClass('is-loading');
+    this.$body.removeClass('is-loading');
+    anime({
+      targets: this.$fader[0],
+      opacity: 0,
+      duration: 300,
+      easing: 'easeOutCubic'
+    }).finished.then(() => {
+      this.$fader.css({zIndex: -1, display: 'none'})
+    })
   },
 
   getCurrentContainer: function () {
@@ -132,6 +195,7 @@ var PageTransition = Barba.BaseTransition.extend({
       animateMenuFromTo($menu1, $newMenu1),
       animateMenuFromTo($menu2, $newMenu2),
       animateBodyFromTo($container, $newContainer),
+      animateFooterFromTo($container, $newContainer),
     ]).then(() => console.warn(123));
   },
 
@@ -144,7 +208,6 @@ var PageTransition = Barba.BaseTransition.extend({
     }
     $container[0].className = [...$newContainer[0].classList, 'js'].join(' ');
 
-    this.isLoadingEnd();
     this.done();
   },
   reinitJs: function () {

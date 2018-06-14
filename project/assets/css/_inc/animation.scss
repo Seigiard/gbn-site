@@ -2,6 +2,7 @@
 
 .fader {
   position: absolute;
+  display: none;
   left: 0;
   right: 0;
   bottom: 0;
@@ -13,9 +14,9 @@
   transition: opacity .1s ease;
   pointer-events: none;
 }
-.is-loading .fader {
-  opacity: .9;
-  z-index: 50;
-  transition: opacity .2s easy;
-  pointer-events: all;
-}
+// .is-loading .fader {
+//   opacity: .9;
+//   z-index: 50;
+//   transition: opacity .3s easy;
+//   pointer-events: all;
+// }
