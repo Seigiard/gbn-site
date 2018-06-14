@@ -12,7 +12,9 @@ function readFile(src) {
 }
 
 function buildJS() {
+  console.log('rebuild js');
   if(!fs.existsSync(JSFILE)) {
+    console.log('file doesn\'t not exist');
     return
   }
   const data = readFile(JSFILE);
@@ -22,6 +24,10 @@ function buildJS() {
     return;
   }
   const script = files.map(path => {
+    if(!fs.existsSync(path)) {
+      console.warn(path, ' doesn\'t exist')
+      return '';
+    }
     const file = readFile(path);
     if(path.includes('/vendor')) {
       return file;
