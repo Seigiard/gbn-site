@@ -209,8 +209,7 @@ var PageTransition = Barba.BaseTransition.extend({
     $container = this.getCurrentContainer();
     $newContainer = this.getNewContainer();
 
-    console.log(isCurrentPageMainPage, '→' , isNextPageMainPage);
-    if (!isCurrentPageMainPage || !isNextPageMainPage) {
+    if (!(isCurrentPageMainPage && isNextPageMainPage)) {
       $container.$content.replaceWith($newContainer.$content);
     }
     $container[0].className = [...$newContainer[0].classList, 'js'].join(' ');
