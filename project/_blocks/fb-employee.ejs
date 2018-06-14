@@ -8,9 +8,12 @@
   const feedbackImageUrl = stripHtml(feedbackImage);
   const feedbackType = stripHtml(feedbackTypeHtml);
 %>
+<%
+  const hash = new Date().getTime();
+%>
 <div class="service-item service-item__feeedback feedback feedback__<%- feedbackType %>">
   <div class="feedback--author">
-    <div class="feedback--image"><img src="/assets/img/<%- feedbackImageUrl %>" alt=""></div>
+    <div class="feedback--image"><img src="/assets/img/<%- feedbackImageUrl %>?<%- hash %>" alt=""></div>
     <%- feedbackName %>
   </div>
   <div class="feedback--text"><%- feedbackText %></div>
