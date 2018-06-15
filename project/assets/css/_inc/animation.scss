@@ -1,22 +1,26 @@
 @import 'variables';
 
 .fader {
-  position: absolute;
   display: none;
+  z-index: -1;
+  position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
   border: 10px solid #000;
   background: #fff;
+  // background: transparent;
   opacity: 0;
-  z-index: -1;
-  transition: opacity .1s ease;
   pointer-events: none;
 }
-// .is-loading .fader {
-//   opacity: .9;
-//   z-index: 50;
-//   transition: opacity .3s easy;
-//   pointer-events: all;
+.is-loading .fader {
+  display: block;
+  z-index: 50;
+  opacity: 0;
+  pointer-events: all;
+}
+// .is-loading .layout--content,
+// .is-loading .service--footer {
+//   filter: blur(3px)
 // }

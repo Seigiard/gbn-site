@@ -1,7 +1,7 @@
 const DURATION = 300;
 const EASING_OUT = 'easeOutCubic';
 const EASING_IN = 'easeInCubic';
-const MIN_WAITING = 500;
+const MIN_WAITING = 300;
 
 function isMainPage($container) {
   return !!$container.$content.has('.layout--content .main-page').length;
@@ -129,40 +129,37 @@ var PageTransition = Barba.BaseTransition.extend({
     this.$body = $('body');
     this.$fader = $('.fader');
 
-    this.isLoadingStart();
     const pageTransform = this.newContainerLoading.then(this.animateSidebar.bind(this));
-    return Promise.all([pageTransform, delayPromise(MIN_WAITING)])
+    return Promise.all([this.isLoadingStart(), pageTransform, delayPromise(MIN_WAITING)])
       .then(this.pageIn.bind(this))
       .then(this.reinitJs.bind(this))
       .then(this.isLoadingEnd.bind(this));
   },
 
   isLoadingStart() {
-    // this.$body.addClass('is-loading');
     if (isCurrentPageMainPage && isNextPageMainPage) {
       return Promise.resolve();
     }
-    this.$fader.css({zIndex: 50, display: 'block'})
-    anime({
+    this.$body.addClass('is-loading');
+    return anime({
       targets: this.$fader[0],
-      opacity: .9,
-      duration: 200,
+      opacity: .3,
+      duration: 100,
       easing: EASING_IN
     })
   },
 
   isLoadingEnd() {
-    // this.$body.removeClass('is-loading');
     if (isCurrentPageMainPage && isNextPageMainPage) {
       return Promise.resolve();
     }
     return anime({
       targets: this.$fader[0],
       opacity: 0,
-      duration: 200,
+      duration: 300,
       easing: EASING_OUT
     }).finished.then(() => {
-      this.$fader.css({zIndex: -1, display: 'none'})
+      this.$body.removeClass('is-loading');
     })
   },
 
@@ -207,7 +204,7 @@ var PageTransition = Barba.BaseTransition.extend({
     if (!(isCurrentPageMainPage && isNextPageMainPage)) {
       $container.$content.replaceWith($newContainer.$content);
     }
-    $container[0].className = [...$newContainer[0].classList, 'js'].join(' ');
+    $container[0].className = [...$newContainer[0].classList, 'js is-loading'].join(' ');
 
     this.done();
   },
