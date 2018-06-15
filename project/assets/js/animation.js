@@ -1,7 +1,7 @@
 const DURATION = 300;
 const EASING_OUT = 'easeOutCubic';
 const EASING_IN = 'easeInCubic';
-const MIN_WAITING = 150;
+const MIN_WAITING = 200;
 
 function isMainPage($container) {
   return !!$container.$content.has('.layout--content .main-page').length;

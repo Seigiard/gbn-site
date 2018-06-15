@@ -15,23 +15,23 @@
 
 .is-loading .fader {
   display: block;
-  opacity: .5;
+  // opacity: .5;
   z-index: 50;
   pointer-events: all;
 }
 
-.is-loading .layout--content {
-  // background-color: #f0f0f0;
-  // .main-page {
-  //   opacity: .7;
-  // }
+.is-loading .layout--content > * {
+  filter: opacity(.5)
 }
-
-.is-loading .layout--content,
-.is-loading .service--footer {
-  .bg-blue,
-  .bg-yellow {
-    filter: grayscale(50%);
-    opacity: .7;
-  }
+.is-loading .service--footer > * {
+  filter: opacity(.7)
+}
+.is-loading .main-page {
+  filter: opacity(1)
+}
+.is-loading .main-page > .main-page--welcome {
+  filter: opacity(.6)
+}
+.is-loading .main-page > .row {
+  filter: opacity(.6)
 }
