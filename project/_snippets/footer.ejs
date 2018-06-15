@@ -7,7 +7,7 @@
 <%
   const hash = new Date().getTime();
 %>
-<script src="/assets/build.vendor.js?<%- hash %>"></script>
+<script src="<%- partial("assets-path.ejs") %>build.vendor.js?<%- hash %>"></script>
 <% if(!!locals.priceEditor) { %>
 <script>
   var priceEditor = new PriceEditor({
