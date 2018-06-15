@@ -32,12 +32,16 @@ function buildJS() {
     if(path.includes('/vendor')) {
       return file;
     }
-    const {code, map} = minify(file, {
-      mangle: false,
-    }, {
-      sourceMaps: false,
-    });
-    return code;
+    try {
+      const {code, map} = minify(file, {
+        mangle: false,
+      }, {
+        sourceMaps: false,
+      });
+      return code;
+    } catch (ex) {
+      return `console.warn("Error is in ${path}")`;
+    }
   }).join('\n');
 
   fs.writeFileSync(DIST_JSFILE, script);
