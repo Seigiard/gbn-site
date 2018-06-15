@@ -1,5 +1,4 @@
 @import 'variables';
-
 .fader {
   display: none;
   z-index: -1;
@@ -9,18 +8,30 @@
   bottom: 0;
   top: 0;
   border: 10px solid #000;
-  background: #fff;
-  // background: transparent;
+  background: #fff; // background: transparent;
   opacity: 0;
   pointer-events: none;
 }
+
 .is-loading .fader {
   display: block;
+  opacity: .5;
   z-index: 50;
-  opacity: 0;
   pointer-events: all;
 }
-// .is-loading .layout--content,
-// .is-loading .service--footer {
-//   filter: blur(3px)
-// }
+
+.is-loading .layout--content {
+  // background-color: #f0f0f0;
+  // .main-page {
+  //   opacity: .7;
+  // }
+}
+
+.is-loading .layout--content,
+.is-loading .service--footer {
+  .bg-blue,
+  .bg-yellow {
+    filter: grayscale(50%);
+    opacity: .7;
+  }
+}

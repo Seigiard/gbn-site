@@ -1,7 +1,7 @@
 const DURATION = 300;
 const EASING_OUT = 'easeOutCubic';
 const EASING_IN = 'easeInCubic';
-const MIN_WAITING = 300;
+const MIN_WAITING = 150;
 
 function isMainPage($container) {
   return !!$container.$content.has('.layout--content .main-page').length;
@@ -40,6 +40,7 @@ function animateMenuFromTo($menu, $newMenu) {
       targets: $menu[0],
       easing: getEasing(widthMenu, widthNewMenu),
       width: `0px`,
+      transformX: '-4px',
       duration: DURATION,
     }).finished.then(() => {
         $menu.replaceWith($newMenu);
@@ -94,6 +95,8 @@ function animateFooterFromTo($body, $newBody) {
     return Promise.resolve();
   }
 
+  const multiplyer = paddingNewMenu > paddingMenu ? 1.05 : 0.95;
+
   var finishedPromise = anime({
     targets: $footer,
     'left': `${paddingNewMenu}px`,
@@ -141,26 +144,29 @@ var PageTransition = Barba.BaseTransition.extend({
       return Promise.resolve();
     }
     this.$body.addClass('is-loading');
-    return anime({
-      targets: this.$fader[0],
-      opacity: .3,
-      duration: 100,
-      easing: EASING_IN
-    })
+    return Promise.resolve();
+    // return anime({
+    //   targets: this.$fader[0],
+    //   opacity: .3,
+    //   duration: 100,
+    //   easing: EASING_IN
+    // })
   },
 
   isLoadingEnd() {
     if (isCurrentPageMainPage && isNextPageMainPage) {
       return Promise.resolve();
     }
-    return anime({
-      targets: this.$fader[0],
-      opacity: 0,
-      duration: 300,
-      easing: EASING_OUT
-    }).finished.then(() => {
-      this.$body.removeClass('is-loading');
-    })
+    this.$body.removeClass('is-loading');
+    return Promise.resolve();
+    // return anime({
+    //   targets: this.$fader[0],
+    //   opacity: 0,
+    //   duration: 300,
+    //   easing: EASING_OUT
+    // }).finished.then(() => {
+    //   this.$body.removeClass('is-loading');
+    // })
   },
 
   getCurrentContainer: function () {
@@ -201,12 +207,18 @@ var PageTransition = Barba.BaseTransition.extend({
     $container = this.getCurrentContainer();
     $newContainer = this.getNewContainer();
 
+    const classes = [...$newContainer[0].classList, 'js']
+    if (!(isCurrentPageMainPage && isNextPageMainPage)) {
+      classes.push('is-loading')
+    }
+    $container[0].className = classes.join(' ');
     if (!(isCurrentPageMainPage && isNextPageMainPage)) {
       $container.$content.replaceWith($newContainer.$content);
     }
-    $container[0].className = [...$newContainer[0].classList, 'js is-loading'].join(' ');
+
 
     this.done();
+    return Promise.resolve();
   },
   reinitJs: function () {
     initAll();
