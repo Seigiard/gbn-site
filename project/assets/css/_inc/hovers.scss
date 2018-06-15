@@ -156,7 +156,10 @@ textarea {
   max-width: 100%;
   @include hover-transition();
 }
-.input__no-border { border: none; }
+div.input {
+  line-height: 31px;
+}
+.input__no-border { border-bottom-color: transparent!important; }
 .input__big { @include fontSize(24px); }
 .input__100, .button__100 { width: 100%; }
 
