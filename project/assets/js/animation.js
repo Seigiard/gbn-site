@@ -1,5 +1,6 @@
 const DURATION = 300;
-const EASING = 'easeOutQuart';
+const EASING_OUT = 'easeOutCubic';
+const EASING_IN = 'easeInCubic';
 const MIN_WAITING = 500;
 
 function isMainPage($container) {
@@ -26,15 +27,21 @@ function getBodyPadding($body) {
   return 194;
 }
 
+function getEasing(oldValue, newValue) {
+  return EASING_OUT;
+}
+
 function animateMenuFromTo($menu, $newMenu) {
   const widthMenu = getMenuWidth($menu);
   const widthNewMenu = getMenuWidth($newMenu);
 
-  // console.log('menu resize from', widthMenu, ' to ', widthNewMenu);
-
   if (widthNewMenu === 0 && widthMenu !== 0) {
-    return $menu.animate({ 'width': '0px' }, DURATION).promise()
-      .then(() => {
+    return anime({
+      targets: $menu[0],
+      easing: getEasing(widthMenu, widthNewMenu),
+      width: `0px`,
+      duration: DURATION,
+    }).finished.then(() => {
         $menu.replaceWith($newMenu);
       });
   }
@@ -47,23 +54,12 @@ function animateMenuFromTo($menu, $newMenu) {
   $newMenu.width(widthMenu);
   $menu.replaceWith($newMenu);
 
-  var finishedPromise = anime({
+  return anime({
     targets: $newMenu[0],
     width: `${widthNewMenu}px`,
     duration: DURATION,
-    easing: EASING
-  });
-
-  return finishedPromise.finished;
-
-  // const props = {
-  //   width: `${widthNewMenu}px`
-  // };
-
-  // return $newMenu.animate(props, DURATION).promise()
-  //   .then(() => {
-  //     $newMenu.removeAttr('style');
-  //   });
+    easing: getEasing(widthMenu, widthNewMenu)
+  }).finished;
 }
 
 function animateBodyFromTo($body, $newBody) {
@@ -76,13 +72,12 @@ function animateBodyFromTo($body, $newBody) {
     return Promise.resolve();
   }
 
-  var finishedPromise = anime({
+  return anime({
     targets: $body[0],
     'padding-left': `${paddingNewMenu}px`,
     duration: DURATION,
-    easing: EASING
-  });
-  return finishedPromise.finished;
+    easing: getEasing(paddingMenu, paddingNewMenu)
+  }).finished;
 }
 
 function animateFooterFromTo($body, $newBody) {
@@ -103,7 +98,7 @@ function animateFooterFromTo($body, $newBody) {
     targets: $footer,
     'left': `${paddingNewMenu}px`,
     duration: DURATION,
-    easing: EASING
+    easing: getEasing(paddingMenu, paddingNewMenu)
   });
   return finishedPromise.finished;
 }
@@ -151,8 +146,8 @@ var PageTransition = Barba.BaseTransition.extend({
     anime({
       targets: this.$fader[0],
       opacity: .9,
-      duration: 100,
-      easing: 'easeInQuart'
+      duration: 200,
+      easing: EASING_IN
     })
   },
 
@@ -164,8 +159,8 @@ var PageTransition = Barba.BaseTransition.extend({
     return anime({
       targets: this.$fader[0],
       opacity: 0,
-      duration: 300,
-      easing: 'easeOutCubic'
+      duration: 200,
+      easing: EASING_OUT
     }).finished.then(() => {
       this.$fader.css({zIndex: -1, display: 'none'})
     })
