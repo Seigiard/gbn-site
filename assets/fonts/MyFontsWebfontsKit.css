@@ -1,0 +1,46 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3564984, 2018-04-22T14:18:22-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: Formular-Bold by Brownfox
+ * URL: https://www.myfonts.com/fonts/brownfox/formular/bold/
+ *
+ * Webfont: Formular by Brownfox
+ * URL: https://www.myfonts.com/fonts/brownfox/formular/regular/
+ *
+ *
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3564984
+ * Licensed pageviews: 20,000
+ * Webfonts copyright: Copyright (c) 2014 by Vyacheslav Kirilenko, Gayane Bagdasaryan. All rights reserved.
+ *
+ * © 2018 MyFonts Inc
+*/
+
+/* @import must be at top of file, otherwise CSS will not work */
+/* @import url("//hello.myfonts.net/count/3665b8"); */
+
+@font-face {
+  font-family: "Formular";
+  font-weight: bold;
+  src: url("webfonts/3665B8_0_0.eot");
+  src: url("webfonts/3665B8_0_0.eot?#iefix") format("embedded-opentype"),
+    url("webfonts/3665B8_0_0.woff2") format("woff2"),
+    url("webfonts/3665B8_0_0.woff") format("woff"),
+    url("webfonts/3665B8_0_0.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Formular";
+  font-weight: normal;
+  src: url("webfonts/3665B8_1_0.eot");
+  src: url("webfonts/3665B8_1_0.eot?#iefix") format("embedded-opentype"),
+    url("webfonts/3665B8_1_0.woff2") format("woff2"),
+    url("webfonts/3665B8_1_0.woff") format("woff"),
+    url("webfonts/3665B8_1_0.ttf") format("truetype");
+}

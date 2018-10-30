@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Услуги.-Кратко.-1000-пк" transform="translate(-280.000000, -548.000000)">
+            <g id="Recommended-services" transform="translate(257.000000, 272.000000)">
+                <g id="2" transform="translate(0.000000, 170.000000)">
+                    <g id="Group" transform="translate(23.000000, 106.000000)">
+                        <g id="More-/-Open">
+                            <rect id="Button" stroke="#C5C5C5" stroke-width="1" x="0.5" y="0.5" width="19" height="9" rx="4.5"></rect>
+                            <path d="M14,6 C13.4477153,6 13,5.55228475 13,5 C13,4.44771525 13.4477153,4 14,4 C14.5522847,4 15,4.44771525 15,5 C15,5.55228475 14.5522847,6 14,6 Z M10,6 C9.44771525,6 9,5.55228475 9,5 C9,4.44771525 9.44771525,4 10,4 C10.5522847,4 11,4.44771525 11,5 C11,5.55228475 10.5522847,6 10,6 Z M6,6 C5.44771525,6 5,5.55228475 5,5 C5,4.44771525 5.44771525,4 6,4 C6.55228475,4 7,4.44771525 7,5 C7,5.55228475 6.55228475,6 6,6 Z" id="Dots" fill="#000000" fill-rule="evenodd"></path>
+                        </g>
+                        <g id="More-/-Hide" transform="translate(0.000000, 10.000000)">
+                            <rect id="Button" fill="#000000" x="0" y="0" width="20" height="10" rx="5"></rect>
+                            <path d="M14,6 C13.4477153,6 13,5.55228475 13,5 C13,4.44771525 13.4477153,4 14,4 C14.5522847,4 15,4.44771525 15,5 C15,5.55228475 14.5522847,6 14,6 Z M10,6 C9.44771525,6 9,5.55228475 9,5 C9,4.44771525 9.44771525,4 10,4 C10.5522847,4 11,4.44771525 11,5 C11,5.55228475 10.5522847,6 10,6 Z M6,6 C5.44771525,6 5,5.55228475 5,5 C5,4.44771525 5.44771525,4 6,4 C6.55228475,4 7,4.44771525 7,5 C7,5.55228475 6.55228475,6 6,6 Z" id="Dots" fill="#FFFFFF"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
