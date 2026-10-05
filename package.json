@@ -2,6 +2,7 @@
     "name": "gbn-site",
     "version": "0.0.1",
     "scripts": {
+        "lint:anti-slop": "tools/oxlint/node_modules/.bin/oxlint --config .oxlintrc.json .",
         "start": "npm-run-all --parallel server livereload watchJS",
         "build": "npm run minJS && harp compile ./project ./dist && npm run minCSS",
         "server": "harp server project --port 9000",
